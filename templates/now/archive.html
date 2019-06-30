@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for post in object_list %}
+<div class="post-entry">
+  <a href="{% url 'then' post.pk %}">{{ post.title }}</a>
+</div>
+{% endfor %}
+
+{% endblock content %}
