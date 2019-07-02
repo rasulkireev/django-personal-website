@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="post-entry">
+      <h2>This is what I used to be up to.</h2>
+      <small>As of {{ post.title }}</small>
+      <hr>
+      <p>{{ post.body }}</p>
+    </div>
+
+  <a href={% url 'archive' %}>Go back to the archive</a>
+
+{% endblock content %}

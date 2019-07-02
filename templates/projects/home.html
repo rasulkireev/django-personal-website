@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="col-2">
+    <h1>Personal Projects</h1>
+
+  </div>
+
+  <div class="col-2">
+    <h1>Side Hustle Projects</h1>
+    {% for post in object_list %}
+        <h2>{{ post.title }}</h2>
+        <img class="project rounded" src="{{ post.cover.url}}" alt="{{ post.title }}">
+    {% endfor %}
+  </div>
+
+{% endblock content %}
