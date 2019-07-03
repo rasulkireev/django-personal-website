@@ -3,9 +3,9 @@
 {% block content %}
     <div class="post-entry">
       <h2>This is what I am up to <strong>Now</strong></h2>
-      <small>As of {{ post.title }}</small>
+      <small>As of {{ now.title }}</small>
       <hr>
-      <p>{{ post.body }}</p>
+      <p>{{ now.body }}</p>
     </div>
 
   <a href={% url 'archive' %}>Archive of what I have been up to in the past</a>

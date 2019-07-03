@@ -3,11 +3,11 @@
 {% block content %}
     <div class="post-entry">
       <h2>This is what I used to be up to.</h2>
-      <small>As of {{ post.title }}</small>
+      <small>As of {{ now.title }}</small>
       <hr>
-      <p>{{ post.body }}</p>
+      <p>{{ now.body }}</p>
     </div>
 
-  <a href={% url 'wiltw-archive' %}>Go back to the archive</a>
+  <a href={% url 'archive' %}>Go back to the archive</a>
 
 {% endblock content %}

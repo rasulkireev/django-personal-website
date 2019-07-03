@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Wiltw
 
 
 class WiltwListView(ListView):
-    model = Post
+    model = Wiltw
     template_name = 'wiltw/wiltw-archive.html'
 
 class WiltwDetailView(DetailView): # new
-    model = Post
+    model = Wiltw
     template_name = 'wiltw/wiltw-then.html'
 
 class WiltwLatestView(DetailView): # new
-    model = Post
+    model = Wiltw
     template_name = 'wiltw/wiltw-now.html'
 
     def get_object(self):
-        return Post.objects.order_by('-title').first()
+        return Wiltw.objects.order_by('-title').first()

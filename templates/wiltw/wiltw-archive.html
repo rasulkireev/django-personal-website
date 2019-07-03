@@ -2,9 +2,9 @@
 
 {% block content %}
 
-{% for post in object_list %}
+{% for wiltw in object_list %}
 <div class="post-entry">
-  <a href="{% url 'then' post.pk %}">{{ post.title }}</a>
+  <a href="{% url 'wiltw-then' wiltw.slug %}">{{ wiltw.title }}</a>
 </div>
 {% endfor %}
 

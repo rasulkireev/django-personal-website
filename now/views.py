@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Now
 
 
 class NowListView(ListView):
-    model = Post
+    model = Now
     template_name = 'now/archive.html'
 
 class NowDetailView(DetailView): # new
-    model = Post
+    model = Now
     template_name = 'now/then.html'
 
 class NowLatestView(DetailView): # new
-    model = Post
+    model = Now
     template_name = 'now/now.html'
 
     def get_object(self):
-        return Post.objects.order_by('-title').first()
+        return Now.objects.order_by('-title').first()

@@ -2,9 +2,9 @@
 
 {% block content %}
 
-{% for post in object_list %}
+{% for now in object_list %}
 <div class="post-entry">
-  <a href="{% url 'wiltw-then' post.pk %}">{{ post.title }}</a>
+  <a href="{% url 'then' now.slug %}">{{ now.title }}</a>
 </div>
 {% endfor %}
 
