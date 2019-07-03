@@ -2,17 +2,22 @@
 
 {% block content %}
 
-  <div class="col-2">
-    <h1>Personal Projects</h1>
+<h1 class="mb-4">Projects</h1>
 
-  </div>
+    {% for project in object_list %}
 
-  <div class="col-2">
-    <h1>Side Hustle Projects</h1>
-    {% for post in object_list %}
-        <h2>{{ post.title }}</h2>
+    <div class="card text-white bg-secondary mb-3">
+      <h5 class="card-header">{{ project.title }}</h5>
+      <div class="card-body row">
+          <img class="col project rounded" src="{{ project.cover.url}}" alt="{{ project.title }}">
+          <p class="col-8 card-text">{{ project.description}}</p>
+      </div>
+    </div>
+
+
         <img class="project rounded" src="{{ post.cover.url}}" alt="{{ post.title }}">
+
     {% endfor %}
-  </div>
+
 
 {% endblock content %}

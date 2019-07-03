@@ -5,7 +5,7 @@
       <h2>This is what I used to be up to.</h2>
       <small>As of {{ now.title }}</small>
       <hr>
-      <p>{{ now.body }}</p>
+      <p>{{ now.body | safe }}</p>
     </div>
 
   <a href={% url 'archive' %}>Go back to the archive</a>

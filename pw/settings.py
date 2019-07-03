@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'pages.apps.PagesConfig',
     'now.apps.NowConfig',
     'wiltw.apps.WiltwConfig',
     'projects.apps.ProjectsConfig',
+
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +87,11 @@ DATABASES = {
     }
 }
 
+# TinyMCE Configuration
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced",
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

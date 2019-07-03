@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
   <h2>Me (TL;DR)</h2>
   <p>Recently graduated from <a class="text-primary" href="https://www.northeastern.edu/" target="blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
   <p>Currently work at <a class="text-primary" href="http://www.guycarp.com/" target="blank">Guy Carpenter</a> as an Actuary (basically a Stats, Probability and Financial Risk person).</p>
@@ -11,18 +10,15 @@
   <p>Originally from Russia. Currently live with my beautiful wife in <a class="text-primary" href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="blank">Newark, NJ</a>.</p>
 
   <h2>What am I up to?</h2>
-  <p>This is what I am up to <a class="text-primary" href={% url 'now' %}><strong>Now</strong></a></p>
+  <p>This is what I am up to <a href={% url 'now' %}>Now</a></p>
 
   <h2>What I learnt this week?</h2>
-  <p>This is what I learnt <a class="text-primary" href={% url 'wiltw-now' %}><strong>this week</strong></a>.</p>
+  <p>This is what I learnt <a href={% url 'wiltw-now' %}>this week</a>.</p>
 
   <h2>Contact me</h2>
   <p>You can just press the @ button in the top right corner and the magic will happen.</p>
 
   <h2>Projects</h2>
-  <p><a class="text-primary" href={% url 'project-list' %}><strong>These</strong></a> are the things I am working on or have finished.</p>
-
-
-
+  <p><a href={% url 'project-list' %}>These</a> are the things I am working on or have finished.</p>
 
 {% endblock content %}
