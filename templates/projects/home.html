@@ -10,7 +10,7 @@
       <h5 class="card-header">{{ project.title }}</h5>
       <div class="card-body row">
           <img class="col project rounded" src="{{ project.cover.url}}" alt="{{ project.title }}">
-          <p class="col-8 card-text">{{ project.description}}</p>
+          <p class="col-8 card-text">{{ project.description | safe }}</p>
       </div>
     </div>
 

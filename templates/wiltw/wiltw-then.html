@@ -5,7 +5,7 @@
       <h2>This is what I used to be up to.</h2>
       <small>As of {{ wiltw.title }}</small>
       <hr>
-      <p>{{ wiltw.body }}</p>
+      <p>{{ wiltw.body | safe }}</p>
     </div>
 
   <a href={% url 'wiltw-archive' %}>Go back to the archive</a>
