@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5re680oy9q3km2(g)gz+#n9sydzw+xb(c=28tq1u#on6=-syw+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rasulkireev.com','208.68.36.10', 'www.rasulkireev.com', 'localhost']
 
 
 # Application definition
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'pw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'personal_website',
+        'USER': 'rasulkireev',
+        'PASSWORD': 'IlovemywifeTatianaDema',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -130,9 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT =os.path.join(BASE_DIR, 'media/')

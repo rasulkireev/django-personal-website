@@ -26,7 +26,4 @@ urlpatterns = [
     path('what-i-learnt-this-week/', include('wiltw.urls')),
     path('projects/', include('projects.urls')),
     path('tinymce/', include('tinymce.urls')),
-]
-
-if settings.DEBUG: # new
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ]
