@@ -9,3 +9,7 @@ media
 # Environments
 ENV/
 .ENV
+venv
+venv/
+
+
