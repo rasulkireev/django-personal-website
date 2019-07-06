@@ -5,6 +5,7 @@ from autoslug import AutoSlugField
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
+    link = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title')
     description = tinymce_models.HTMLField()
     cover = models.ImageField(upload_to='project-images/')

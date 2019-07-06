@@ -18,6 +18,8 @@ Django = "*"
 Pillow = "*"
 psycopg2-binary = "*"
 python-decouple = "*"
+boto3 = "*"
+django-storages = "*"
 
 [requires]
 python_version = "3.7"

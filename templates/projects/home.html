@@ -7,10 +7,10 @@
     {% for project in object_list %}
 
     <div class="card text-white bg-secondary mb-3">
-      <h5 class="card-header">{{ project.title }}</h5>
+      <a class="h3 card-header text-decoration-none text-white" href="{{ project.link }}" target=”_blank”>{{ project.title }}</a>
       <div class="card-body row">
-          <img class="col project rounded" src="{{ project.cover.url}}" alt="{{ project.title }}">
-          <p class="col-8 card-text">{{ project.description | safe }}</p>
+        <div class="col-auto"><img class="img-fluid project rounded" src="{{ project.cover.url}}" alt="{{ project.title }}"></div>
+        <div class="col-lg-auto"><p class="card-text">{{ project.description | safe }}</p></div>
       </div>
     </div>
 
