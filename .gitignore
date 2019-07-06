@@ -11,5 +11,4 @@ ENV/
 .ENV
 venv
 venv/
-
-
+.env
