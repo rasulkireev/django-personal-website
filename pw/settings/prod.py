@@ -1,5 +1,7 @@
 from pw.settings.base import *
 
+### Do not forget to set the environment settings variable to this file (on the server)
+###### export DJANGO_SETTINGS_MODULE = pw.settings.prod
 
 import os
 from decouple import config, Csv
@@ -33,14 +35,17 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'storage_backends.StaticStorage'
+# STATIC_URL = "https://%s/static/" % (AWS_S3_CUSTOM_DOMAIN)
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL = "https://%s/static/" % (AWS_S3_CUSTOM_DOMAIN)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'storage_backends.MediaStorage'
+
+# MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
