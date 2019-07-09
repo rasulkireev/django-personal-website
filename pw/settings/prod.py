@@ -37,12 +37,12 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 # STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'settings.storage_backends.StaticStorage'
+STATICFILES_STORAGE = 'pw.settings.storage_backends.StaticStorage'
 # STATIC_URL = "https://%s/static/" % (AWS_S3_CUSTOM_DOMAIN)
 
 
 MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'settings.storage_backends.MediaStorage'
+DEFAULT_FILE_STORAGE = 'pw.settings.storage_backends.MediaStorage'
 
 # MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
