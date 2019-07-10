@@ -21,6 +21,7 @@ python-decouple = "*"
 boto3 = "*"
 django-storages = "*"
 gunicorn = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6.8"

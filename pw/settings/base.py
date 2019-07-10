@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'tinymce',
     'storages',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+### Dealing with CORS errors (connection to AWS S3)
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'pw.urls'
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "01147fdffa5ebcde35d057587c716b1ce0f422bed143bd597577c5a0d273e24a"
+            "sha256": "3fd8bb443d03fd93772068fc7d444dbc7c5b40616ab89d7177f32ea79b9f1bc8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,18 +18,18 @@
     "default": {
         "boto3": {
             "hashes": [
-                "sha256:2149b6b617783bac1cf2a3d009949be6356d62a6c1e9f2ac77e6c861ce6548de",
-                "sha256:31a887919f58a75c37daba8e46f7bcf4481e1be6935ce006fe7595a1084b5938"
+                "sha256:18fdfbaf8f82059307b8eab31f87c65e7d0e8873f4a5b0c891bd7ce85fc23d41",
+                "sha256:9b86514e6eaf258ff44fe1e1d08d1c2adc5282e020aaaac1ff4358979101fcd2"
             ],
             "index": "pypi",
-            "version": "==1.9.183"
+            "version": "==1.9.185"
         },
         "botocore": {
             "hashes": [
-                "sha256:2943d87d6844813fff9b0b4e9d9fef223d5e211bd69235b650b2d65137f816b0",
-                "sha256:d4b280e7c312ffecda0f2519d8e41b69860eb5d72e8d737e7e3814a5153190c6"
+                "sha256:0d47e674f160f453de7a5b67e9bb12907352d63d0fefabaedfdfbe3b6dc3b657",
+                "sha256:1f76c7586c90ea2b0d43902d8614fb7bb17869b44692286067015d6516bb043d"
             ],
-            "version": "==1.12.183"
+            "version": "==1.12.185"
         },
         "certifi": {
             "hashes": [
@@ -61,13 +61,13 @@
             "index": "pypi",
             "version": "==1.9.4"
         },
-        "django-split-settings": {
+        "django-cors-headers": {
             "hashes": [
-                "sha256:04f6b551111fdbcb4f669ac9004ac2d4a27197a36ca88444cb896378807ed777",
-                "sha256:14b164dbd724e52aa9a0b0338eefa988a8a0f17f7cba34e0f983e5348682aeb7"
+                "sha256:5b80bf0f8d7fc6e2bcb4f40781d5ff3661961bbf1982e52daec77241dea3b890",
+                "sha256:ebf3e2cf25aa6993b959a8e6a87828ebb3c8fe5bc3ec4a2d6e65f3b8d9b4212c"
             ],
             "index": "pypi",
-            "version": "==0.3.0"
+            "version": "==3.0.2"
         },
         "django-storages": {
             "hashes": [
