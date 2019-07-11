@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'wiltw.apps.WiltwConfig',
     'projects.apps.ProjectsConfig',
 
-    'tinymce',
     'storages',
 ]
 

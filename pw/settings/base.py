@@ -94,11 +94,6 @@ DATABASES = {
     }
 }
 
-# TinyMCE Configuration
-TINYMCE_DEFAULT_CONFIG = {
-    'theme': "advanced",
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
