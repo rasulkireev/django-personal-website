@@ -1,12 +1,12 @@
 -i https://pypi.org/simple
-boto3==1.9.185
-botocore==1.12.185
+boto3==1.9.186
+botocore==1.12.186
 certifi==2019.6.16
 chardet==3.0.4
 django-autoslug==1.9.4
 django-cors-headers==3.0.2
 django-storages==1.7.1
-django-tinymce==2.8.0
+django-summernote==0.8.11.4
 django==2.2.3
 docutils==0.14
 gunicorn==19.9.0
