@@ -1,4 +1,8 @@
 from django.contrib import admin
 from .models import Project
+from django_summernote.admin import SummernoteModelAdmin
 
-admin.site.register(Project)
+class ProjectAdmin(SummernoteModelAdmin):
+    summernote_fields = '__all__'
+
+admin.site.register(Project, ProjectAdmin)

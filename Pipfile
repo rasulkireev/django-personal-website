@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 requests = "*"
 django-autoslug = "*"
-django-tinymce = "*"
 pip-review = "*"
 pyparsing = "*"
 pytz = "*"
@@ -22,6 +21,7 @@ boto3 = "*"
 django-storages = "*"
 gunicorn = "*"
 django-cors-headers = "*"
+django-summernote = "*"
 
 [requires]
 python_version = "3.6.8"

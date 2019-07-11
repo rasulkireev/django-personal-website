@@ -1,13 +1,12 @@
 from django.db import models
-from tinymce import models as tinymce_models
 from autoslug import AutoSlugField
 
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    homeurl = models.CharField(max_length=200, blank=True)
+    homeurl = models.URLField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title')
-    description = tinymce_models.HTMLField()
+    description = models.TextField()
     cover = models.ImageField(upload_to='project-images/')
 
     def __str__(self):

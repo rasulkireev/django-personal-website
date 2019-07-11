@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'wiltw.apps.WiltwConfig',
     'projects.apps.ProjectsConfig',
 
-    'tinymce',
+    'django_summernote',
     'storages',
     'corsheaders',
 ]

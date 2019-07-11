@@ -25,7 +25,7 @@ urlpatterns = [
     path('now/', include('now.urls')),
     path('what-i-learnt-this-week/', include('wiltw.urls')),
     path('projects/', include('projects.urls')),
-    path('tinymce/', include('tinymce.urls')),
+    path('summernote/', include('django_summernote.urls')),
  ]
 
 if settings.DEBUG:
