@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'now.apps.NowConfig',
     'wiltw.apps.WiltwConfig',
     'projects.apps.ProjectsConfig',
+    'writings.apps.WritingsConfig',
 
     'django_summernote',
     'storages',

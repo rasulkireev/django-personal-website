@@ -18,30 +18,24 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-sm bg-warning">
-      <span class="container d-flex justify-content-center"><h4 class="text-danger">Design and some features are still under construction.</h4></span>
-    </nav>
-
-    <nav class="navbar navbar-expand-sm bg-warning">
-      <span class="container d-flex justify-content-center"><h4 class="text-danger">Feel free to look around though!</h4></span>
-    </nav>
-
     <nav class="navbar navbar-expand-sm justify-content-between mb-4">
       <div class="container">
         <a class="navbar-brand" href="/"><b>Rasul Kireev</b></a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item"><a class="nav-link" href={% url 'project-list' %}><b>Projects</b></a></li>
+      <!--  <ul class="nav justify-content-end">
+            <li class="nav-item"><a class="nav-link" href="/projects/"><b>Projects</b></a></li>
             <li class="nav-item"><a class="nav-link" href="https://photos.rasulkireev.com" target="_blank"><b>Photography</b></a></li>
             <li class="nav-item"><a class="nav-link" href="mailto:kireevr1996@gmail.com"><i class="fas fa-at fa-lg"></i></a></li>
-            </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
 
-<div class='container'>
+<div class='container mb-4'>
   {% block content %}
   {% endblock %}
 </div>
+
+
+
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

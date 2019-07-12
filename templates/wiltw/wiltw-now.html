@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="post-entry">
+    <div class="post-entry text-white">
       <h2>What I learnt this week:</h2>
+      <small>As of {{ wiltw.title }}</small>
       <hr>
       <p>{{ wiltw.body | safe }}</p>
     </div>

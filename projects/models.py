@@ -9,5 +9,17 @@ class Project(models.Model):
     description = models.TextField()
     cover = models.ImageField(upload_to='project-images/')
 
+    Project = 'Project'
+    Hustle = 'Hustle'
+    PROJECT_TYPE = [
+        (Project, 'Project'),
+        (Hustle, 'Hustle'),
+    ]
+    project_type = models.CharField(
+        max_length=10,
+        choices=PROJECT_TYPE,
+        default=Project,
+    )
+
     def __str__(self):
         return self.title

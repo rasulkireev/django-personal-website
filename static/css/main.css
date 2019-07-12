@@ -1,10 +1,11 @@
+/* main */
 html {
   font-family: "Montserrat", sans-serif;
 }
 
 body {
   background-color: #101C2D;
-  color: white;
+  /* color: white */
 }
 
 nav {
@@ -16,6 +17,24 @@ nav a {
 
 .project-width {
   max-width: 18rem;
+}
+
+/*  */
+/* Colors */
+.bunting-bg {
+  background-color: #19204F;
+}
+
+.sunglow {
+  color: #FCD42B;
+}
+
+.swans-down-bg {
+  background-color: #CEEAE6;
+}
+
+.algae-green {
+  color: #7CDFAF;
 }
 
 /*# sourceMappingURL=main.css.map */

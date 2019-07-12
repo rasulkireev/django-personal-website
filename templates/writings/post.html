@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="post-entry text-white">
+      <h2>{{ post.title }}</h2>
+      <hr>
+      <p>{{ post.body | safe }}</p>
+    </div>
+
+  <a href={% url 'all-posts' %}>All posts</a>
+
+{% endblock content %}

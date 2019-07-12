@@ -2,10 +2,19 @@
 
 {% block content %}
 
-{% for now in object_list %}
-<div class="post-entry">
-  <a href="{% url 'then' now.slug %}">{{ now.title }}</a>
+<div class="card">
+  <div class="card-header h2">As of:</div>
+  <div class="card-body">
+  <ul>
+    {% for now in object_list %}
+    <li>
+      <div class="post-entry">
+        <a href="{% url 'then' now.slug %}">{{ now.title }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
 </div>
-{% endfor %}
 
 {% endblock content %}
