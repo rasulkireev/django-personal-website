@@ -14,14 +14,13 @@
     </div>
 </div>
 
-
 <div class="card-deck">
     <div class="card mb-3">
       <div class="card-header h2">What am I up to?</div>
         <div class="card-body">
           <p>This is a now page, and if you have your own site, you should make one, too. Learn more <a href="https://nownownow.com/about" target="_blank">here</a></p>
           <p>Essentially, this is just a way of letting the world know (if it is at all interested) what I am currently doing.</p>
-          <p>So, this is what I am up to <a href={% url 'now' %}>Now</a></p>
+          <p>So, this is what I am up to <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'now' %}>Now</a></button></p>
         </div>
       </div>
 
@@ -30,7 +29,7 @@
           <div class="card-body">
             <p>Every Sunday I sit down with my journal to go through the week that is about to finish and come up with a list of things I have learnt.</p>
             <p>I decided to to this for myself, but if you somehow find it useful, or want to discuss any of these things with me, I will consider this to be an extremely successfull "venture".</p>
-            <p>So, this is what I learnt <a href={% url 'wiltw-now' %}>this week</a>.</p>
+            <p>So, this is what I learnt <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'wiltw-now' %}>this week</a></button>.</p>
           </div>
         </div>
   </div>
@@ -38,16 +37,19 @@
   <div class="card mb-3">
     <div class="card-header h2">Writings</div>
       <div class="card-body">
-        <p>This are # of my latest posts.</p>
+        <p>These are 3 of my latest posts.</p>
         <ul>
-          <li><a href="">Why?</a></li>
-          <li><a href="">Because</a></li>
+
+          {% for post in post %}
+          <li><a href="{% url 'post' post.slug %}">{ post.title }</a></li>
+          {% endfor %}
+
         </ul>
-        <a href="{% url 'all-posts' %}">Read more</a>
+        <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'all-posts' %}">Read more</a></button>
       </div>
   </div>
 
-  <div class="card-deck">
+    <div class="card-deck">
       <div class="card mb-3">
         <div class="card-header h2">Projects</div>
           <div class="card-body">
@@ -68,7 +70,7 @@
                 <li><a href="">Hustle 3</a></li>
               </ul>
             </div>
-          </div>
+        </div>
     </div>
 
 <!--  <h2>Projects</h2>

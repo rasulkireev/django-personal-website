@@ -6,6 +6,7 @@ from .models import Now
 class NowListView(ListView):
     model = Now
     template_name = 'now/archive.html'
+    ordering = '-title'
 
 class NowDetailView(DetailView): # new
     model = Now

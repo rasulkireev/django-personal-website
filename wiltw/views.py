@@ -6,6 +6,7 @@ from .models import Wiltw
 class WiltwListView(ListView):
     model = Wiltw
     template_name = 'wiltw/wiltw-archive.html'
+    ordering = '-title'
 
 class WiltwDetailView(DetailView): # new
     model = Wiltw

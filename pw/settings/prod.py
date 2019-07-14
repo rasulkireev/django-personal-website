@@ -35,6 +35,11 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 
+# Web traffic & Analytics
+GOOGLE_ANALYTICS_JS_PROPERTY_ID = config('GOOGLE_ANALYTICS_JS_PROPERTY_ID')
+GOOGLE_ANALYTICS_TRACKING_STYLE = 'TRACK_MULTIPLE_DOMAINS'
+
+
 # STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'pw.settings.storage_backends.StaticStorage'
@@ -43,9 +48,3 @@ STATICFILES_STORAGE = 'pw.settings.storage_backends.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'pw.settings.storage_backends.MediaStorage'
-
-# MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'storages',
     'corsheaders',
+    'analytical',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Web traffic & Analytics
+GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-222222-2'
+
 
 
 # Internationalization
