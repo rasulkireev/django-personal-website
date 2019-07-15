@@ -34,13 +34,13 @@
         </div>
   </div>
 
-  <div class="card mb-3">
+  <!-- <div class="card mb-3">
     <div class="card-header h2">Writings</div>
       <div class="card-body">
         <p>These are 3 of my latest posts.</p>
         <ul>
 
-          {% for post in post %}
+          {% for post in top3 %}
           <li><a href="{% url 'post' post.slug %}">{ post.title }</a></li>
           {% endfor %}
 
@@ -71,9 +71,6 @@
               </ul>
             </div>
         </div>
-    </div>
-
-<!--  <h2>Projects</h2>
-  <p><a href={% url 'project-list' %}>These</a> are the things I am working on or have finished.</p>  -->
+    </div> -->
 
 {% endblock content %}
