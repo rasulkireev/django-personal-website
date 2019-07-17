@@ -38,6 +38,14 @@ AWS_S3_OBJECT_PARAMETERS = {
 # Web traffic & Analytics
 GOOGLE_ANALYTICS_JS_PROPERTY_ID = config('GOOGLE_ANALYTICS_JS_PROPERTY_ID')
 
+# Sentry error tracking
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn=config('dsn'),
+    integrations=[DjangoIntegration()]
+)
 
 
 # STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]

@@ -2,11 +2,23 @@
 
 {% block content %}
 
-<h1 class="mb-4">Projects</h1>
+    <div class="card">
+      <div class="card-header h2">Projects</div>
+      <div class="card-body">
+      <ul>
+        {% for project in object_list %}
+        <li>
+          <div class="post-entry">
+            <a href={{ project.homeurl }}>{{ project.title }}</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      </div>
+    </div>
 
-    {% for project in object_list %}
 
-    <div class="card text-white bg-secondary mb-3">
+    <!-- <div class="card text-white bg-secondary mb-3">
       <div class="card-header"><a class="h3 text-decoration-none text-white" href="{{ project.homeurl }}" target=”_blank”>{{ project.title }}</a>
         <div class="card-body row">
           <div class="row">
@@ -17,9 +29,8 @@
               <p class="card-text">{{ project.description | safe }}</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
-    {% endfor %}
 
 
 {% endblock content %}

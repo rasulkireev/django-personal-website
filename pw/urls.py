@@ -18,6 +18,8 @@ from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
 
 urlpatterns = [
     path('rk-admin/', admin.site.urls),
@@ -27,6 +29,8 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     path('writings/', include('writings.urls')),
     path('summernote/', include('django_summernote.urls')),
+
+    path('sentry-debug/', trigger_error),
  ]
 
 if settings.DEBUG:

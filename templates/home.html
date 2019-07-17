@@ -34,17 +34,14 @@
         </div>
   </div>
 
-  <!-- <div class="card mb-3">
+  <div class="card mb-3">
     <div class="card-header h2">Writings</div>
       <div class="card-body">
         <p>These are 3 of my latest posts.</p>
-        <ul>
 
-          {% for post in top3 %}
-          <li><a href="{% url 'post' post.slug %}">{ post.title }</a></li>
-          {% endfor %}
+          {% load post_tags %}
+          {% latest_posts Post %}
 
-        </ul>
         <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'all-posts' %}">Read more</a></button>
       </div>
   </div>
@@ -53,24 +50,18 @@
       <div class="card mb-3">
         <div class="card-header h2">Projects</div>
           <div class="card-body">
-            <ul>
-              <li><a href="">Project 1</a></li>
-              <li><a href="">Project 2</a></li>
-              <li><a href="">Project 3</a></li>
-            </ul>
+            {% load project_list %}
+            {% projects project %}
           </div>
         </div>
 
         <div class="card mb-3">
           <div class="card-header h2">Hustles</div>
             <div class="card-body">
-              <ul>
-                <li><a href="">Hustle 1</a></li>
-                <li><a href="">Hustle 2</a></li>
-                <li><a href="">Hustle 3</a></li>
-              </ul>
+              {% load project_list %}
+              {% hustles project %}
             </div>
         </div>
-    </div> -->
+    </div>
 
 {% endblock content %}
