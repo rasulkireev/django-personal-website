@@ -34,19 +34,19 @@
         </div>
   </div>
 
-  <div class="card mb-3">
-    <div class="card-header h2">Writings</div>
-      <div class="card-body">
-        <p>These are 3 of my latest posts.</p>
-
-          {% load post_tags %}
-          {% latest_posts Post %}
-
-        <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'all-posts' %}">Read more</a></button>
-      </div>
-  </div>
-
     <div class="card-deck">
+      <div class="card mb-3">
+        <div class="card-header h2">Writings</div>
+          <div class="card-body">
+            <p>These are 3 of my latest posts.</p>
+
+              {% load post_tags %}
+              {% latest_posts Post %}
+
+            <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'all-posts' %}">Read more</a></button>
+          </div>
+      </div>
+
       <div class="card mb-3">
         <div class="card-header h2">Projects</div>
           <div class="card-body">

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'wiltw.apps.WiltwConfig',
     'projects.apps.ProjectsConfig',
     'writings.apps.WritingsConfig',
+    'books.apps.BooksConfig',
 
     'django_summernote',
     'storages',
