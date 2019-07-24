@@ -5,7 +5,7 @@ from .models import Post
 
 class PostListView(ListView):
     model = Post
-    template_name = 'writings/all-posts.html'
+    template_name = 'writings/all_posts.html'
 
 class PostDetailView(DetailView): # new
     model = Post
