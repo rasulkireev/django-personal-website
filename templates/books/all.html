@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for book in object_list %}
+    <div class="card mb-4">
+      <div class="card-header h3">{{ book.title }} by {{ book.author }}</div>
+        <div class="card-body">
+            <img class="mr-4" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px" align="left">
+            <p>Date read: {{ book.date_read }}</p>
+            <p>How much I liked it: <b>{{ book.rank }}</b>/10</p>
+            <p>{{ book.description|truncatewords:120|safe }}<p>
+            <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'book' book.slug %}">Read More</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" href={{ book.buylink }} target="_blank">Buy on Amazon</a></button>
+        </div>
+      </div>
+{% endfor %}
+
+
+{% endblock %}
