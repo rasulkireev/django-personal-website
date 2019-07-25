@@ -52,8 +52,9 @@ sentry_sdk.init(
 # STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static/'), ]
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'pw.settings.storage_backends.StaticStorage'
-# STATIC_URL = "https://%s/static/" % (AWS_S3_CUSTOM_DOMAIN)
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'pw.settings.storage_backends.MediaStorage'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
