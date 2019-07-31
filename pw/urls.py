@@ -29,6 +29,8 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     path('writings/', include('writings.urls')),
     path('books/', include('books.urls')),
+    path('journal/', include('journal.urls')),
+    path('ideas/', include('ideas.urls')),
     path('summernote/', include('django_summernote.urls')),
 
     path('sentry-debug/', trigger_error),

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'writings.apps.WritingsConfig',
     'books.apps.BooksConfig',
+    'ideas.apps.IdeasConfig',
+    'journal.apps.JournalConfig',
 
     'django_summernote',
     'storages',
