@@ -10,7 +10,7 @@
         <p>Date read: {{ book.date_read }}<br>
         How much I liked it: <b>{{ book.rank }}</b>/10</p>
         <p>{{ book.description|truncatewords:60|safe }} <a href="{% url 'book' book.slug %}">Read More</a></p>
-        <a href={{ book.buylink }} target="_blank">Buy on Amazon</a>
+        <p><a href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
       </div>
     {% endfor %}
 
