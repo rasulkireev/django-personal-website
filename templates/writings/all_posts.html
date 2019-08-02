@@ -4,15 +4,12 @@
 
 {% block content %}
 
-<div class="card">
-  <div class="card-header h2">All posts</div>
-  <div class="card-body">
+<div class="card-box">
+  <h1>All posts</h1>
   <ul>
     {% for post in object_list %}
-    <li>
-      <div class="post-entry">
-        <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
-      </div>
+    <li class="list-item">
+      <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
     </li>
     {% endfor %}
 

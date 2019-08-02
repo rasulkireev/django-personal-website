@@ -1,5 +1,4 @@
-<ul>
+
   {% for post in post %}
-  <li><a href="{% url 'post' post.slug %}"> {{post.title}} </a></li>
+    <a class="post-title" href="{% url 'post' post.slug %}"> {{post.title}} </a>
   {% endfor %}
-</ul>

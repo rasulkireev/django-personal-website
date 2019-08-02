@@ -3,13 +3,10 @@
 
 
 {% block content %}
-    <div class="post-entry text-white">
-      <h2>This is what I used to be up to.</h2>
-      <small>As of {{ wiltw.title }}</small>
-      <hr>
+    <div class="card-box">
+      <h2>This is what learnt the week of {{ wiltw.title }}</h2>
       <p>{{ wiltw.body | safe }}</p>
+      <a href={% url 'wiltw_archive' %}>Archive</a>
     </div>
-
-  <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'wiltw_archive' %}>Archive</a></button>
 
 {% endblock content %}

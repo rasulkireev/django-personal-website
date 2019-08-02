@@ -3,16 +3,14 @@
 
 {% block content %}
 
-<div class="card">
-  <div class="card-header h2">As of:</div>
-  <div class="card-body">
+<div class="card-box">
+  <h1>As of:</h1>
   <ul>
     {% for wiltw in object_list %}
-    <li>
-      <div class="post-entry">
-        <a href="{% url 'wiltw_then' wiltw.slug %}">{{ wiltw.title }}</a>
-      </div>
+    <li class="list-item">
+      <a href="{% url 'wiltw_then' wiltw.slug %}">{{ wiltw.title }}</a>
     </li>
     {% endfor %}
+</div>
 
 {% endblock content %}

@@ -2,12 +2,12 @@
 {% block title %}{{post.title}}{% endblock %}
 
 {% block content %}
-    <div class="card-box">
+    <div class="post-entry text-white">
       <h2>{{ post.title }}</h2>
+      <hr>
       <p>{{ post.body | safe }}</p>
-      <a href={% url 'all_posts' %}>All posts</a>
     </div>
 
-
+  <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'all_posts' %}>All posts</a></button>
 
 {% endblock content %}

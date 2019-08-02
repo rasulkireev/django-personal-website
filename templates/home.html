@@ -3,65 +3,38 @@
 
 {% block content %}
 
+  <section class="card-box" id="pw-info">
+    <h1>This website is</h1>
+    <ul>
+      <li>built with <a href="">Django</a></li>
+      <li>hosted on <a href="">DigitalOcean</a></li>
+      <li><b>my pride and joy</b></li>
+  </section>
+  <section class="card-box" id="me">
+    <h1>Me (TL;DR)</h1>
+    <p>Recently graduated from <a class="" href="https://www.northeastern.edu/" target="blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
+    <p>Currently work at <a class="" href="http://www.guycarp.com/" target="blank">Guy Carpenter</a> as a Junior Data Analyst.</p>
+    <p>Originally from Russia. Currently live with my wife in <a class="text-primary p-locality" href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="blank">Newark, NJ</a>.</p>
+    <!-- <p><a href="">Here</a> you can learn more about me. -->
+  </section>
+  <section class="card-box" id="now">
+    <h1>What am I up to?</h1>
+    <p><a href="{% url 'now' %}">Here</a> you can learn what I am up to <b>Now</b>.</p>
+    <p><a class="" href="{% url 'wiltw_now' %}">Here</a> you can see what I have learnt last week.</p>
+  </section>
+  <section class="card-box" id="recentposts">
+      <h1>Recent Posts<small><a href="{% url 'all_posts' %}">See all</a></small></h1>
+      {% load post_tags %}
+      {% latest_posts Post %}
+  </section>
+  <section class="card-box" id="projects">
+    <h1>Projects</h1>
+      <a class="post-title" href="" target="_blank">OSARJournal</a> <!--<small>Open Source Analytics Research Journal</small>-->
+      <a class="post-title" href="" target="_blank">EntrepreneurWeekl</a> <!--<small>Startup advice for Russian Entrepreneurs</small>-->
+      <a class="post-title" href="" target="_blank">Fermentline</a> <!--<small>Apparel for Fermentation Enthusiasts</small>-->
+      <a class="post-title" href="" target="_blank">YourGuidesToLife</a> <!--<small>Simple and actionable guides to difficult things.</small>-->
+  </section>
 
-<div class="card mb-3">
-  <div class="card-header h2">Me (TL;DR)</div>
-    <div class="card-body">
-      <p>Recently graduated from <a class="" href="https://www.northeastern.edu/" target="blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
-      <p>Currently work at <a class="" href="http://www.guycarp.com/" target="blank">Guy Carpenter</a> as an Actuary (basically a Stats, Probability and Financial Risk person).</p>
-      <p>Just as all other human beings I am trying to find my own path. Mainly trying to create a <a class="text-primary" href="https://amzn.to/2WkGrYC" target="blank">side hustle</a> to support me an my family, as well as our hobbies.</p>
-      <p>Originally from Russia. Currently live with my beautiful wife in <a class="text-primary p-locality" href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="blank">Newark, NJ</a>.</p>
-    </div>
-</div>
 
-<div class="card-deck">
-    <div class="card mb-3">
-      <div class="card-header h2">What am I up to?</div>
-        <div class="card-body">
-          <p>This is a now page, and if you have your own site, you should make one, too. Learn more <a href="https://nownownow.com/about" target="_blank">here</a></p>
-          <p>Essentially, this is just a way of letting the world know (if it is at all interested) what I am currently doing.</p>
-          <p>So, this is what I am up to <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'now' %}>Now</a></button></p>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <div class="card-header h2">What I learnt this week?</div>
-          <div class="card-body">
-            <p>Every Sunday I sit down with my journal to go through the week that is about to finish and come up with a list of things I have learnt.</p>
-            <p>I decided to to this for myself, but if you somehow find it useful, or want to discuss any of these things with me, I will consider this to be an extremely successfull "venture".</p>
-            <p>So, this is what I learnt <button type="button" class="btn btn-primary"><a class="text-white" href={% url 'wiltw_now' %}>this week</a></button></p>
-          </div>
-        </div>
-  </div>
-
-    <div class="card-deck">
-      <div class="card mb-3">
-        <div class="card-header h2">Writings</div>
-          <div class="card-body">
-            <p>These are 3 of my latest posts.</p>
-
-              {% load post_tags %}
-              {% latest_posts Post %}
-
-            <button type="button" class="btn btn-primary"><a class="text-white" href="{% url 'all_posts' %}">Read more</a></button>
-          </div>
-      </div>
-
-      <div class="card mb-3">
-        <div class="card-header h2">Projects</div>
-          <div class="card-body">
-            {% load project_list %}
-            {% projects project %}
-          </div>
-        </div>
-
-        <div class="card mb-3">
-          <div class="card-header h2">Hustles</div>
-            <div class="card-body">
-              {% load project_list %}
-              {% hustles project %}
-            </div>
-        </div>
-    </div>
 
 {% endblock content %}
