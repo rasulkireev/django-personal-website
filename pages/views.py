@@ -3,3 +3,6 @@ from django.views.generic import TemplateView #This is specific to this tutorial
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
+
+class PhotoGalleryView(TemplateView):
+    template_name = 'photo_gallery.html'

@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Idea(models.Model):
     title = models.CharField(max_length=200)
+    category = models.CharField(max_length=200, blank=True)
     working = models.BooleanField()
     description = models.TextField(blank=True)
     ease = models.IntegerField(validators=[
