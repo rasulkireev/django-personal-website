@@ -60,10 +60,6 @@ a.nav-item:hover, a.nav-item:active {
   max-width: 180px;
   border-radius: 50%;
 }
-small {
-  font-size: 0.8em;
-  margin-left: 1.2em;
-}
 .list-item {
   margin-bottom: 7px;
 }
@@ -74,6 +70,47 @@ small {
   border: solid 1px white;
   border-radius: 2%;
 }
+#photo {
+  max-width: 100%;
+  margin: 0.5em auto;
+  border: solid 1px white;
+  border-radius: 2%;
+}
+#contact a {
+  text-decoration: none;
+  display: block;
+}
+
+h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.info {
+  margin-top: 0px;
+  margin-bottom: 0.8em;
+}
+
+.note {
+  font-size: 0.6em;
+}
+.has-a-note {
+  line-height: 1em;
+}
+
+.flex-grid {
+  display: block;
+}
+.col {
+  flex: 1;
+}
+
+.timeline {
+  padding-bottom: 1em;
+}
+.last-item {
+  padding-bottom: 2em;
+}
+
 
 @media screen and (min-width: 768px) {
   #navbar {
@@ -101,5 +138,15 @@ small {
     float: left;
     margin-right: 15px;
     margin-bottom: 3px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .flex-grid {
+  display: flex;
+  margin-bottom: 10px;
+  }
+  .col {
+    margin-right: 1em;
   }
 }

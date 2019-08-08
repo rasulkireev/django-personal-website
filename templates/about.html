@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <div class="flex-grid card-box">
+          <section class="col" id="basic-info">
+            <h1>Basic Info:</h1>
+            <h4>Name:</h4>
+            <p class='info'>Rasul Kireev</p>
+            <h4>Date of Birth:</h4>
+            <p class='info'>04/12/1996</p>
+            <h4>Place ob Birth:</h4>
+            <p class='info'>Moscow, Russia</p>
+            <h4>Current location:</h4>
+              <p class='info'>New York, USA</p>
+            <h4>Languages I speak (or learn to speak):</h4>
+            <ul class='info' 'last-item'>
+              <li>Russian - Native</li>
+              <li>English - Fluent</li>
+              <li class='has-a-note'>Italian - Beginner <br><span class="note">(DuoLingo Classes)</span></li>
+              <li class='has-a-note'>Japanese - Beginner <br><span class='note'>(LingoDeer Classes)</span></li>
+            </ul>
+          </section>
+          <section class="col" id='contact'>
+            <h1>Contact Me:</h1>
+            <h4>Mobile Phone (USA)</h4>
+            <a class="info" href="tel:1-857-222-3481">+1 (857) 222-3481</a>
+            <h4>Mobile Phone (Russia)</h4>
+            <a class="info" href="tel:7-925-599-0417">+7 (925) 599-0417</a>
+            <h4>WhatsApp</h4>
+            <a class="info" href="https://wa.me/18572223481">+1 (857) 222-3481</a>
+            <h4>E-mail</h4>
+            <a class="info" href="mailto:kireevr1996@gmail.com">kireevr1996@gmail.com</a>
+            <h4>Other Links:</h4>
+            <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/">LinekdIn </a>
+            <a rel="me" href="https://github.com/rasulkireev">GitHub</a>
+            <a rel="me" href="https://twitter.com/rasulkireev">Twitter</a>
+            <a rel="me" href="https://www.facebook.com/kireev.rasul">Facebook</a>
+            <a rel="me" href="https://www.researchgate.net/profile/Rasul_Kireev">ResearchGate</a>
+            <a rel="me" href="https://stackexchange.com/users/7977534/rasul-kireev">StackExchange</a>
+            <a rel="me" href="https://www.quantopian.com/users/56619b349a641ff19e000075" class='last-item' href="">Quantopian</a>
+          </section>
+        </div>
+           <section class="card-box" id="about-me">
+            <h1>About:</h1>
+            <p>Lorem Ipsum</p>
+            <h2>Timeline:</h2>
+              <ul>
+                <li class='timeline'>1996: Born in Moscow</li>
+                <li class='timeline'>2008: Wrote my first HTML code</li>
+                <li class='timeline'>2011: Moved to Leominster, UK to study in Lucton School (High School)</li>
+                <li class='timeline'>2012: Got a closer introduction to Economics and Statistics. Decided to focus ojn these in University.</li>
+                <li class='timeline'>2013: Got my first job as a Lifeguard and a summer school staff</li>
+                <li class='timeline'>2014: Moved to Boston, USA to pursue a bachelors degree in Economics and Mathematics at Northeastern University</li>
+                <li class='timeline'>2018 - August: Got married to the love of my life</li>
+              </ul>
+            </section>
+
+{% endblock content %}

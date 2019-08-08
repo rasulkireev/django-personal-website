@@ -5,7 +5,7 @@
 
   {% for photo in object_list %}
     <div class="gallery">
-      <img src="{{ photo.cover }}" alt="{{ photo.title }}">
+      <a href="{% url 'photo' photo.slug %}"><img src="{{ MEDIA_URL }}{{ photo.cover }}" alt="{{ photo.title }}"></a>
     </div>
   {% endfor %}
 
