@@ -6,3 +6,4 @@ from .models import Journal
 class JournalEntry(ListView):
     model = Journal
     template_name = 'journal/home.html'
+    ordering = '-date'
