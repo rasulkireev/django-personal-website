@@ -5,16 +5,14 @@
 
 <div class='card-box'>
   <h1>This is my Project Journal</h1>
-</div>
 
-{% regroup object_list by date as journal_list %}
-  {% for date in journal_list %}
-  <div class='card-box'>
-      <h2>{{ date.grouper }}</h2>
-        {% for entry in date.list %}
-          <p><b>{{ entry.topic | safe }}:</b> {{ entry.body | safe }}</p>
-        {% endfor %}
-  </div>
-  {% endfor %}
+  {% regroup object_list by date as journal_list %}
+    {% for date in journal_list %}
+        <h2>{{ date.grouper }}</h2>
+          {% for entry in date.list %}
+            <p><b>{{ entry.topic | safe }}:</b> {{ entry.body | safe }}</p>
+          {% endfor %}
+    {% endfor %}
+<div class='card-box'>
 
 {% endblock content %}
