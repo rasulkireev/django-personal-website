@@ -108,6 +108,7 @@ h4 {
   padding-bottom: 1em;
 }
 .last-item {
+  display: block;
   padding-bottom: 2em;
 }
 
