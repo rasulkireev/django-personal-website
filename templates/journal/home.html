@@ -3,8 +3,8 @@
 
 {% block content %}
 
+<h1>This is my Project Journal</h1>
 {% regroup object_list by date as journal_list %}
-
   {% for date in journal_list %}
   <div class='card-box'>
       <h2>{{ date.grouper }}</h2>
