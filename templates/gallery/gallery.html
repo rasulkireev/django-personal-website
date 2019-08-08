@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Rasul Kireev | Photo Gallery{% endblock %}
+
+{% block content %}
+
+  {% for photo in object_list %}
+    <div class="gallery">
+      <img src="{{ photo.cover }}" alt="{{ photo.title }}">
+    </div>
+  {% endfor %}
+
+{% endblock content %}

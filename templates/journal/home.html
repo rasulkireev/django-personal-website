@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Rasul Kireev | Journal{% endblock %}
+
+{% block content %}
+
+{% regroup object_list by date as journal_list %}
+
+  {% for date in journal_list %}
+  <div class='card-box'>
+      <h2>{{ date.grouper }}</h2>
+        {% for entry in date.list %}
+          <p>{{ entry.topic | safe }}: {{ entry.body | safe }}</p>
+        {% endfor %}
+  </div>
+  {% endfor %}
+
+{% endblock content %}

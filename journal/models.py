@@ -1,7 +1,5 @@
 from django.db import models
 from autoslug import AutoSlugField
-from django.core.validators import MaxValueValidator, MinValueValidator
-
 
 class Journal(models.Model):
     date = models.DateField()
