@@ -24,7 +24,7 @@
     <p><a class="" href="{% url 'wiltw_now' %}">Here</a> you can see what I have learnt last week.</p>
   </section>
   <section class="card-box" id="recentposts">
-      <h1>Recent Posts<small><a href="{% url 'all_posts' %}">See all</a></small></h1>
+      <h1 class='has-a-note'>Recent Posts<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
       {% load post_tags %}
       {% latest_posts Post %}
   </section>
