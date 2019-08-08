@@ -9,7 +9,7 @@
   <div class='card-box'>
       <h2>{{ date.grouper }}</h2>
         {% for entry in date.list %}
-          <p>{{ entry.topic | safe }}: {{ entry.body | safe }}</p>
+          <p><b>{{ entry.topic | safe }}:</b> {{ entry.body | safe }}</p>
         {% endfor %}
   </div>
   {% endfor %}
