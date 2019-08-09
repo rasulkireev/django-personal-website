@@ -37,7 +37,7 @@
     <div id="page">
       <div id="navbar">
         <section class="navbar-item" id="brand">
-          <a rel="me" class="p-name u-url" href="https://rasulkireev.com/"><b>Rasul Kireev</b></a>
+          <a rel="me" class="p-name u-url" href="/"><b>Rasul Kireev</b></a>
         </section>
         <section class="navbar-item" id="sociallinks">
             <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a>
@@ -58,13 +58,10 @@
             <a class="nav-item" href="{% url 'project_list' %}">projects</a>
           </section>
       </div>
-    </div>
-
-    <div id="content">
-
-      {% block content %}
-      {% endblock %}
-
+      <div id="content">
+        {% block content %}
+        {% endblock %}
+      </div>
     </div>
 
     {% analytical_body_bottom %}

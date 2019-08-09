@@ -6,6 +6,10 @@
   <section class="card-box" id="pw-info">
     <h1>This website:</h1>
     <ul>
+      <li class='has-a-note'>
+        is my Personal Website<br>
+        <span class="note">Here I publish <a href="{% url 'all_posts' %}">blog posts</a>, <a href="{% url 'gallery' %}">photos</a> and <a href="{% url 'journal' %}">project journal entries</a></span>
+      </li>
       <li>is built with <a href="https://www.djangoproject.com/">Django</a></li>
       <li>is hosted on <a href="https://m.do.co/c/a2a2c0826ff3">DigitalOcean</a></li>
       <li>has all the source code <a href="https://github.com/rasulkireev/django-personal-website">here</a></li>
@@ -14,15 +18,15 @@
   </section>
   <section class="card-box" id="me">
     <h1>Me (TL;DR)</h1>
-    <p class="p-note">Recently graduated from <a class="" href="https://www.northeastern.edu/" target="blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
-    <p class="p-note">Currently work at <a class="" href="http://www.guycarp.com/" target="blank">Guy Carpenter</a> as a Junior Data Analyst.</p>
-    <p class="p-note">Originally from Russia. Currently live with my wife in <a class="text-primary p-locality" href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="blank">Newark, NJ</a>.</p>
-    <!-- <p><a href="">Here</a> you can learn more about me. -->
+    <p>Recently graduated from <a class="" href="https://www.northeastern.edu/" target="blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
+    <p>Currently work at <a class="" href="http://www.guycarp.com/" target="blank">Guy Carpenter</a> as a Junior Data Analyst.</p>
+    <p>Originally from Russia. Currently live with my wife in <a class="text-primary p-locality" href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="blank">Newark, NJ</a>.</p>
+    <p><a href="{% url 'about' %}">More about me</a>
   </section>
   <section class="card-box" id="now">
     <h1>What am I up to?</h1>
-    <p><a href="{% url 'now' %}">Here</a> you can learn what I am up to <b>Now</b>.</p>
-    <p><a class="" href="{% url 'wiltw_now' %}">Here</a> you can see what I have learnt last week.</p>
+    <p><a href="{% url 'now' %}">Here</a> you can learn what I am up to <b>Now</b></p>
+    <p><a class="" href="{% url 'wiltw_now' %}">Here</a> you can see what I have learnt last week</p>
   </section>
   <section class="card-box" id="recentposts">
       <h1 class='has-a-note'>Recent Posts<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
@@ -30,7 +34,7 @@
       {% latest_posts Post %}
   </section>
   <section class="card-box" id="projects">
-    <h1>Projects</h1>
+    <h1 class='has-a-note'>Projects<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
       <ul>
         <li class="list-item"><a href="https://osarjournal.com" target="_blank">OSARJournal</a></li> <!--<small>Open Source Analytics Research Journal</small>-->
         <li class="list-item"><a href="https://EntrepreneurWeekly.ru" target="_blank">EntrepreneurWeekl</a></li> <!--<small>Startup advice for Russian Entrepreneurs</small>-->
