@@ -1,8 +1,11 @@
+from django.db import models
 from django.contrib import admin
 from .models import Project
-from django_summernote.admin import SummernoteModelAdmin
+from martor.widgets import AdminMartorWidget
 
-class ProjectAdmin(SummernoteModelAdmin):
-    summernote_fields = '__all__'
+class ProjectAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMartorWidget},
+    }
 
 admin.site.register(Project, ProjectAdmin)

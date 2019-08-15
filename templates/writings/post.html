@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}{{post.title}}{% endblock %}
+{% load martortags %}
+
 
 {% block content %}
     <div class="card-box">
       <h2>{{ post.title }}</h2>
-      <p>{{ post.body | safe }}</p>
+      <p>{{ post.body | safe_markdown }}</p>
       <a class="last-item" href={% url 'all_posts' %}>All posts</a>
     </div>
 

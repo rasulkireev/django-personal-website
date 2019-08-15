@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
 
     'pages.apps.PagesConfig',
     'now.apps.NowConfig',
@@ -45,7 +46,7 @@ INSTALLED_APPS = [
     'journal.apps.JournalConfig',
     'gallery.apps.GalleryConfig',
 
-    'django_summernote',
+    'martor',
     'storages',
     'corsheaders',
     'analytical',

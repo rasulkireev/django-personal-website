@@ -5,6 +5,7 @@ from autoslug import AutoSlugField
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='title', unique_with='title')
+    draft = models.BooleanField(default = False)
     body = models.TextField()
     cover = models.ImageField(upload_to='post-images/', blank=True)
     date = models.DateTimeField()

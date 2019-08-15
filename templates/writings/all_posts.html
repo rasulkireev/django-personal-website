@@ -7,10 +7,14 @@
 <div class="card-box">
   <h1>All posts</h1>
   <ul>
-    {% for post in object_list %}
-    <li class="list-item">
-      <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
+      {% for post in object_list %}
+        {% if post.draft == False %}
+        <li class="list-item">
+          <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+  </ul>
+
 
 {% endblock content %}

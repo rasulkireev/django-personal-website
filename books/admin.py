@@ -1,8 +1,11 @@
+from django.db import models
 from django.contrib import admin
 from .models import Book
-from django_summernote.admin import SummernoteModelAdmin
+from martor.widgets import AdminMartorWidget
 
-class BooksAdmin(SummernoteModelAdmin):
-    summernote_fields = '__all__'
+class BooksAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMartorWidget},
+    }
 
 admin.site.register(Book, BooksAdmin)
