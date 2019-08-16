@@ -6,7 +6,7 @@
       <h2>This is what I used to be up to.</h2>
       <p>As of {{ now.title }}</p>
       <hr>
-      <p>{{ now.body | safe }}</p>
+      <p>{{ now.body | safe_markdown }}</p>
       <p><a href={% url 'archive' %}>Archive</a></p>
     </div>
 

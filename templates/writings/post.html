@@ -2,10 +2,12 @@
 {% block title %}{{post.title}}{% endblock %}
 {% load martortags %}
 
+<!-- Hypothesis -->
+<script src="https://hypothes.is/embed.js" async></script>
 
 {% block content %}
     <div class="card-box">
-      <h2>{{ post.title }}</h2>
+      <h1>{{ post.title }}</h1>
       <p>{{ post.body | safe_markdown }}</p>
       <a class="last-item" href={% url 'all_posts' %}>All posts</a>
     </div>

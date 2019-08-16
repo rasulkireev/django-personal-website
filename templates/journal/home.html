@@ -11,7 +11,7 @@
     {% for date in journal_list %}
         <h2>{{ date.grouper }}</h2>
           {% for entry in date.list %}
-            <p><b>{{ entry.topic | safe }}:</b> {{ entry.body | safe }}</p>
+            <p><b>{{ entry.topic | safe }}:</b> {{ entry.body | safe_markdown }}</p>
           {% endfor %}
     {% endfor %}
 <div class='card-box'>

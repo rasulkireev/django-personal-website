@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Idea(models.Model):
     title = models.CharField(max_length=200)
+    draft = models.BooleanField(default = False)
     category = models.CharField(max_length=200, blank=True)
     working = models.BooleanField()
     description = models.TextField(blank=True)
@@ -17,6 +18,5 @@ class Idea(models.Model):
             MaxValueValidator(10),
             MinValueValidator(1)])
 
-
     def __str__(self):
-        return self.title
+        return self.title + " (Draft = " + str(self.draft) + ")"

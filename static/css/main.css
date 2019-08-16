@@ -66,8 +66,11 @@ a.nav-item:hover, a.nav-item:active {
 }
 .has-a-note {
   line-height: 1em;
+  margin-bottom: 0;
 }
-
+#recentposts ul, #projects ul {
+  margin-top: 7px;
+}
 
 
 .post-title {

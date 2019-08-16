@@ -4,6 +4,7 @@ from autoslug import AutoSlugField
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
+    draft = models.BooleanField(default = False)
     homeurl = models.URLField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title')
     description = models.TextField(blank=True)
@@ -22,4 +23,4 @@ class Project(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.title + " (Draft = " + str(self.draft) + ")"

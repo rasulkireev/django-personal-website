@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Book(models.Model):
+    draft = models.BooleanField(default = False)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     buylink = models.URLField(max_length=200, blank=True)
@@ -16,4 +17,4 @@ class Book(models.Model):
     cover = models.ImageField(upload_to='book-cover/')
 
     def __str__(self):
-        return self.title
+        return self.title + " (Draft = " + str(self.draft) + ")"

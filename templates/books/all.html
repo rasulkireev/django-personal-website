@@ -9,7 +9,7 @@
         <img class="book-cover" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
         <p>Date read: {{ book.date_read }}<br>
         How much I liked it: <b>{{ book.rank }}</b>/10</p>
-        <p>{{ book.description|truncatewords:60|safe }} <a href="{% url 'book' book.slug %}">Read More</a></p>
+        <p>{{ book.description|truncatewords:60|safe_markdown }} <a href="{% url 'book' book.slug %}">Read More</a></p>
         <p><a class='last-item' href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
       </div>
     {% endfor %}
