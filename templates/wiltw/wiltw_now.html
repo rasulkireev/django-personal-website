@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="card-box">
-      <h2>What I learnt the week of {{ wiltw.title }}</h2>
+      <h1>What I learnt the week of {{ wiltw.title }}</h1>
       <p>{{ wiltw.body | safe_markdown }}</p>
       <p><a href={% url 'wiltw_archive' %}>Archive</a></p>
     </div>
