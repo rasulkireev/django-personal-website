@@ -17,6 +17,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
 
+    <!-- Martor CSS -->
+    <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+
     <!-- stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -24,6 +29,8 @@
 
     <title>{% block title %}Rasul Kireev | Personal Website{% endblock %}</title>
 
+    <!-- Martor JS -->
+    <script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
     {% analytical_head_bottom %}
   </head>
   <body>
@@ -35,11 +42,11 @@
           <a rel="me" class="p-name u-url" href="/"><b>Rasul Kireev</b></a>
         </section>
         <section class="navbar-item" id="sociallinks">
-            <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a>
-            <a rel="me" href="https://github.com/rasulkireev" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-            <a rel="me" href="https://stackoverflow.com/users/6020165/rasul-kireev" target="_blank"><i class="fab fa-stack-overflow fa-2x"></i></a>
-            <a rel="me" href="https://www.quora.com/profile/Rasul-Kireev" target="_blank"><i class="fab fa-quora fa-2x"></i></a>
-            <a rel="me" class="u-email" href="mailto:kireevr1996@gmail.com"><i class="fas fa-at fa-2x"></i></a>
+            <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/" target="_blank"><i class="fab fa-linkedin-in fa-3x"></i></a>
+            <a rel="me" href="https://github.com/rasulkireev" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+            <a rel="me" href="https://stackoverflow.com/users/6020165/rasul-kireev" target="_blank"><i class="fab fa-stack-overflow fa-3x"></i></a>
+            <a rel="me" href="https://www.quora.com/profile/Rasul-Kireev" target="_blank"><i class="fab fa-quora fa-3x"></i></a>
+            <a rel="me" class="u-email" href="mailto:kireevr1996@gmail.com"><i class="fas fa-at fa-3x"></i></a>
         </section>
         <section class="navbar-item" id="logo">
             <img class="logo-pic u-photo" src="https://media.licdn.com/dms/image/C4E03AQFZwChWH3z5iw/profile-displayphoto-shrink_200_200/0?e=1568851200&v=beta&t=ekBx6Lwmaz819-RHJFM9221kQr2LPE9xFEPBIFLUX1g">
@@ -48,7 +55,7 @@
             <a class="nav-item" href="/">home</a>
             <a class="nav-item" href="{% url 'about' %}">about</a>
             <a class="nav-item" href="{% url 'gallery' %}">photos</a>
-            <a class="nav-item" href="{% url 'all_posts' %}">blog</a>
+            <a class="nav-item" href="{% url 'all_posts' %}">writings</a>
             <a class="nav-item" href="{% url 'all_books' %}">books</a>
             <a class="nav-item" href="{% url 'project_list' %}">projects</a>
           </section>
@@ -60,5 +67,16 @@
     </div>
 
     {% analytical_body_bottom %}
+
+    <!-- Martor JS -->
+    <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+    <script>
+      $('pre').each(function(i, block){
+          hljs.highlightBlock(block);
+      });
+      $('.ui.dropdown').dropdown();
+    </script>
+
   </body>
 </html>

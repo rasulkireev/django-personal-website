@@ -124,9 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Web traffic & Analytics
 GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-222222-2'
 
-SUMMERNOTE_THEME = 'lite'
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 

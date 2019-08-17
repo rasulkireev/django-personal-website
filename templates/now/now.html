@@ -8,10 +8,10 @@
     <div class="card-box">
       <h1>This is what I am up to <strong>Now</strong></h1>
       <em>(This is a <a href="https://nownownow.com/">now</a> page, and if you have your own site, <a href="https://nownownow.com/about">you should make one</a>, too.)</em>
-      <p>{{ now.body | safe_markdown }}</p>
+      {{ now.body | safe_markdown }}
       <hr>
       <p>Updated {{ now.title }}</p>
       <p><a class="block" href={% url 'archive' %}>Archive</a></p>
     </div>
-    
+
 {% endblock content %}
