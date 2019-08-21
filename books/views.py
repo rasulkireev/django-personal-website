@@ -6,6 +6,7 @@ from .models import Book
 class AllBooksView(ListView):
     model = Book
     template_name = 'books/all.html'
+    ordering = '-date_read'
 
 class BooksDetailView(DetailView): # new
     model = Book

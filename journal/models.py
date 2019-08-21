@@ -7,4 +7,4 @@ class Journal(models.Model):
     body = models.TextField()
 
     def __str__(self):
-        return str(self.date)
+        return str(self.date) + ': ' + self.topic
