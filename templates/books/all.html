@@ -6,7 +6,7 @@
 {% block content %}
 
     {% for book in object_list %}
-      {% if post.draft == False %}
+      {% if book.draft == False %}
         <div class="card-box">
           <h1>{{ book.title }} by {{ book.author }}</h1>
           <img class="book-cover" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">

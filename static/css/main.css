@@ -94,11 +94,13 @@ a.nav-item:hover, a.nav-item:active {
 
 /* Photo */
 .gallery img {
-  max-width: 200px;
+  display: block;
+  max-width: 95%;
   height: auto;
   margin: 0.5em auto;
   border: solid 1px white;
   border-radius: 2%;
+  text-align: center;
 }
 #photo {
   max-width: 100%;
@@ -115,13 +117,13 @@ a.nav-item:hover, a.nav-item:active {
   margin-top: 0px;
   margin-bottom: 0.8em;
 }
+.info li {
+  margin-left: 1em;
+}
 
 /* About */
 .flex-grid {
   display: block;
-}
-.col {
-  flex: 1;
 }
 .timeline {
   padding-bottom: 1em;
@@ -147,6 +149,10 @@ a.nav-item:hover, a.nav-item:active {
   .card-box {
      max-width: 80%;
   }
+  .gallery img {
+    max-width: 30%;
+    margin: 0.5em;
+  }
   #content {
     margin-top: 10px;
     margin-left: 310px;
@@ -158,12 +164,12 @@ a.nav-item:hover, a.nav-item:active {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .flex-grid {
     display: flex;
     margin-bottom: 10px;
   }
   .col {
-    margin-right: 1em;
+    margin: 0 2em;
   }
 }

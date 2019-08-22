@@ -22,7 +22,6 @@ def trigger_error(request):
     division_by_zero = 1 / 0
 
 urlpatterns = [
-    path('rk-admin/doc/', include('django.contrib.admindocs.urls')),
     path('rk-admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('now/', include('now.urls')),
