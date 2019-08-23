@@ -107,11 +107,15 @@ a.nav-item:hover, a.nav-item:active {
   margin: 0.5em auto;
   border: solid 1px white;
   border-radius: 2%;
+  max-width: 97%;
+
 }
 #contact a {
   text-decoration: none;
   display: block;
 }
+/* End Photo */
+
 
 .info {
   margin-top: 0px;

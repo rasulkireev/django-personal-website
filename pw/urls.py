@@ -18,6 +18,8 @@ from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
 
+from writings.views import markdown_uploader
+
 def trigger_error(request):
     division_by_zero = 1 / 0
 
@@ -33,6 +35,7 @@ urlpatterns = [
     path('ideas/', include('ideas.urls')),
     path('photos/', include('gallery.urls')),
     path('martor/', include('martor.urls')),
+    path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
 
     path('sentry-debug/', trigger_error),
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
