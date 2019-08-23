@@ -35,8 +35,7 @@ urlpatterns = [
     path('ideas/', include('ideas.urls')),
     path('photos/', include('gallery.urls')),
     path('martor/', include('martor.urls')),
-    path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
-
+    
     path('sentry-debug/', trigger_error),
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

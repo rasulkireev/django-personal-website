@@ -56,20 +56,3 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'pw.settings.storage_backends.MediaStorage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-
-# Global martor settings
-# Input: string boolean, `true/false`
-MARTOR_ENABLE_CONFIGS = {
-    'imgur': 'true',     # to enable/disable imgur/custom uploader.
-    'mention': 'false',  # to enable/disable mention
-    'jquery': 'true',    # to include/revoke jquery (require for admin default django)
-    'living': 'false',   # to enable/disable live updates in preview
-}
-
-MAX_IMAGE_UPLOAD_SIZE = 2621440  # 2.5MB
-
-# Upload to locale storage
-import time
-MARTOR_UPLOAD_PATH = 'images/uploads/{}'.format(time.strftime("%Y/%m/%d/"))
-MARTOR_UPLOAD_URL = '/api/uploader/'  # change to local uploader
