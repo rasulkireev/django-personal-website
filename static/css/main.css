@@ -132,6 +132,13 @@ a.nav-item:hover, a.nav-item:active {
 .timeline {
   padding-bottom: 1em;
 }
+/* About End */
+
+/* Blog Post */
+#blogpost img {
+  max-width: 80%;
+}
+/* Blog Post End */
 
 
 
