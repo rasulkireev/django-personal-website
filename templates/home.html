@@ -3,30 +3,25 @@
 
 {% block content %}
 
-  <section class="card-box" id="pw-info">
-    <h1>This website:</h1>
-    <ul>
-      <li class='has-a-note'>
-        is my Personal Website<br>
-        <span class="note">Here I publish <a href="{% url 'all_posts' %}" target="_blank">blog posts</a>, <a href="{% url 'gallery' %}">photos</a> and <a href="{% url 'journal' %}">project journal entries</a></span>
-      </li>
-      <li>is built with <a href="https://www.djangoproject.com/" target="_blank">Django</a></li>
-      <li>is hosted on <a href="https://m.do.co/c/a2a2c0826ff3" target="_blank">DigitalOcean</a></li>
-      <li>has all the source code <a href="https://github.com/rasulkireev/django-personal-website" target="_blank">here</a></li>
-      <li><b>my pride and joy</b></li>
-    </ul>
-  </section>
   <section class="card-box" id="me">
-    <h1>Me (TL;DR)</h1>
-    <p>Recently graduated from <a href="https://www.northeastern.edu/" target="_blank">Northeastern University</a> with a BS degree in Econometrics and Quantitative Economics.</p>
-    <p>Currently work at <a href="http://www.guycarp.com/" target="_blank">Guy Carpenter</a> as a Junior Data Analyst.</p>
-    <p>Originally from Russia. Currently live with my wife in <a href="https://goo.gl/maps/RLJ41pepui2C1s7R8" target="_blank">Newark, NJ</a>.</p>
+    <h1>Hi, I'm Rasul</h1>
+    <p>I'm an aspiring data scientist and a software engineer hobbyist, specializing in Python.</p>
+    <p>I like to make things from scratch, automate wherever possible and want to contribute to open-source projects more.</p>
+    <p>I like to write about my learning experiences and anything that interests me.</p>
     <p><a href="{% url 'about' %}">More about me</a>
   </section>
+  <section class="card-box" id="pw-info">
+    <h1>This is my personal website</h1>
+    <p>I built it with <a href="https://www.djangoproject.com/" target="_blank">Django Framework</a>.</p>
+    <p>All pixels designed and built by myself, using plain HTML & CSS.</p>
+    <p>The website is hosted on <a href="https://m.do.co/c/a2a2c0826ff3" target="_blank">DigitalOcean</a>.</p>
+    <p>The source code is on <a href="https://github.com/rasulkireev/django-personal-website" target="_blank">GitHub</a>.</p>
+  </section>
   <section class="card-box" id="now">
-    <h1>What am I up to?</h1>
-    <p><a href="{% url 'now' %}">Here</a> you can learn what I am up to <b>Now</b></p>
-    <p><a href="{% url 'wiltw_now' %}">Here</a> you can see what I have learnt last week</p>
+    <p>This is what I am up to <a href="{% url 'now' %}">Now</a></p>
+  </section>
+  <section class="card-box" id="wiltw">
+    <p>This is <a href="{% url 'wiltw_now' %}">what I have learnt last week</a></p>
   </section>
   <section class="card-box" id="recentposts">
       <h1 class='has-a-note'>Recent Posts<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
@@ -34,13 +29,14 @@
       {% latest_posts Post %}
   </section>
   <section class="card-box" id="projects">
-    <h1 class='has-a-note'>Projects<br><a class="note" href="{% url 'project_list' %}">See all</a></h1>
+    <!-- <h1 class='has-a-note'>Projects<br><a class="note" href="{% url 'project_list' %}">See all</a></h1>
       <ul>
-        <li class="list-item"><a href="https://osarjournal.com" target="_blank">OSARJournal</a></li> <!--<small>Open Source Analytics Research Journal</small>-->
-        <li class="list-item"><a href="https://EntrepreneurWeekly.ru" target="_blank">EntrepreneurWeekly</a></li> <!--<small>Startup advice for Russian Entrepreneurs</small>-->
-        <li class="list-item"><a href="https://fermentline.com" target="_blank">Fermentline</a></li> <!--<small>Apparel for Fermentation Enthusiasts</small>-->
-        <li class="list-item"><a href="https://yourguidestolife.com" target="_blank">YourGuidesToLife</a></li> <!--<small>Simple and actionable guides to difficult things.</small>-->
-      </ul>
+        <li class="list-item has-a-note"><a href="https://osarjournal.com" target="_blank">OSARJournal</a></li> <span class="note">Open Source Analytics Research Journal</span>
+        <li class="list-item has-a-note"><a href="https://EntrepreneurWeekly.ru" target="_blank">EntrepreneurWeekly</a></li> <span class="note">Startup advice for Russian Entrepreneurs</span>
+        <li class="list-item has-a-note"><a href="https://fermentline.com" target="_blank">Fermentline</a></li> <span class="note">Apparel for Fermentation Enthusiasts</span>
+        <li class="list-item has-a-note"><a href="https://yourguidestolife.com" target="_blank">YourGuidesToLife</a></li> <span class="note">Simple and actionable guides to difficult things.</span>
+      </ul> -->
+        <p>This is my <a href="{% url 'journal' %}">Project Journal</a></p>
   </section>
 
 {% endblock content %}

@@ -13,4 +13,4 @@ class Post(models.Model):
     category = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
-        return self.category + ': ' + self.title + " (Draft = " + str(self.draft) + ")"
+        return "(Draft = " + str(self.draft) + ")    " + self.category + ': ' + self.title
