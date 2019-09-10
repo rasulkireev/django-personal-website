@@ -49,12 +49,13 @@
             <a rel="me" class="u-email" href="mailto:kireevr1996@gmail.com"><i class="fas fa-at fa-3x"></i></a>
         </section>
         <section class="navbar-item" id="logo">
-            <img class="logo-pic u-photo" src="https://media.licdn.com/dms/image/C4E03AQFZwChWH3z5iw/profile-displayphoto-shrink_200_200/0?e=1568851200&v=beta&t=ekBx6Lwmaz819-RHJFM9221kQr2LPE9xFEPBIFLUX1g">
+            <a href="/"><img class="logo-pic u-photo" src="https://media.licdn.com/dms/image/C4E03AQFZwChWH3z5iw/profile-displayphoto-shrink_200_200/0?e=1568851200&v=beta&t=ekBx6Lwmaz819-RHJFM9221kQr2LPE9xFEPBIFLUX1g"></a>
         </section>
         <section class="navbar-item" id="nav">
             <a class="nav-item" href="/">home</a>
             <a class="nav-item" href="{% url 'about' %}">about</a>
-            <a class="nav-item" href="{% url 'gallery' %}">photos</a>
+            <a class="nav-item" href="{% static 'Resume Rasul Kireev.pdf' %}" id="resume">resume</a>
+            <!-- <a class="nav-item" href="{% url 'gallery' %}">photos</a> -->
             <a class="nav-item" href="{% url 'all_posts' %}">writings</a>
             <a class="nav-item" href="{% url 'all_books' %}">books</a>
             <a class="nav-item" href="{% url 'project_list' %}">projects</a>
