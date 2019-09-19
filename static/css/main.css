@@ -11,38 +11,56 @@ font-family: 'Montserrat', sans-serif;
 }
 
 /* Nav */
-.navbar-item{
-  text-align: center;
-  margin-bottom: 30px;
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: #101C2D;
+  box-shadow: 1px 2px 18px rgba(0,0,0,.1);
 }
 #brand {
-  font-size: 40px;
-  margin-top: 25px;
+  font-size: 25px;
 }
 #brand a {
   color: white;
   text-decoration: none;
 }
-#nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+#navbar .nav-container {
+  padding: 0 1.5rem;
+  height: 55px;
+  max-width: 920px;
+  margin: auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
-a.nav-item:link, a.nav-item:visited {
-  background-color: white;
-  color: black;
-  font-size: 20px;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 10px 2px;
-  margin: 4px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
+#navbar .links, #navbar .links a {
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
-a.nav-item:hover, a.nav-item:active {
-  background-color: green;
-  color: white;
+#navbar .links {
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1 1;
+}
+#navbar .links a {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .75rem;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+}
+#navbar .brand a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin-right: 0;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 #sociallinks i {
   margin: 0 0.2rem;
@@ -51,8 +69,13 @@ a.nav-item:hover, a.nav-item:active {
 
 /* Content */
 #content {
+  margin-top: 70px;
   line-height: 30px;
   font-size: 20px;
+  max-width: 920px;
+  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card-box {
   margin-bottom: 10px;
@@ -68,6 +91,13 @@ a.nav-item:hover, a.nav-item:active {
 .last-item {
   display: block;
   padding: 10px 0;
+}
+.soc-link {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.soc-link a {
+  text-decoration: underline;
 }
 .note {
   font-size: 0.6em;
@@ -128,9 +158,6 @@ a.nav-item:hover, a.nav-item:active {
 }
 
 /* About */
-.flex-grid {
-  display: block;
-}
 .timeline {
   padding-bottom: 1em;
 }
@@ -144,8 +171,8 @@ a.nav-item:hover, a.nav-item:active {
 
 
 
-@media screen and (min-width: 768px) {
-  #navbar {
+/* @media screen and (min-width: 768px) { */
+  /* #navbar {
     margin-top: 10px;
     margin-left: 20px;
     height: 100%;
@@ -156,8 +183,38 @@ a.nav-item:hover, a.nav-item:active {
     left: 0;
     overflow-x: hidden;
   }
-  #nav {
+  #navbar .nav-container {
     display: block;
+  }
+  #navbar .links a {
+    color: black;
+    display: block;
+  }
+  #brand {
+    margin-top: 20px;
+  }
+  #navbar .links {
+    display: block;
+  }
+  a.nav-item:link, a.nav-item:visited {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px 1px;
+    margin: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+  }
+  a.nav-item:hover, a.nav-item:active {
+    background-color: green;
+    color: white;
+  }
+  .navbar-item{
+    text-align: center;
+    margin-bottom: 30px;
   }
   .card-box {
      max-width: 80%;
@@ -185,4 +242,4 @@ a.nav-item:hover, a.nav-item:active {
   .col {
     margin: 0 2em;
   }
-}
+} */

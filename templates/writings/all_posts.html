@@ -6,15 +6,20 @@
 
 <div class="card-box">
   <h1>All posts</h1>
-  <ul>
-      {% for post in object_list %}
+
+  {% regroup object_list by category as posts %}
+    {% for category in posts %}
+    <h2>{{ category.grouper }}</h2>
+    <ul>
+      {% for post in category.list %}
         {% if post.draft == False %}
         <li class="list-item">
           <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
         </li>
         {% endif %}
       {% endfor %}
-  </ul>
+    </ul>
+    {% endfor %}
 
 
 {% endblock content %}
