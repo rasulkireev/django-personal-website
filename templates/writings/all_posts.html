@@ -8,19 +8,21 @@
   <h1>All posts</h1>
   <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
 
-  {% regroup object_list by category as posts %}
+  {% regroup object_list|dictsort:"category" by category as posts %}
     {% for category in posts %}
     <h2>{{ category.grouper }}</h2>
     <ul>
       {% for post in category.list %}
-        {% if post.draft == False %}
+      {% if post.draft == False %}
         <li class="list-item">
           <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
         </li>
-        {% endif %}
+      {% endif %}
       {% endfor %}
     </ul>
-    {% endfor %}
+  {% endfor %}
+
+
 
 
 {% endblock content %}
