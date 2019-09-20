@@ -82,7 +82,7 @@ font-family: 'Montserrat', sans-serif;
   margin-left: 5px;
   border: 1px solid;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 15px;
 }
 .list-item {
@@ -109,10 +109,42 @@ font-family: 'Montserrat', sans-serif;
 #recentposts ul, #projects ul {
   margin-top: 7px;
 }
+/* Content End */
+
+/* Button */
+.button, [type="button"], [type="submit"], a.button, button {
+    -webkit-appearance: none;
+    display: inline-block;
+    border: 2px solid #5183f5;
+    border-radius: 4px;
+    background: #5183f5;
+    color: #fff;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.1rem;
+    text-transform: none;
+    padding: .6rem .9rem;
+    margin: 0 0 .5rem;
+        margin-right: 0px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+}
+/* Button End */
+
+/* Code */
 .hljs {
   background: lightgrey;
+  border-radius: 15px
 }
-/* Content End */
+code {
+  background-color: lightgrey;
+  word-break: break-word;
+  border-radius: 15px;
+}
+/* Code End */
 
 
 .post-title {

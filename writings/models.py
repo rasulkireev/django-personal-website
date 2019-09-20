@@ -1,5 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.urls import reverse
+
 
 
 class Post(models.Model):
@@ -14,3 +16,6 @@ class Post(models.Model):
 
     def __str__(self):
         return "(Draft = " + str(self.draft) + ")    " + self.category + ': ' + self.title
+
+    def get_absolute_url(self):
+        return reverse('writings.views.PostDetailView', args=[str(self.slug)])
