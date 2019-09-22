@@ -8,12 +8,17 @@
     {% for book in object_list %}
       {% if book.draft == False %}
         <div class="card-box">
-          <h1>{{ book.title }} by {{ book.author }}</h1>
+          <h1 class="book-title">{{ book.title }} - by {{ book.author }}</h1>
           <img class="book-cover" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
-          <p>Date read: {{ book.date_read }}<br>
-          How much I liked it: <b>{{ book.rank }}</b>/10</p>
-          {{ book.description|truncatewords:60|safe_markdown }} <a href="{% url 'book' book.slug %}">Read More</a>
-          <p><a class='last-item' href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
+          <p>
+          Date read: {{ book.date_read }}<br>
+          How much I liked it: <b>{{ book.rank }}</b>/10
+          </p>
+          <p>
+          {{ book.description|truncatewords:60|safe_markdown }}
+          <a href="{% url 'book' book.slug %}">Read More</a>
+          </p>
+          <a class='last-item' href={{ book.buylink }} target="_blank">Buy on Amazon</a>
         </div>
       {% endif %}
     {% endfor %}

@@ -38,14 +38,30 @@
     <div id="page">
       <nav id="navbar">
         <div class="nav-container">
+
           <section class="navbar-item" id="brand">
             <a rel="me" class="p-name u-url" href="/"><b>Rasul Kireev</b></a>
           </section>
 
-          <section class="links">
-              <a class="nav-item" href="{% url 'about' %}">me</a>
-              <a class="nav-item" href="{% url 'all_posts' %}">writings</a>
+          <section class='links'>
+            <div class="dropdown">
+              <span>me</span>
+              <div class="dropdown-content">
+                <a href="{% url 'about' %}">about</a>
+                <a href="{% url 'now' %}">now</a>
+                <a href="{% url 'wiltw_now' %}">learnt this week</a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <span>writings</span>
+              <div class="dropdown-content">
+                <a href="{% url 'all_books' %}">books</a>
+                <a class="dropdown-content" href="{% url 'all_posts' %}">articles</a>
+              </div>
+            </div>
           </section>
+
 
         </div>
       </nav>

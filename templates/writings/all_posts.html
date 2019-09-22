@@ -14,7 +14,7 @@
     <ul>
       {% for post in category.list %}
       {% if post.draft == False %}
-        <li class="list-item">
+        <li class="no-bullets">
           <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
         </li>
       {% endif %}
