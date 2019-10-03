@@ -14,8 +14,9 @@
     <ul>
       {% for post in category.list %}
       {% if post.draft == False %}
-        <li class="no-bullets">
-          <a href="{% url 'post' post.slug %}">{{ post.title }}</a>
+        <li class="blog-post-list-item">
+          <img class="blog-post-cover" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
+          <a class="blog-post-title" href="{% url 'post' post.slug %}">{{ post.title }}</a>
         </li>
       {% endif %}
       {% endfor %}

@@ -1,7 +1,0 @@
-<ul>
-  {% for post in post %}
-    {% if post.draft == False %}
-      <li class="list-item"><a class="post-title" href="{% url 'post' post.slug %}"> {{post.title}} </a></li>
-    {% endif %}  
-  {% endfor %}
-</ul>

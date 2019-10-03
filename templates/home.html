@@ -6,12 +6,12 @@
   <section class="card-box" id="me">
     <h1>Hi, I'm Rasul</h1>
     <hr>
-    <p>I started this website as a place to document everything I learn while on my path to become a highly qualified Data Scientist and a financially self-sufficient person. I am trying to make a habit of writing about everything I learn... <a href="{% url 'about' %}">read more</a></p>
+    <p>I started this website as a place to document everything I learn while on my path to become a Data Scientist and am <a href="https://www.indiehackers.com" target="_blank">Indiehacker</a>... <a href="{% url 'about' %}">read more</a></p>
 
 
     <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
 
-    <h3>Around the web:</h2>
+    <h3>Around the web:</h3>
     <p class="soc-link">Email: <a rel="me" href="mailto:me@rasulkireev.com" target="_blank">me@rasulkireev.com</a></p>
     <p class="soc-link">LinekdIn: <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/" target="_blank">linkedin.com/in/rasul-kireev/</a></p>
     <p class="soc-link">GitHub: <a rel="me" href="https://github.com/rasulkireev" target="_blank">github.com/rasulkireev</a></p>
@@ -23,8 +23,13 @@
       <hr>
       {% load post_tags %}
       {% latest_posts Post %}
-      <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
+  </section>
 
+  <section class="card-box" id="recentbooks">
+      <h1 class='has-a-note'>Recent Book Reviews<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
+      <hr>
+      {% load book_tags %}
+      {% latest_books Book %}
   </section>
 
 {% endblock content %}
