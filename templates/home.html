@@ -26,7 +26,7 @@
   </section>
 
   <section class="card-box book-list">
-      <h1 class='has-a-note'>Recent Book Reviews<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
+      <h1 class='has-a-note'>Recent Book Reviews<br><a class="note" href="{% url 'all_books' %}">See all</a></h1>
       <hr>
       {% load book_tags %}
       {% latest_books Book %}
