@@ -124,9 +124,9 @@ font-family: 'Montserrat', sans-serif;
   line-height: 1em;
   margin-bottom: 0;
 }
-#recentposts ul, #projects ul, #recentbooks ul {
+.book-list ul, .post-list ul {
   margin-top: 7px;
-  padding-left: 0;
+  padding-left: 0px;
 }
 /* Content End */
 
@@ -213,55 +213,8 @@ code {
 
 
 @media screen and (min-width: 768px) {
-  #recentposts ul, #projects ul, #recentbooks ul {
+  .book-list ul, .post-list ul {
     margin-top: 7px;
     padding-left: 40px;
   }
 }
-
-
-/* @media screen and (min-width: 768px) { */
-  /* #navbar {
-    margin-top: 10px;
-    margin-left: 20px;
-    height: 100%;
-    width: 280px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-  }
-  #navbar .nav-container {
-    display: block;
-  }
-  #navbar .links a {
-    color: black;
-    display: block;
-  }
-  #brand {
-    margin-top: 20px;
-  }
-  #navbar .links {
-    display: block;
-  }
-  .navbar-item{
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .card-box {
-     max-width: 80%;
-  }
-
-
-}
-
-@media screen and (min-width: 1100px) {
-  .flex-grid {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  .col {
-    margin: 0 2em;
-  }
-} */

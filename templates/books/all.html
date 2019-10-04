@@ -7,10 +7,10 @@
 
     {% for book in object_list %}
       {% if book.draft == False %}
-        <div class="card-box" itemscope itemtype="https://schema.org/Book">
+        <div class="card-box book-list" itemscope itemtype="https://schema.org/Book">
           <h1 class="book-title">
             <span itemprop="name">{{ book.title }}</span>
-            - by 
+            - by
             <span itemprop="author">{{ book.author }}<span></h1>
           <img class="book-cover" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
           <p>

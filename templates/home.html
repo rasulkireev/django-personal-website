@@ -18,14 +18,14 @@
   </section>
 
 
-  <section class="card-box" id="recentposts">
+  <section class="card-box post-list">
       <h1 class='has-a-note'>Recent Posts<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
       <hr>
       {% load post_tags %}
       {% latest_posts Post %}
   </section>
 
-  <section class="card-box" id="recentbooks">
+  <section class="card-box book-list">
       <h1 class='has-a-note'>Recent Book Reviews<br><a class="note" href="{% url 'all_posts' %}">See all</a></h1>
       <hr>
       {% load book_tags %}
