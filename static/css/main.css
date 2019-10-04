@@ -212,6 +212,13 @@ code {
 /* Blog Post End */
 
 
+@media screen and (min-width: 768px) {
+  #recentposts ul, #projects ul, #recentbooks ul {
+    margin-top: 7px;
+    padding-left: 40px;
+  }
+}
+
 
 /* @media screen and (min-width: 768px) { */
   /* #navbar {
