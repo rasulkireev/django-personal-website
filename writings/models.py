@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    slug = AutoSlugField(populate_from='title', unique_with='title')
+    slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
     draft = models.BooleanField(default = False)
     body = models.TextField()
     cover = models.ImageField(upload_to='post-images/', blank=True)
