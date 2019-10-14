@@ -5,13 +5,17 @@
 
 {% block content %}
 
-<div class="card-box">
-  <h1>{{ book.title }} by {{ book.author }}</h1>
-  <img class="book-cover" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
+<div class="card-box" itemscope itemtype="https://schema.org/Book">
+  <h1>
+    <span itemprop="name">{{ book.title }}</span>
+     by
+    <span itemprop="author">{{ book.author }}</span>
+  </h1>
+  <img class="book-cover" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
   <p>Date read: {{ book.date_read }}</p>
   <p>How much I liked it: <b>{{ book.rank }}</b>/10</p>
   <a href="{% url 'all_books' %}">Back to Book List</a><br>
-  <p><a href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
+  <p><a itemprop="url" href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
   {{ book.description|safe_markdown }}
 </div>
 
