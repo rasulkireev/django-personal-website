@@ -62,9 +62,12 @@ font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
 }
-#sociallinks i {
+.sociallinks {
+  margin: 0.5rem 0;
+}
+.sociallinks i {
   margin: 0 0.2rem;
-  color: white;
+  color: black;
 }
 .dropdown {
   position: relative;
