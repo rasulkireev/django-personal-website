@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
 
-/* Main CSS */
+/* General */
 body {
     background-color: #101C2D;
+    font-family: 'Montserrat'
 }
-
-h1, h2, h3, h4, p, a, li {
-font-family: 'Montserrat', sans-serif;
+.mb {
+  margin-bottom: 1rem;
 }
+/* General End */
 
 /* Nav */
 #navbar {

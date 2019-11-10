@@ -8,21 +8,24 @@
     {% for book in object_list %}
       {% if book.draft == False %}
         <div class="card-box book-list" itemscope itemtype="https://schema.org/Book">
-          <h1 class="book-title">
-            <span itemprop="name">{{ book.title }}</span>
-            - by
-            <span itemprop="author">{{ book.author }}<span>
-          </h1>
-          <img class="book-cover" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
-          <p>
-          Date read: {{ book.date_read }}<br>
-          How much I liked it: <b>{{ book.rank }}</b>/10
-          </p>
-          <p>
-          {{ book.description|truncatewords:60|safe_markdown }}
-          <a href="{% url 'book' book.slug %}">Read More</a>
-          </p>
-          <a class='last-item' itemprop="url" href={{ book.buylink }} target="_blank">Buy on Amazon</a>
+
+
+          <div class="mb">
+            <img class="book-cover" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
+            <h1 class="book-title">
+              <span itemprop="name">{{ book.title }}</span>
+              - by
+              <span itemprop="author">{{ book.author }}<span>
+            </h1>
+            <p>
+              Date read: {{ book.date_read }}<br>
+              How much I liked it: <b>{{ book.rank }}</b>/10
+            </p>
+          </div>
+
+          {{ book.intro_thoughts|safe_markdown }}
+          <p><a href="{% url 'book' book.slug %}">Read More</a>, or go to the <a itemprop="url" href={{ book.buylink }} target="_blank">Amazon page</a> for details and reviews.</p>
+
         </div>
       {% endif %}
     {% endfor %}

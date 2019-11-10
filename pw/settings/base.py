@@ -38,12 +38,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'now.apps.NowConfig',
     'wiltw.apps.WiltwConfig',
-    'projects.apps.ProjectsConfig',
     'writings.apps.WritingsConfig',
     'books.apps.BooksConfig',
-    'ideas.apps.IdeasConfig',
-    'journal.apps.JournalConfig',
-    'gallery.apps.GalleryConfig',
 
     'martor',
     'storages',

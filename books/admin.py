@@ -9,4 +9,3 @@ class BooksAdmin(admin.ModelAdmin):
     }
 
 admin.site.register(Book, BooksAdmin)
-# admin.site.register(Book_toRead, BooksAdmin)

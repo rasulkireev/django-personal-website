@@ -26,12 +26,8 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('now/', include('now.urls')),
     path('what-i-learnt-this-week/', include('wiltw.urls')),
-    path('projects/', include('projects.urls')),
     path('writings/', include('writings.urls')),
     path('books/', include('books.urls')),
-    path('journal/', include('journal.urls')),
-    path('ideas/', include('ideas.urls')),
-    path('photos/', include('gallery.urls')),
     path('martor/', include('martor.urls')),
 
     path('sentry-debug/', trigger_error),
