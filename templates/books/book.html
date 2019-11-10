@@ -24,10 +24,8 @@
   <a href="{% url 'all_books' %}">Back to Book List</a><br>
   <p><a itemprop="url" href={{ book.buylink }} target="_blank">Buy on Amazon</a><p>
 
-  {{ book.intro_thoughts|safe_markdown }}
-
-  <h2>My Notes</h2>
   {{ book.description|safe_markdown }}
+
 </div>
 
 
