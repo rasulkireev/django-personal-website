@@ -1,7 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.core.validators import MaxValueValidator, MinValueValidator
-from markdownx.models import MarkdownxField
 
 class Book(models.Model):
     draft = models.BooleanField(default = False)
