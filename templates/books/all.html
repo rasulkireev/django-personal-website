@@ -7,26 +7,14 @@
 
     {% for book in object_list %}
       {% if book.draft == False %}
-        <div class="card-box book-list" itemscope itemtype="https://schema.org/Book">
-
-
-          <div class="mb">
-            <img class="book-cover" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
-            <h1 class="book-title">
-              <span itemprop="name">{{ book.title }}</span>
-              - by
-              <span itemprop="author">{{ book.author }}<span>
-            </h1>
-            <p>
-              Date read: {{ book.date_read }}<br>
-              How much I liked it: <b>{{ book.rank }}</b>/10
-            </p>
-          </div>
-
-          {{ book.intro_thoughts|safe_markdown }}
-          <p><a href="{% url 'book' book.slug %}">Read More</a>, or go to the <a itemprop="url" href={{ book.buylink }} target="_blank">Amazon page</a> for details and reviews.</p>
-
-        </div>
+        <ul itemscope itemtype="https://schema.org/Book">
+          {% if book.draft == False %}
+          <li class="blog-post-list-item">
+            <img class="blog-post-cover" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
+            <a class="blog-post-title" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
+          </li>
+          {% endif %}
+        </ul>
       {% endif %}
     {% endfor %}
 

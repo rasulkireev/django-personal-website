@@ -11,6 +11,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Other meta stuff -->
+    <meta name="description" content="My peronal page to document this lng life journey.">
+    
+    <meta property="og:title" content="Rasul Kireev">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="My peronal page to document this lng life journey.">
+    <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@rasulkireev">
+    <meta name="twitter:creator" content="@rasulkireev">
+    <meta name="twitter:title" content="Rasul Kireev">
+    <meta name="twitter:description" content="My peronal page to document this lng life journey">
+    <meta name="twitter:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+
     <!-- for favicon from favicon.io -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
@@ -23,8 +38,10 @@
     <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
 
     <!-- stylesheet -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <title>{% block title %}Rasul Kireev | Personal Website{% endblock %}</title>
 
@@ -35,45 +52,39 @@
   <body>
     {% analytical_body_top %}
 
-    <div id="page">
-      <nav id="navbar">
-        <div class="nav-container">
+    <div id="content">
 
-          <section class="navbar-item" id="brand">
-            <a rel="me" class="p-name u-url" href="/"><b>Rasul Kireev</b></a>
-          </section>
+      <header>
+        <a href="/"><img src="{{ MEDIA_URL }}my_photo.jpg" height="200px"></a>
+        <h1>
+          <a href="/">Rasul Kireev</a>        
+          <div class="social">
+              <a rel="me" href="https://twitter.com/rasulkireev"><i class="lab la-twitter"></i></a>
+              <a rel="me" href="https://github.com/rasulkireev"><i class="lab la-github"></i></a>
+              <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="lab la-linkedin-in"></i></a>
+              <a rel="me" href="mailto:me@rasulkireev.com"><i class="las la-at"></i></a>
+          </div>
+        </h1>
 
-          <section class='links'>
-            <div class="dropdown" onclick="void(0)">
-              <span>me</span>
-              <div class="dropdown-content">
-                <a href="{% url 'about' %}">about</a>
-                <a href="{% url 'now' %}">now</a>
-                <a href="{% url 'wiltw_now' %}">learnt this week</a>
-              </div>
-            </div>
+        <p>Aspiring Data Scientist. <a href="https://www.indiehackers.com/rasulkireev">Indiehacker</a>. Love to try new things.</p>
+        <p>
+          →
+          <a href="{% url 'about' %}">About</a>, 
+          <a href="{% url 'all_posts' %}">Articles</a>,
+          <a href="{% url 'all_books' %}">Reading</a>,
+          <a href="{% url 'now' %}">Now</a>,
+          <a href="{% url 'wiltw_now' %}">Learning</a>
+        </p>
+        
+        <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
+        <a class="button orange" href="https://www.buymeacoffee.com/rasulkireev">Buy Me a Coffee</a>
 
-            <div class="dropdown" onclick="void(0)">
-              <span>writings</span>
-              <div class="dropdown-content">
-                <a href="{% url 'all_books' %}">books</a>
-                <a class="dropdown-content" href="{% url 'all_posts' %}">articles</a>
-              </div>
-            </div>
-          </section>
+      </header>
 
-
-        </div>
-      </nav>
-
-
-      <div id="content">
         {% block content %}
         {% endblock %}
-      </div>
-    </div>
 
-    {% analytical_body_bottom %}
+    </div>
 
     <!-- Martor JS -->
     <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
@@ -85,5 +96,6 @@
       $('.ui.dropdown').dropdown();
     </script>
 
+    {% analytical_body_bottom %}
   </body>
 </html>
