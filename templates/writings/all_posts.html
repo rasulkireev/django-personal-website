@@ -4,26 +4,25 @@
 
 {% block content %}
 
-<div class="card-box post-list">
-  <h1>All posts</h1>
-  <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
+<section id="blog-posts">
 
-  {% regroup object_list|dictsort:"category" by category as posts %}
-    {% for category in posts %}
-    <h2>{{ category.grouper }}</h2>
+  <h1>Writings</h1>
+  <hr>
+
     <ul>
-      {% for post in category.list %}
+      {% for post in object_list %}
       {% if post.draft == False %}
         <li class="blog-post-list-item">
           <img class="blog-post-cover" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
           <a class="blog-post-title" href="{% url 'post' post.slug %}">{{ post.title }}</a>
+          <span class="post-category">{{post.category}}</span>
+          <span class="post-date">{{post.date}}</span>
         </li>
       {% endif %}
       {% endfor %}
     </ul>
-  {% endfor %}
 
-
+</section>
 
 
 {% endblock content %}

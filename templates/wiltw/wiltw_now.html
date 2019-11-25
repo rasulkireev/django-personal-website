@@ -3,11 +3,12 @@
 {% load martortags %}
 
 {% block content %}
-    <div class="card-box">
+
+    <section class="textblock">
       <h1>What I learnt the week of {{ wiltw.title }}</h1>
       {{ wiltw.body | safe_markdown }}
       <p><a href={% url 'wiltw_archive' %}>Archive</a></p>
-    </div>
+    </section>
 
 
 

@@ -3,13 +3,13 @@
 {% load martortags %}
 
 {% block content %}
-    <div class="card-box">
-      <h1>This is what I used to be up to.</h1>
-      <p>As of {{ now.title }}</p>
-      <hr>
-      {{ now.body | safe_markdown }}
-      <p><a href={% url 'archive' %}>Archive</a></p>
-    </div>
+
+  <p class="breadcrumb">← <a class="" href={% url 'archive' %}>back to archive</a></p>
+
+  <div class="textblock">
+    <h1>This is what I used to be up to on {{ now.title }}</h1>
+    {{ now.body | safe_markdown }}
+  </div>
 
 
 

@@ -3,27 +3,26 @@
 {% load martortags %}
 
 {% block content %}
-    <div class="card-box" id="blogpost">
+
+    <p class="breadcrumb">← <a class="" href={% url 'all_posts' %}>back to posts</a></p>
+
+    <section class="textblock blogpost" id="blogpost">
       <h1>{{ post.title }}</h1>
       <hr>
-      {{ post.body | safe_markdown }}
+      {{ post.body | safe_markdown }}      
+    </section>
 
-      <!-- AddToAny BEGIN -->
-      <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_twitter"></a>
-      <a class="a2a_button_email"></a>
-      <a class="a2a_button_pocket"></a>
-      <a class="a2a_button_linkedin"></a>
-      </div>
-      <script async src="https://static.addtoany.com/menu/page.js"></script>
-      <!-- AddToAny END -->
-      
-      <a class="last-item" href={% url 'all_posts' %}>All posts</a>
-      <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
+    <!-- AddToAny BEGIN -->
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_email"></a>
+        <a class="a2a_button_pocket"></a>
+        <a class="a2a_button_linkedin"></a>
     </div>
-
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
 
 
 {% endblock content %}

@@ -4,10 +4,12 @@
 
 
 {% block content %}
-    <div class="card-box">
+
+    <p class="breadcrumb">← <a class="" href={% url 'wiltw_archive' %}>back to archive</a></p>
+
+    <section class="textblock">
       <h1>This is what learnt the week of {{ wiltw.title }}</h1>
       {{ wiltw.body | safe_markdown }}
-      <p><a href={% url 'wiltw_archive' %}>Archive</a></p>
-    </div>
+    </section>
 
 {% endblock content %}

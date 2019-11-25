@@ -8,10 +8,7 @@ html {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  font: 11px/18px "Roboto Mono", "Helvetica Neue", sans-serif;
-      font-weight: normal;
-  color:
-  #222;
+  color: #222;
   font-weight: 400;
 }
 h1 {
@@ -28,7 +25,7 @@ a:hover {
   background:#2D3FD1;
 }
 p, ul {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
   margin-bottom: 15px;
 }
@@ -40,7 +37,27 @@ p, ul {
   background: orange !important;
   border: 2px solid orange !important;
 }
+.breadcrumb {
+  margin: 7px 0px;
+}
+.breadcrumb a {
+  font-size: 12px;
+}
 /* General End */
+
+/* fonts */
+body, p, a, h1, h2, h3, h4, h5, h6, ul, li {
+  font-family: 'Roboto Mono', monospace;
+}
+/* fonts end */
+
+/* text */
+.textblock p, .textblock a, .textblock ul, .blogpost li {
+  font-size: 20px;
+  line-height: 1.5em;
+}
+/* text end */
+
 
 /* header */
 header {
@@ -85,6 +102,12 @@ section ul {
 }
 /* home end */
 
+/* about */
+#techstack ul {
+  margin-left: 20px;
+}
+/* about end */
+
 
 /* Button */
 .button, [type="button"], [type="submit"], a.button, button {
@@ -109,19 +132,6 @@ section ul {
 }
 /* Button End */
 
-/* Lists */
-.blog-post-list-item {
-  display: block;
-  list-style-type: none;
-  margin-bottom: 20px;
-}
-.blog-post-cover {
-  vertical-align: middle;
-}
-.blog-post-title {
-  vertical-align: middle;
-}
-
 /* Code */
 .hljs {
   background: lightgrey;
@@ -139,6 +149,11 @@ code {
   border-radius: 50%;
 }
 
+/* now */
+.now-description {
+  font-size: 12px !important;
+}
+/* now end */
 
 /* Books */
 .book-cover {
@@ -147,7 +162,7 @@ code {
   padding-bottom: 5px;
 }
 .book-title {
-  margin-top: 0;
+  display: inline;
 }
 /* Books End */
 
@@ -164,6 +179,28 @@ code {
 /* Blog Post */
 #blogpost img {
   max-width: 80%;
+}
+#blog-posts ul {
+  margin-left: 0px;
+}
+.blog-post-list-item {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+.blog-post-cover {
+  vertical-align: middle;
+}
+.blog-post-title {
+  vertical-align: middle;
+}
+.post-category, .post-date {
+  color: grey;
+  background-color: lightgray;
+  border: 0px solid grey;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px;
 }
 /* Blog Post End */
 
@@ -195,8 +232,11 @@ code {
   }
   /* header end */
   
-  .book-list ul, .post-list ul {
-    margin-top: 7px;
-    padding-left: 40px;
+  /* text */
+  .textblock p, .textblock a, .textblock ul, .blogpost li {
+    font-size: 25px;
+    line-height: 1.5em;
   }
+  /* text end */
+
 }

@@ -3,32 +3,34 @@
 
 {% block content %}
 
-      <div class="card-box">
-        <p>I started this website as a place to document everything I learn while on my path to become a Data Scientist and an <a href="https://www.indiehackers.com/rasulkireev">Indiehacker</a>... <a href="{% url 'about' %}">read more</a></p>
-        <p>I started this website as a place to document everything I learn while on my path to become a highly qualified Data Scientist and a financially self-sufficient person. I am trying to make a habit of writing about everything I learn.</p>
+      <section class="textblock">
+        <h1>About</h1>
+        <hr>
+        <p>I started this website as a place to document everything I learn while on my path to become a Data Scientist and an Indie maker and generally a good person. I am trying to make a habit of writing about everything I learn.</p>
         <p>My current goal is to find an entry level job in the Data Science field. I also want to make a useful product/app that would be useful to people but would also create an additional independent income stream, to support my family, financially.</p>
         <p>When I am not applying to jobs, connecting with people, or creating things, I enjoy spending time with my wife, Tania. We like to walk, travel, discover new places among other many things.</p>
         <p>We also enjoy photography and are looking for subjects to improve our photography skills. If you would be interested in this please contact us. Here is our portfolio.</p>
+      </section>
 
-        <a class="button" href="https://tinyletter.com/rasulkireev">Subscribe</a>
+      <section class="textblock">
+          <h1>Design</h1>
+          <hr>
+          <p>
+            Just because I have not creativity and imagination I stole this design from <a href="https://joshpigford.com/">Josh Pigford</a> founder of <a href="https://baremetrics.com/">Baremetrics</a>.
+            Josh, thanks for the inspiration. Promise to update the website to look more like me soon!
+          </p>
 
-        <h3>Around the web:</h3>
-        <p class="soc-link">Email: <a rel="me" href="mailto:me@rasulkireev.com" target="_blank">me@rasulkireev.com</a></p>
-        <p class="soc-link">LinekdIn: <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/" target="_blank">linkedin.com/in/rasul-kireev/</a></p>
-        <p class="soc-link">GitHub: <a rel="me" href="https://github.com/rasulkireev" target="_blank">github.com/rasulkireev</a></p>
-        <p class="soc-link">Indiehackers: <a rel="me" href="https://www.indiehackers.com/rasulkireev" target="_blank">indiehackers.com/rasulkireev</a></p>
-      </div>
+        </section>
 
-      <section class="card-box" id="currently-using">
-       <h2>Currently using:</h2>
-       <hr>
-         <ul>
-           <li class='bullet'><b>Hosting:</b> Digital Ocean</li>
-           <li class='bullet'><b>Editor</b>: Atom</li>
-           <li class='bullet'><b>Backend</b>: Django</li>
-           <li class='bullet'><b>Static Storage</b>: AWS S3</li>
-           <li class='bullet'><b>Content Storage</b>: Postgres</li>
-         </ul>
-       </section>
+      <section class="textblock" id="techstack">
+        <h1>This website is using:</h1>
+        <ul>
+          <li class='bullet'><b>Digital Ocean</b> for Hosting</li>
+          <li class='bullet'><b>Visual Studio Code</b> for code editing</li>
+          <li class='bullet'><b>Django</b> for backend</li>
+          <li class='bullet'><b>AWS S3</b> for static storage</li>
+          <li class='bullet'><b>Postgres</b> content storage</li>
+        </ul>
+      </section>
 
 {% endblock content %}

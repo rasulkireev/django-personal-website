@@ -6,6 +6,7 @@ class Book(models.Model):
     draft = models.BooleanField(default = False)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
+    main_category = models.CharField(max_length=200, blank=True)
     buylink = models.URLField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
     date_read = models.DateField()
