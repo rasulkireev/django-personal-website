@@ -48,6 +48,7 @@ p, ul {
 /* fonts */
 body, p, a, h1, h2, h3, h4, h5, h6, ul, li {
   font-family: 'Roboto Mono', monospace;
+  font-family: Inter UI Regular, sans-serif;
 }
 /* fonts end */
 
