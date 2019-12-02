@@ -101,6 +101,10 @@ section h1 {
 section ul {
   padding-left: 0;
 }
+.open-source-image {
+  vertical-align: middle;
+  max-width: 30px;
+}
 /* home end */
 
 /* about */

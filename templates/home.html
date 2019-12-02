@@ -1,7 +1,24 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
+
+  <section>
+    <h1>Currently Working On</h1>
+    <hr>
+    <ul>
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/kushim.png' %}" alt="Kushim">
+        <a class="blog-post-title" href="https://kushim.io">Kushim</a>
+      </li>
+
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Django">
+        <a class="blog-post-title" href="https://github.com/rasulkireev/django-saas-template">django-saas-template</a>
+      </li>
+    </ul>
+  </section>
+
         
   <section>
       <h1>Writings</h1><a href="{% url 'all_posts' %}">See all</a>
@@ -16,5 +33,48 @@
       {% load book_tags %}
       {% latest_books Book %}
   </section>
+
+  <section>
+    <h1>Open Source Projects</h1>
+    <hr>
+    <ul>
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/kushim.png' %}" alt="Kushim">
+        <a class="blog-post-title" href="https://kushim.io">Kushim</a>
+        <span class="post-category">Created</span>
+      </li>
+
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Django">
+        <a class="blog-post-title" href="https://github.com/rasulkireev/django-saas-template">django-saas-template</a>
+        <span class="post-category">Created</span>
+      </li>
+          
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Awesome">
+        <a class="blog-post-title" href="https://github.com/joke2k/django-environ">django-environ</a>
+        <span class="post-category">Contributed</span>
+      </li>
+
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/awesome.png' %}" alt="Awesome">
+        <a class="blog-post-title" href="https://github.com/mezod/awesome-indie">awesome-indie</a>
+        <span class="post-category">Contributed</span>
+      </li>
+
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/awesome.png' %}" alt="Django">
+        <a class="blog-post-title" href="https://github.com/academic/awesome-datascience">awesome-datascience</a>
+        <span class="post-category">Contributed</span>
+      </li>
+
+      <li class="blog-post-list-item">
+        <img class="open-source-image" src="{% static 'images/remote.jpg' %}" alt="Django">
+        <a class="blog-post-title" href="https://github.com/remoteintech/remote-jobs">remotejobs</a>
+        <span class="post-category">Contributed</span>
+      </li>
+
+    </ul>
+</section>
 
 {% endblock content %}
