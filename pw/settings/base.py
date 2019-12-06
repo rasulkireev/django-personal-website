@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'storages',
     'corsheaders',
     'analytical',
+    'taggit',
 ]
 
 MIDDLEWARE = [

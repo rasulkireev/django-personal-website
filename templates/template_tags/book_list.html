@@ -7,6 +7,7 @@
         <a class="blog-post-title" href="{% url 'book' book.slug %}"> {{book.title}} </a>
         <!-- <span class="post-category">{{book.main_category}}</span> -->
         <span class="post-date">{{book.date_read}}</span>
+        <span class="post-date"><b>{{book.rank}}</b>/10</span>
       </li>
     {% endif %}
   {% endfor %}
