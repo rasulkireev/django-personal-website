@@ -4,6 +4,6 @@ from .views import PostListView, PostDetailView, AddComment, DjangoLatestEntries
 urlpatterns = [
         path('', PostListView.as_view(), name='all_posts'),
         path('<slug:slug>', PostDetailView.as_view(), name='post'),
-        path('django-rss/latest/feed/', DjangoLatestEntriesFeed()),
+        path('django-rss/', DjangoLatestEntriesFeed()),
         path('<slug:slug>/add', AddComment.as_view(), name='add-comment'),
             ]
