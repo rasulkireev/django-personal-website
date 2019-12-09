@@ -7,12 +7,18 @@
     <p class="breadcrumb">← <a class="" href={% url 'all_posts' %}>back to posts</a></p>
 
     <article class="h-entry textblock blogpost" id="blogpost">
-      <p style="display: none;">Published by <a class="p-author h-card" href="https://rasulkireev.com">W. Developer</a><img class="u-photo" src="{{ MEDIA_URL }}my_photo.jpg" height="200px"></p>
-      <h1 class="p-name inside-post-title">{{ post.title }}</h1>
-      <p class="inside-post-date">Published on <time class="dt-published" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
-      <hr>
-      <p class="p-summary" style="display: none;">{{ post.description }}</p>
-      <span class="e-content">{{ post.body | safe_markdown }}</span>
+        <!-- Author description -->
+        <p style="display: none;">Published by <a class="p-author h-card" rel="author" href="https://rasulkireev.com">Rasul Kireev</a><img class="u-photo" src="{{ MEDIA_URL }}my_photo.jpg" height="200px"></p>
+      
+        <!-- Post Info -->
+        <h1 class="p-name inside-post-title">{{ post.title }}</h1>
+        <h2 class="p-category" style="display: none;"></h2>
+        <a class="u-url" href="{{ post.get_absolute_url }}" style="display: none;"></a>
+        <p class="inside-post-date">Published on <time class="dt-published" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
+        <hr>
+      
+        <p class="p-summary" style="display: none;">{{ post.description }}</p>
+        <span class="e-content">{{ post.body | safe_markdown }}</span>
     </article>
     
     <section class="add-comment-section">
