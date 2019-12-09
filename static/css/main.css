@@ -248,6 +248,13 @@ code {
 .comment .author {
   font-size: 2rem;
 }
+.inside-post-date {
+  margin: 0;
+  font-size: 15px !important;
+}
+.inside-post-title {
+  margin-bottom: 10px;
+}
 /* Blog Post End */
 
 

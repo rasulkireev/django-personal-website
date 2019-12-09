@@ -6,11 +6,14 @@
 
     <p class="breadcrumb">← <a class="" href={% url 'all_posts' %}>back to posts</a></p>
 
-    <section class="textblock blogpost" id="blogpost">
-      <h1>{{ post.title }}</h1>
+    <article class="h-entry textblock blogpost" id="blogpost">
+      <p style="display: none;">Published by <a class="p-author h-card" href="https://rasulkireev.com">W. Developer</a></p>
+      <h1 class="p-name inside-post-title">{{ post.title }}</h1>
+      <p class="inside-post-date">Published on <time class="dt-published" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
       <hr>
-      {{ post.body | safe_markdown }}      
-    </section>
+      <p class="p-summary" style="display: none;">{{ post.description }}</p>
+      <span class="e-content">{{ post.body | safe_markdown }}</span>
+    </article>
     
     <section class="add-comment-section">
         <h1>If you have any thoughts, please leave a reply</h1>

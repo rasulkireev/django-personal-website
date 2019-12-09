@@ -5,19 +5,26 @@
 
 {% block content %}
 
+<section id="blog-posts">
+
+  <h1>Writings</h1>
+  <hr>
+  
+  <ul itemscope itemtype="https://schema.org/Book">
     {% for book in object_list %}
       {% if book.draft == False %}
-        <ul itemscope itemtype="https://schema.org/Book">
-          {% if book.draft == False %}
-          <li class="blog-post-list-item">
-            <img class="blog-post-cover" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
-            <a class="blog-post-title" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
-            <span class="post-date">{{book.date_read}}</span>
-            <span class="post-date"><b>{{book.rank}}</b>/10</span>
-          </li>
-          {% endif %}
-        </ul>
+        <li class="blog-post-list-item">
+          <img class="blog-post-cover" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
+          <a class="blog-post-title" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
+          <span class="post-date">{{book.date_read}}</span>
+          <span class="post-date"><b>{{book.rank}}</b>/10</span>
+        </li>
       {% endif %}
     {% endfor %}
+  </ul>
+
+</section>
+
+
 
 {% endblock %}
