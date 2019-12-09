@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.contrib.syndication.views import Feed
 from django.views.generic import ListView, DetailView, CreateView
+from django.shortcuts import render
 from .models import Post, Comment
 from .forms import CommentForm
 from django.urls import reverse
@@ -33,3 +34,18 @@ class AddComment(CreateView):
         form.instance.slug = current_post.slug
         form.instance.post_id = current_post.id
         return super(AddComment, self).form_valid(form)
+
+    
+class DjangoLatestEntriesFeed(Feed):
+    title = "Django Writintgs"
+    link = "/django-rss/"
+    description = "These are posts about my experiences learning and working with Django."
+
+    def items(self):
+        return Post.objects.filter(category="Django").order_by('-date')
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.description

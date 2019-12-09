@@ -7,6 +7,7 @@ from django.forms import ModelForm
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
     draft = models.BooleanField(default = False)
     body = models.TextField()
@@ -19,7 +20,7 @@ class Post(models.Model):
         return "(Draft = " + str(self.draft) + ") " + self.category + ': ' + self.title
 
     def get_absolute_url(self):
-        return reverse('writings.views.PostDetailView', args=[str(self.slug)])
+        return reverse('post', args=[str(self.slug)])
 
 class Comment(models.Model):
     post = models.ForeignKey('writings.Post', on_delete=models.CASCADE, related_name="comments")
