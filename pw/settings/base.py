@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'writings.apps.WritingsConfig',
     'books.apps.BooksConfig',
     'health.apps.HealthConfig',
+    'api.apps.ApiConfig',
 
+    'rest_framework',
     'martor',
     'storages',
     'corsheaders',
@@ -60,6 +62,13 @@ MIDDLEWARE = [
 
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+# DRF
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES': [
+'rest_framework.permissions.AllowAny',
+]
+}
 
 ### Dealing with CORS errors (connection to AWS S3)
 CORS_ORIGIN_ALLOW_ALL = True

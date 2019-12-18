@@ -46,6 +46,12 @@
 
     <!-- Martor JS -->
     <script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+
+    {% block d3.js %}
+      {# Import D3.js CDN #}
+      {# Plus any additional styling for D3 chart #}
+    {% endblock %}
+
     {% analytical_head_bottom %}
   </head>
   <body>

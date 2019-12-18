@@ -30,6 +30,7 @@ urlpatterns = [
     path('writings/', include('writings.urls')),
     path('health/', include('health.urls')),
     path('books/', include('books.urls')),
+    path('api/v1/', include('api.urls')),
     
     path('martor/', include('martor.urls')),
     path('sentry-debug/', trigger_error),
