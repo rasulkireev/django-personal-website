@@ -11,6 +11,10 @@ __pycache__/
 # Media
 media/
 
+# Dependency directories
+node_modules/
+
+
 # Distribution / packaging
 .Python
 build/
