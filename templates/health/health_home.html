@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1>Weight Records</h1>
+
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Weight</th>
+        </tr>
+
+        {% for entry in object_list %}
+            <tr>
+                <td>{{ entry.date_and_time|date:'j/d/y' }}</td>
+                <td>{{ entry.weight }}kg</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

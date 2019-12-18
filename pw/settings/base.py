@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'wiltw.apps.WiltwConfig',
     'writings.apps.WritingsConfig',
     'books.apps.BooksConfig',
+    'health.apps.HealthConfig',
 
     'martor',
     'storages',

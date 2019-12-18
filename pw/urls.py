@@ -24,12 +24,14 @@ def trigger_error(request):
 urlpatterns = [
     path('rk-admin/', admin.site.urls),
     path('', include('pages.urls')),
+
     path('now/', include('now.urls')),
     path('what-i-learnt-this-week/', include('wiltw.urls')),
     path('writings/', include('writings.urls')),
+    path('health/', include('health.urls')),
     path('books/', include('books.urls')),
+    
     path('martor/', include('martor.urls')),
-
     path('sentry-debug/', trigger_error),
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
