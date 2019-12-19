@@ -11401,7 +11401,24 @@ video {
   z-index: auto;
 }
 
-@charset "UTF-8";
+/* PostCSS Nested Test */
+
+article .article-body h2 {
+      font-size: 2.7rem;
+      margin-top: 1.5rem;
+    }
+
+@media (max-width: 640px) {
+
+article .article-body h2 {
+        font-size: 2rem
+    }
+      }
+
+article .article-body p {
+      font-size: 1.7rem;
+      line-height: 1.625;
+    }
 
 /* General */
 
@@ -11415,11 +11432,6 @@ html {
   font-weight: 400;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 32px;
-}
-
 a {
   color: #2D3FD1;
   font-weight: bold;
@@ -11429,12 +11441,6 @@ a {
 a:hover {
   color: white;
   background:#2D3FD1;
-}
-
-p, ul {
-  font-size: 18px;
-  line-height: 25px;
-  margin-bottom: 15px;
 }
 
 #content {
@@ -11701,11 +11707,6 @@ code {
   font-size: 2rem;
 }
 
-.inside-post-date {
-  margin: 0;
-  font-size: 15px !important;
-}
-
 .inside-post-title {
   margin-bottom: 10px;
 }
@@ -11743,15 +11744,6 @@ code {
   }
 
   /* header end */
-
-  /* text */
-
-  .textblock p, .textblock a, .textblock ul, .blogpost li {
-    font-size: 25px;
-    line-height: 1.5em;
-  }
-
-  /* text end */
 }
 
 @media (min-width: 640px) {

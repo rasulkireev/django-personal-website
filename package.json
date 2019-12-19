@@ -1,0 +1,28 @@
+{
+  "name": "django-personal-website",
+  "version": "1.0.0",
+  "description": "This is my attempt to learn the essentials of Django through creating a personal website.",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "postcss-cli": "^6.1.3",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "tailwindcss": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "postcss static/css/main.css -o static/css/final.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasulkireev/django-personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasulkireev/django-personal-website/issues"
+  },
+  "homepage": "https://github.com/rasulkireev/django-personal-website#readme"
+}

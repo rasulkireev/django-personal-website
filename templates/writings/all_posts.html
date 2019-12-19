@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<section id="blog-posts">
+<section id="blog-posts" >
 
   <h1>Writings</h1>
   <hr class="mb-4">
@@ -12,7 +12,7 @@
     <ul>
       {% for post in object_list %}
       {% if post.draft == False %}
-        <li class="blog-post-list-item">
+        <li class="blog-post-list-item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
           <img class="inline w-8 align-middle" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
           <a class="blog-post-title" href="{% url 'post' post.slug %}">{{ post.title }}</a>
           <span class="post-category">{{post.category}}</span>
