@@ -7,13 +7,13 @@
 <section id="blog-posts">
 
   <h1>Writings</h1>
-  <hr>
+  <hr class="mb-4">
 
     <ul>
       {% for post in object_list %}
       {% if post.draft == False %}
         <li class="blog-post-list-item">
-          <img class="blog-post-cover" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
+          <img class="inline w-8 align-middle" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
           <a class="blog-post-title" href="{% url 'post' post.slug %}">{{ post.title }}</a>
           <span class="post-category">{{post.category}}</span>
           <span class="post-date">{{post.date}}</span>

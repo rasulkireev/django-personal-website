@@ -8,12 +8,12 @@
 <section id="blog-posts">
 
   <h1>Book Reviews</h1>
-  <hr>
+  <hr class="mb-6">
   
   <ul itemscope itemtype="https://schema.org/Book">
     {% for book in object_list %}
         <li class="blog-post-list-item">
-          <img class="blog-post-cover" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
+          <img class="inline h-8 align-middle rounded-sm" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
           <a class="blog-post-title" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
           <span class="post-date">{{book.date_read}}</span>
           <span class="post-date"><b>{{book.rank}}</b>/10</span>

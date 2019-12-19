@@ -2,7 +2,7 @@
 <ul>
   {% for book in book %}
       <li class="blog-post-list-item">
-        <img class="blog-post-cover" src="{% get_media_prefix %}{{book.cover}}" height="30">
+        <img class="inline h-6 align-middle rounded-sm" src="{% get_media_prefix %}{{book.cover}}" height="30">
         <a class="blog-post-title" href="{% url 'book' book.slug %}"> {{book.title}} </a>
         <!-- <span class="post-category">{{book.main_category}}</span> -->
         <span class="post-date">{{book.date_read}}</span>
