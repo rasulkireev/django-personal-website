@@ -2,9 +2,9 @@
 <ul>
   {% for post in post %}
     {% if post.draft == False %}
-      <li class="blog-post-list-item">
+      <li class="mb-4 text-xl">
         <img class="inline w-8 align-middle" src="{% get_media_prefix %}{{post.cover}}" width="30" height="30">
-        <a class="blog-post-title" href="{% url 'post' post.slug %}"> {{post.title}} </a>
+        <a class="" href="{% url 'post' post.slug %}"> {{post.title}} </a>
         <span class="post-category">{{post.category}}</span>
         <span class="post-date">{{post.date}}</span>
       </li>

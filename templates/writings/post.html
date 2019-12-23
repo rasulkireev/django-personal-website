@@ -20,13 +20,17 @@
         <a class="u-url" href="{{ post.get_absolute_url }}" style="display: none;" itemprop="url"></a>
         <p class="m-0 text-lg text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
         <p class="p-summary" style="display: none;" itemprop="abstract">{{ post.description }}</p>
+        
         <hr class="mb-4">
       
         <!-- Article Body -->
-        <div class="e-content article-body" itemprop="articleBody">{{ post.body | safe_markdown }}</div>
+        <div class="e-content post-body" itemprop="articleBody">
+            {{ post.body | safe_markdown }}
+        </div>
+        
     </article>
     
-    <section class="add-comment-section">
+    <!-- <section class="add-comment-section">
         <h1>If you have any thoughts, please leave a reply</h1>
         <hr>
         <form class="" id="" action="{% url 'add-comment' post.slug %}" method="post">{% csrf_token %}
@@ -65,6 +69,6 @@
         {% empty %}
             <p>No comments here yet :(</p>
         {% endfor %}
-    </section>
+    </section> -->
 
 {% endblock content %}

@@ -3,18 +3,52 @@
 @tailwind utilities;
 
 /* PostCSS Nested Test */
-article {
-  .article-body {
+article, .now, .wiltw, .book-review {
+  .post-body {
     h2 {
       font-size: 2.7rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
       @media (max-width: 640px) {
         font-size: 2rem;
+    }
+  }
+    h3 {
+      font-size: 2.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.5rem;
+      @media (max-width: 640px) {
+        font-size: 1.8rem;
     }
   }
     p {
       font-size: 1.7rem;
       line-height: 1.625;
+    }
+    ul {
+      font-size: 1.4rem;
+      line-height: 1.625;
+      list-style-position: outside;
+      margin-left: 1.5rem;
+      list-style-type: circle;
+    }
+    ol {
+      font-size: 1.4rem;
+      line-height: 1.625;
+      list-style-position: outside;
+      margin-left: 1.5rem;
+      list-style-type: decimal;
+    }
+    pre {
+      margin: 1rem 0;
+    }
+    blockquote {
+      p {
+        margin: 1rem;
+        padding-left: 1rem;
+        font-size: 1rem;
+        border-left: 4px solid blue
+      }
     }
   }
 }

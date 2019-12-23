@@ -7,9 +7,23 @@
 
     <p class="breadcrumb">← <a class="" href={% url 'wiltw_archive' %}>back to archive</a></p>
 
-    <section class="textblock">
-      <h1>This is what learnt the week of {{ wiltw.title }}</h1>
-      {{ wiltw.body | safe_markdown }}
+    <section class="wiltw h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <!-- Author description -->
+      <div style="display: none;" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        Published by 
+        <a class="p-author h-card" rel="author" href="https://rasulkireev.com"><span itemprop="givenName">Rasul</span> <span itemprop='familyName'>Kireev</span></a>
+        <img class="u-photo" src="{{ MEDIA_URL }}my_photo.jpg" height="200px" itemprop="image">
+      </div>
+
+      <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl p-name" itemprop="name">What I learnt the week of <time class="dt-published" itemprop="dateCreated" datetime="{{ wiltw.title }}">{{ wiltw.title }}</time></h1>
+      <a class="u-url" href="/what-i-learnt-this-week/archive/{{ wiltw.title }}" style="display: none;" itemprop="url"></a>
+      
+      <hr>
+
+      <div class="pb-6 border-b-4 border-blue-600 post-body e-content" itemprop="articleBody">
+        {{ wiltw.body | safe_markdown }}
+      </div>
     </section>
+
 
 {% endblock content %}

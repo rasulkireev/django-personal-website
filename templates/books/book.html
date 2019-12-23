@@ -7,22 +7,27 @@
 
   <p class="breadcrumb">← <a class="" href="{% url 'all_books' %}">back to books</a></p>
 
-  <section class="book-description" itemscope itemtype="https://schema.org/Book">
-    <img class="book-cover" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
-    <h1 class="book-title">
+  <div class="" itemscope itemtype="https://schema.org/Book">
+    <img class="float-left h-64 pb-4 pr-6" itemprop="image" src="{{ MEDIA_URL }}{{ book.cover }}" height="190px">
+    <h1 class="text-4xl">
       <span itemprop="name">{{ book.title }}</span>
        by
       <span itemprop="author">{{ book.author }}</span>
     </h1>
-    <p>Date read: {{ book.date_read }}</p>
-    <p>How much I liked it: <b>{{ book.rank }}</b>/10</p>
+    <hr class="mb-3">
+    <p class="text-3xl">Date read: {{ book.date_read }}</p>
+    <p class="text-3xl">How much I liked it: <b>{{ book.rank }}</b>/10</p>
 
     <p><a itemprop="url" href={{ book.buylink }} target="_blank">Buy on Amazon</a><p></p>
-  </section>
+  </div>
 
   
-  <section class="textblock">
-    {{ book.description|safe_markdown }}
+  <section class="book-review">
+    
+    <div class="post-body">
+      {{ book.description|safe_markdown }}
+    </div>
+    
   </section>
 
 </div>

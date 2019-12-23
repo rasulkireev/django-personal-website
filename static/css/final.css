@@ -11403,22 +11403,63 @@ video {
 
 /* PostCSS Nested Test */
 
-article .article-body h2 {
+article .post-body h2, .now .post-body h2, .wiltw .post-body h2, .book-review .post-body h2 {
       font-size: 2.7rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
 @media (max-width: 640px) {
 
-article .article-body h2 {
+article .post-body h2, .now .post-body h2, .wiltw .post-body h2, .book-review .post-body h2 {
         font-size: 2rem
     }
       }
 
-article .article-body p {
+article .post-body h3, .now .post-body h3, .wiltw .post-body h3, .book-review .post-body h3 {
+      font-size: 2.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+@media (max-width: 640px) {
+
+article .post-body h3, .now .post-body h3, .wiltw .post-body h3, .book-review .post-body h3 {
+        font-size: 1.8rem
+    }
+      }
+
+article .post-body p, .now .post-body p, .wiltw .post-body p, .book-review .post-body p {
       font-size: 1.7rem;
       line-height: 1.625;
     }
+
+article .post-body ul, .now .post-body ul, .wiltw .post-body ul, .book-review .post-body ul {
+      font-size: 1.4rem;
+      line-height: 1.625;
+      list-style-position: outside;
+      margin-left: 1.5rem;
+      list-style-type: circle;
+    }
+
+article .post-body ol, .now .post-body ol, .wiltw .post-body ol, .book-review .post-body ol {
+      font-size: 1.4rem;
+      line-height: 1.625;
+      list-style-position: outside;
+      margin-left: 1.5rem;
+      list-style-type: decimal;
+    }
+
+article .post-body pre, .now .post-body pre, .wiltw .post-body pre, .book-review .post-body pre {
+      margin: 1rem 0;
+    }
+
+article .post-body blockquote p, .now .post-body blockquote p, .wiltw .post-body blockquote p, .book-review .post-body blockquote p {
+        margin: 1rem;
+        padding-left: 1rem;
+        font-size: 1rem;
+        border-left: 4px solid blue
+      }
 
 /* General */
 
