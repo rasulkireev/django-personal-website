@@ -17,7 +17,7 @@
     {% for book in object_list %}
           <li class="mb-4 text-xl">
           <img class="inline h-8 align-middle rounded-sm" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
-          <a class="" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
+          <a class="" itemprop="name" href="{{ book.buylink }}" target="_blank">{{book.title}}</a>
         </li>
     {% endfor %}
     
