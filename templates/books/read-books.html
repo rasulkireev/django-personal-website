@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Book Notes & Reviews{% endblock %}
+{% load martortags %}
+
+
+{% block content %}
+
+<div class="flex flex-row flex-wrap items-start pb-6 mb-8 border-b-2 border-gray-200">
+  <h1><a class="p-2 mr-1 text-2xl text-white bg-blue-800 rounded-lg hover:bg-blue-800" href="{% url 'read-books' %}">Book Reviews</a></h1>
+  <div><a class="p-2 mx-1 rounded-lg" href="{% url 'currently-reading-books' %}">Currently Reading</a></div>
+  <div><a class="p-2 ml-1 rounded-lg" href="{% url 'to-read-books' %}">Books to Read</a></div>
+</div>  
+
+  <section id="read-summaries">
+      <ul itemscope itemtype="https://schema.org/Book">
+      
+      {% for book in object_list %}
+      <li class="mb-4 text-xl">
+        <img class="inline h-8 align-middle rounded-sm" itemprop="image" src="{{ MEDIA_URL }}{{book.cover}}" height="30">
+        <a class="" itemprop="name" href="{% url 'book' book.slug %}"> {{book.title}} </a>
+        <span class="post-date">{{book.date_read}}</span>
+        <span class="post-date"><b>{{book.rank}}</b>/10</span>
+      </li>
+      {% endfor %}
+      
+    </ul>
+  </section>
+
+
+{% endblock %}

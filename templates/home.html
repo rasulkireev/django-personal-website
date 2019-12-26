@@ -28,7 +28,7 @@
   </section>
 
   <section>
-      <h1 class="text-4xl">Recent Book Reviews</h1><a href="{% url 'all_books' %}">See all</a>
+      <h1 class="text-4xl">Recent Book Reviews</h1><a href="{% url 'read-books' %}">See all</a>
       <hr class="mb-4">
       {% load book_tags %}
       {% latest_books Book %}

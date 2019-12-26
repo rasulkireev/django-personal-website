@@ -60,9 +60,9 @@
     <div id="content">
 
       <header class="mb-4 md:mb-12 lg:mb-20 h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a class="u-url" href="https://rasulkireev.com"><img class="mt-4 md:mt-2 u-photo" src="{{ MEDIA_URL }}my_photo.jpg"></a>
+        <a class="u-url" href="{% url 'home' %}"><img class="mt-4 md:mt-2 u-photo" src="{{ MEDIA_URL }}my_photo.jpg"></a>
         <h1 class="pt-2 m-0 mb-3 text-5xl leading-none">
-          <a class="text-gray-900 p-name u-url" href="https://rasulkireev.com">Rasul Kireev</a>        
+          <a class="text-gray-900 p-name u-url" href="{% url 'home' %}">Rasul Kireev</a>        
           <div class="social">
               <a rel="me" href="https://twitter.com/rasulkireev"><i class="lab la-twitter"></i></a>
               <a rel="me" href="https://github.com/rasulkireev"><i class="lab la-github"></i></a>
@@ -75,7 +75,7 @@
         <p class="mb-4 text-xl leading-none ">
           <a href="{% url 'about' %}">About</a>, 
           <a href="{% url 'all_posts' %}">Writings</a>,
-          <a href="{% url 'all_books' %}">Reading</a>,
+          <a href="{% url 'read-books' %}">Reading</a>,
           <a href="{% url 'now' %}">Now</a>,
           <!-- <a href="{% url 'health-home' %}">Health</a>, -->
           <a href="{% url 'wiltw_now' %}">Learning</a>

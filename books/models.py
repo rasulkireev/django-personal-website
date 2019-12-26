@@ -11,22 +11,20 @@ class Book(models.Model):
     
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
-    date_read = models.DateField()
-    cover = models.ImageField(upload_to='book-cover/')
+    date_read = models.DateField(blank=True, null=True)
+    cover = models.ImageField(upload_to='book-cover/', blank=True)
     status = models.CharField(
         max_length=100,
         choices=statuses,
         default='TO READ'
     )
     
-    
     main_category = models.CharField(max_length=200, blank=True)
-    buylink = models.URLField(max_length=200, blank=True)
+    buylink = models.URLField(max_length=200, blank=True) 
     description = models.TextField(blank=True)
-    rank = models.IntegerField(blank=True, validators=[
+    rank = models.IntegerField(blank=True, null=True, validators=[
             MaxValueValidator(10),
             MinValueValidator(1)])
-    
     
     slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
 

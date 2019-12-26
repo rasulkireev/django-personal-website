@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import AllBooksView, BooksDetailView
+from .views import ReadBooksView, CurrentlyReadingBooksView, ToReadBooksView, BooksDetailView
 
 urlpatterns = [
-        path('', AllBooksView.as_view(), name='all_books'),
+        path('read', ReadBooksView.as_view(), name='read-books'),
+        path('to-read', ToReadBooksView.as_view(), name='to-read-books'),
+        path('reading', CurrentlyReadingBooksView.as_view(), name='currently-reading-books'),
+        
         path('<slug:slug>', BooksDetailView.as_view(), name='book'),
             ]
