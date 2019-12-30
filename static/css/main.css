@@ -9,6 +9,7 @@ article, .now, .wiltw, .book-review {
       font-size: 2.7rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
+      border-bottom: 2px solid lightgrey;
       @media (max-width: 640px) {
         font-size: 2rem;
     }
@@ -24,19 +25,20 @@ article, .now, .wiltw, .book-review {
     p {
       font-size: 1.7rem;
       line-height: 1.625;
+      margin: 1rem 0;
     }
     ul {
       font-size: 1.4rem;
       line-height: 1.625;
       list-style-position: outside;
-      margin-left: 1.5rem;
+      margin: 1.5rem;
       list-style-type: circle;
     }
     ol {
       font-size: 1.4rem;
       line-height: 1.625;
       list-style-position: outside;
-      margin-left: 1.5rem;
+      margin: 1.5rem;
       list-style-type: decimal;
     }
     pre {
@@ -44,10 +46,10 @@ article, .now, .wiltw, .book-review {
     }
     blockquote {
       p {
-        margin: 1rem;
+        margin: 1rem 1rem 1rem 0;
         padding-left: 1rem;
         font-size: 1rem;
-        border-left: 4px solid blue
+        border-left: 4px solid blue;
       }
     }
   }
