@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
+
+{% block meta %}
+    <!-- Other meta stuff -->
+    <meta name="description" content="My thought and notes on {{ book.title }}">
+      
+    <meta property="og:title" content="Notes on {{ book.title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="My thought and notes on {{ book.title }}">
+    <meta name="og:image" content="{{MEDIA_URL}}{{book.cover}}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rasulkireev">
+    <meta name="twitter:creator" content="@rasulkireev">
+    <meta name="twitter:title" content="{{ book.title }}">
+    <meta name="twitter:description" content="My thought and notes on {{ book.title }}">
+    <meta name="twitter:image" content="{{MEDIA_URL}}{{book.cover}}">
+{% endblock %}
+
+
 {% block title %}{{ book.title }}{% endblock %}
+
 {% load martortags %}
 
 

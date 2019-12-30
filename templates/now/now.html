@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
+
+{% block meta %}
+    <!-- Other meta stuff -->
+    <meta name="description" content="This is what I am up to now.">
+      
+    <meta property="og:title" content="Now">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="This is what I am up to now.">
+    <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rasulkireev">
+    <meta name="twitter:creator" content="@rasulkireev">
+    <meta name="twitter:title" content="Now">
+    <meta name="twitter:description" content="This is what I am up to now.">
+    <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+{% endblock %}
+
 {% block title %}Now{% endblock %}
+
 {% load martortags %}
 
 
