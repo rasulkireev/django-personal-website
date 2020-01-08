@@ -12,6 +12,7 @@ class Post(models.Model):
     draft = models.BooleanField(default = False)
     body = models.TextField()
     cover = models.ImageField(upload_to='post-images/', blank=True)
+    main_image = models.ImageField(upload_to='main-post-images/', blank=True)
     date = models.DateTimeField()
     tags = TaggableManager(blank=True)
     category = models.CharField(max_length=100)
