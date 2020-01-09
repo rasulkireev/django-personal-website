@@ -23,17 +23,20 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import GenericSitemap
 from writings.models import Post
 from books.models import Book
+from .sitemaps import StaticViewSitemap
 
 sitemaps = {
+    'static': StaticViewSitemap,
+
     'writings': GenericSitemap({
         'queryset': Post.objects.all(),
         'date_field': 'date',
-    }, priority=0.9),
+    }, priority=0.5),
 
     'books': GenericSitemap({
         'queryset': Book.objects.all(),
         'date_field': 'date_published',
-    }, priority=0.9),
+    }, priority=0.5),
 }
 
 def trigger_error(request):
