@@ -3,6 +3,12 @@
 {% block meta %}
     <!-- Other meta stuff -->
     <meta name="description" content="{{ post.description }}">
+    <meta name="keywords" content="{{ post.tags }}" />
+    
+    <meta property="article:published_time" content="{{post.date}}" />
+    <meta property="article:section" content="{{ post.category }}" />
+    <meta property="article:tag" content="{{ post.tags }}" />
+
       
     <meta property="og:title" content="{{ post.title }}">
     <meta property="og:type" content="article">
