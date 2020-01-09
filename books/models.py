@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.urls import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Book(models.Model):
@@ -12,6 +13,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     date_read = models.DateField(blank=True, null=True)
+    date_published = models.DateField(auto_now_add=True)
     cover = models.ImageField(upload_to='book-cover/', blank=True)
     status = models.CharField(
         max_length=100,
@@ -30,3 +32,6 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title + " (Status = " + str(self.status) + ")"
+
+    def get_absolute_url(self):
+        return reverse('book', args=[str(self.slug)])

@@ -17,7 +17,24 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
+
+# Sitemap imports
 from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+from writings.models import Post
+from books.models import Book
+
+sitemaps = {
+    'writings': GenericSitemap({
+        'queryset': Post.objects.all(),
+        'date_field': 'date',
+    }, priority=0.9),
+
+    'books': GenericSitemap({
+        'queryset': Book.objects.all(),
+        'date_field': 'date_published',
+    }, priority=0.9),
+}
 
 def trigger_error(request):
     division_by_zero = 1 / 0
@@ -35,5 +52,7 @@ urlpatterns = [
     
     path('martor/', include('martor.urls')),
     path('sentry-debug/', trigger_error),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
