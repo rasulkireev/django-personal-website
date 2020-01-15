@@ -11409,6 +11409,13 @@ video {
   list-style-type: disk;
 }
 
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
