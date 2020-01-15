@@ -18,92 +18,27 @@
 
 {% block content %}
 
-<p class="mb-4 text-xl leading-normal md:leading-none p-note">In constant beta mode. Currently learning to build web apps, create beutiful visualizations and analyze large datasets.</p>
+<!-- <p class="mb-4 text-xl leading-normal md:leading-none p-note">In constant beta mode. Currently learning to build web apps, create beutiful visualizations and analyze large datasets.</p>
 <div class="social">
   <a rel="me" href="https://twitter.com/rasulkireev"><i class="lab la-twitter"></i></a>
   <a rel="me" href="https://github.com/rasulkireev"><i class="lab la-github"></i></a>
   <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="lab la-linkedin-in"></i></a>
   <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="las la-at"></i></a>
-</div>
-
-<section>
-    <h1 class="text-4xl">Currently Working On</h1>
-    <hr class="mb-4">
-    <ul class="">
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/kushim.png' %}" alt="Kushim">
-        <a class="" href="https://kushim.io">Kushim</a>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Django">
-        <a class="" href="https://builtwithdjango.com">Built with Django</a>
-      </li>
-    </ul>
-  </section>
-
+</div> -->
         
   <section>
       <h1 class="text-4xl">Recent Writings</h1><a href="{% url 'all_posts' %}">See all</a>
       <hr class="mb-4">
-      {% load post_tags %}
-      {% latest_posts Post %}
+      <ul>
+        {% for post in post_list %}
+          {% if post.draft == False %}
+            <li class="mb-4 text-xl">
+              <img class="inline w-8 align-middle" src="{% get_media_prefix %}{{post.cover}}" width="30" height="30">
+              <a class="" href="{% url 'post' post.slug %}"> {{post.title}} </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
   </section>
-
-  <section>
-      <h1 class="text-4xl">Recent Book Reviews</h1><a href="{% url 'read-books' %}">See all</a>
-      <hr class="mb-4">
-      {% load book_tags %}
-      {% latest_books Book %}
-  </section>
-
-  <section>
-    <h1 class="text-4xl">Open Source Projects</h1>
-    <hr class="mb-4">
-    <ul>
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/kushim.png' %}" alt="Kushim">
-        <a class="" href="https://kushim.io">Kushim</a>
-        <span class="post-category">Created</span>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Django">
-        <a class="" href="https://github.com/rasulkireev/django-saas-template">django-saas-template</a>
-        <span class="post-category">Created</span>
-      </li>
-          
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/djangostack-stack-220x234.png' %}" alt="Awesome">
-        <a class="" href="https://github.com/joke2k/django-environ">django-environ</a>
-        <span class="post-category">Contributed</span>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/webmentions.png' %}" alt="WebMentions">
-        <a class="" href="https://github.com/beatonma/django-wm">django-wb (webmentions)</a>
-        <span class="post-category">Contributed</span>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/awesome.png' %}" alt="Awesome">
-        <a class="" href="https://github.com/mezod/awesome-indie">awesome-indie</a>
-        <span class="post-category">Contributed</span>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/awesome.png' %}" alt="Django">
-        <a class="" href="https://github.com/academic/awesome-datascience">awesome-datascience</a>
-        <span class="post-category">Contributed</span>
-      </li>
-
-      <li class="mb-4 text-xl">
-        <img class="inline w-8 align-middle" src="{% static 'images/remote.jpg' %}" alt="Django">
-        <a class="" href="https://github.com/remoteintech/remote-jobs">remotejobs</a>
-        <span class="post-category">Contributed</span>
-      </li>
-
-    </ul>
-</section>
 
 {% endblock content %}

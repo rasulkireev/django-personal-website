@@ -5,9 +5,9 @@ class StaticViewSitemap(sitemaps.Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['home', 'about',
-                'now', 'wiltw_now',
-                'read-books', 'to-read-books', 'currently-reading-books',
+        return ['home',
+                'about',
+                'now',
                 'all_posts']
 
     def location(self, item):
