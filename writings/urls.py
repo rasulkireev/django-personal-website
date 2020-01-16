@@ -4,6 +4,6 @@ from .views import PostListView, PostDetailView, DjangoLatestEntriesFeed, Writin
 urlpatterns = [
         path('', PostListView.as_view(), name='all_posts'),
         path('<slug:slug>', PostDetailView.as_view(), name='post'),
-        path('django-feed/rss/', DjangoLatestEntriesFeed()),
-        path('feed/rss/', WritingsFeed())
+        path('django-feed/rss/', DjangoLatestEntriesFeed(), name='django-rss'),
+        path('feed/rss/', WritingsFeed(), name='writings-rss')
             ]

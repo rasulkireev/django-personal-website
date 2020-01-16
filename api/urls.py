@@ -3,5 +3,5 @@ from .views import WritingsAPIView
 
 
 urlpatterns = [
-    path('writings/', WritingsAPIView.as_view()),
+    path('writings/', WritingsAPIView.as_view(), name='writings-json'),
     ]
