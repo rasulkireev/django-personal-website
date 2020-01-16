@@ -24,6 +24,11 @@
     {% endif %}
 {% endblock %}
 
+{% block github.css %}
+    <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
+{% endblock %}
+
+
 
 {% block title %}{{post.title}}{% endblock %}
 
