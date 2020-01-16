@@ -7,7 +7,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post_list'] = Post.objects.filter(draft=False).order_by('-date')[0:10]
+        context['post_list'] = Post.objects.filter(draft=False).order_by('-date')[0:5]
 
         return context
 
