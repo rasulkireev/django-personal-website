@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'health.apps.HealthConfig',
     'api.apps.ApiConfig',
 
+    'mentions',
     'rest_framework',
     'martor',
     'storages',
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'corsheaders.middleware.CorsMiddleware',
+    'mentions.middleware.WebmentionHeadMiddleware',
 ]
 
 # DRF
@@ -153,3 +155,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 
 SITE_ID = 1
+
+
+
+# CELERY
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/New_York'
+DOMAIN_NAME = 'rasulkireev.com'

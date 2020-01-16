@@ -47,7 +47,8 @@ urlpatterns = [
     
     path('martor/', include('martor.urls')),
     path('sentry-debug/', trigger_error),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('webmentions/', include('mentions.urls')),
 
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

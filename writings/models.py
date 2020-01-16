@@ -1,3 +1,4 @@
+from mentions.models.mixins.mentionable import MentionableMixin
 from django.db import models
 from autoslug import AutoSlugField
 from django.urls import reverse
@@ -5,7 +6,7 @@ from taggit.managers import TaggableManager
 from django.forms import ModelForm
 
 
-class Post(models.Model):
+class Post(MentionableMixin, models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
@@ -17,6 +18,9 @@ class Post(models.Model):
     tags = TaggableManager(blank=True)
     category = models.CharField(max_length=100)
 
+    def all_text(self) -> str:
+        return f'{self.title} {self.body}'
+        
     def __str__(self):
         return "(Draft = " + str(self.draft) + ") " + self.category + ': ' + self.title
 

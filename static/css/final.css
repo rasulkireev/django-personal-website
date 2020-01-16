@@ -28,6 +28,10 @@ body {
  * Render the `main` element consistently in IE.
  */
 
+main {
+  display: block;
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -57,6 +61,11 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
 /* Text-level semantics
    ========================================================================== */
 
@@ -73,6 +82,13 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
@@ -87,7 +103,9 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-code {
+code,
+kbd,
+samp {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
@@ -96,10 +114,30 @@ code {
  * Add the correct font size in all browsers.
  */
 
+small {
+  font-size: 80%;
+}
+
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
 
 /* Embedded content
    ========================================================================== */
@@ -120,7 +158,11 @@ img {
  * 2. Remove the margin in Firefox and Safari.
  */
 
-button {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
@@ -132,7 +174,8 @@ button {
  * 1. Show the overflow in Edge.
  */
 
-button { /* 1 */
+button,
+input { /* 1 */
   overflow: visible;
 }
 
@@ -141,7 +184,8 @@ button { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
-button { /* 1 */
+button,
+select { /* 1 */
   text-transform: none;
 }
 
@@ -183,6 +227,10 @@ button:-moz-focusring,
  * Correct the padding in Firefox.
  */
 
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
 /**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
@@ -190,13 +238,30 @@ button:-moz-focusring,
  *    `fieldset` elements in all browsers.
  */
 
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 
+progress {
+  vertical-align: baseline;
+}
+
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
+
+textarea {
+  overflow: auto;
+}
 
 /**
  * 1. Add the correct box sizing in IE 10.
@@ -253,6 +318,10 @@ button:-moz-focusring,
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 
+details {
+  display: block;
+}
+
 /*
  * Add the correct display in all browsers.
  */
@@ -267,6 +336,10 @@ summary {
 /**
  * Add the correct display in IE 10+.
  */
+
+template {
+  display: none;
+}
 
 /**
  * Add the correct display in IE 10.
@@ -303,11 +376,19 @@ html {
  * Removes the default spacing and border for appropriate elements.
  */
 
-
+blockquote,
+dl,
+dd,
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 hr,
-p {
+figure,
+p,
+pre {
   margin: 0;
 }
 
@@ -326,7 +407,12 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+}
 
+ol,
 ul {
   list-style: none;
   margin: 0;
@@ -394,6 +480,31 @@ img {
   border-style: solid;
 }
 
+textarea {
+  resize: vertical;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #a0aec0;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #a0aec0;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0aec0;
+}
+
 button,
 [role="button"] {
   cursor: pointer;
@@ -404,7 +515,11 @@ table {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -427,7 +542,11 @@ a {
  * normalize.css.
  */
 
-button {
+button,
+input,
+optgroup,
+select,
+textarea {
   padding: 0;
   line-height: inherit;
   color: inherit;
@@ -440,8 +559,10 @@ button {
  * 'mono' font family.
  */
 
-
-code {
+pre,
+code,
+kbd,
+samp {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -453,7 +574,14 @@ code {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   vertical-align: middle;
 }
@@ -465,7 +593,8 @@ img {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -498,8 +627,8 @@ img {
   }
 }
 
-.bg-gray-500 {
-  background-color: #a0aec0;
+.bg-gray-400 {
+  background-color: #cbd5e0;
 }
 
 .bg-green-500 {
@@ -544,10 +673,6 @@ img {
 
 .border-b-4 {
   border-bottom-width: 4px;
-}
-
-.border-t {
-  border-top-width: 1px;
 }
 
 .block {
@@ -708,9 +833,9 @@ img {
   padding: 0.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .px-5 {
@@ -806,26 +931,14 @@ img {
   width: 100%;
 }
 
-.markdown-body ul {
-  list-style-type: disk;
-}
-
-.markdown-body {
-  box-sizing: border-box;
-  min-width: 200px;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
 @media (min-width: 768px) {
 
   .md\:inline {
     display: inline;
   }
 
-  .md\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+  .md\:mt-6 {
+    margin-top: 1.5rem;
   }
 
   .md\:text-xl {
