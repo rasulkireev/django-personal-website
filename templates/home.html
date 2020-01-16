@@ -19,7 +19,7 @@
 {% block content %}
       
   <section>
-      <h1 class="text-3xl font-bold">Recent Writings</h1><a class="text-blue-700" href="{% url 'all_posts' %}">See all</a>
+      <h1 class="text-3xl font-bold">Recent Writings <a class="text-lg font-normal text-blue-700" href="{% url 'all_posts' %}">See all</a></h1>
       <hr class="mb-4">
       <ul>
         {% for post in post_list %}
