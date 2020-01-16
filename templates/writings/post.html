@@ -57,45 +57,4 @@
         
     </article>
     
-    <!-- <section class="add-comment-section">
-        <h1>If you have any thoughts, please leave a reply</h1>
-        <hr>
-        <form class="" id="" action="{% url 'add-comment' post.slug %}" method="post">{% csrf_token %}
-            {{ form.non_field_errors }}
-        
-            <div class="form-field">
-                {{ form.author.errors }}
-                <label class="" for="{{ form.author.id_for_label }}">Username</label>
-                <div class="">{{ form.author }}</div>
-            </div>
-
-            <div class="form-field">
-                {{ form.author_email.errors }}
-                <label class="" for="{{ form.author_email.id_for_label }}">Email address <span class="private-field">(Private, for my eyes only)</span></label>
-                <div>{{ form.author_email }}</div>
-            </div>
-
-            <div class="form-field">
-                {{ form.text.errors }}
-                <label class="" for="{{ form.text.id_for_label }}">Comment</label>
-                <div>{{ form.text }}</div>
-            </div>
-
-            <button type="submit" class="">Add Comment</button>
-        </form>
-    </section>
-
-    <section class='comments-section'>
-        <h1>Comments</h1>
-        <hr>
-        {% for comment in comments %}
-        <div class="comment">
-            <p class="author">{{ comment.author }} ({{ comment.created_date }})</p>
-            <p class="text">{{ comment.text|linebreaks }}</p>
-        </div>
-        {% empty %}
-            <p>No comments here yet :(</p>
-        {% endfor %}
-    </section> -->
-
 {% endblock content %}
