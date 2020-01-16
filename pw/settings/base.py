@@ -37,14 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sites', 
     'django.contrib.sitemaps',
 
-    'pages.apps.PagesConfig',
-    'now.apps.NowConfig',
-    'wiltw.apps.WiltwConfig',
-    'writings.apps.WritingsConfig',
-    'books.apps.BooksConfig',
-    'health.apps.HealthConfig',
-    'api.apps.ApiConfig',
-
     'mentions',
     'rest_framework',
     'martor',
@@ -52,6 +44,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'analytical',
     'taggit',
+
+    'pages.apps.PagesConfig',
+    'now.apps.NowConfig',
+    'writings.apps.WritingsConfig',
+    'api.apps.ApiConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -69,9 +67,9 @@ MIDDLEWARE = [
 
 # DRF
 REST_FRAMEWORK = {
-'DEFAULT_PERMISSION_CLASSES': [
-'rest_framework.permissions.AllowAny',
-]
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
 }
 
 ### Dealing with CORS errors (connection to AWS S3)
@@ -139,7 +137,7 @@ GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-222222-2'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -155,8 +153,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 
 SITE_ID = 1
-
-
 
 # CELERY
 BROKER_URL = 'redis://localhost:6379'
