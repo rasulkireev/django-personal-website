@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
 {% load static %}
+{% extends 'base.html' %}
 
 {% block meta %}
     <!-- Other meta stuff -->
@@ -24,12 +24,6 @@
     <meta name="twitter:image" content="{{ post.main_image.url }}">
     {% endif %}
 {% endblock %}
-
-{% block github.css %}
-    <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
-{% endblock %}
-
-
 
 {% block title %}{{post.title}}{% endblock %}
 

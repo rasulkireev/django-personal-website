@@ -45,7 +45,8 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="{% static 'css/final.css' %}">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
+    <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
+    
     <title>{% block title %}Rasul Kireev | Personal Website{% endblock %}</title>
 
     {% block d3.js %}
@@ -53,9 +54,7 @@
       {# Plus any additional styling for D3 chart #}
     {% endblock %}
 
-    {% block github.css %}
-      {# Additional CSS for Posts #}
-    {% endblock %}
+    {% block github-css %}{% endblock %}
 
     {% analytical_head_bottom %}
   </head>
