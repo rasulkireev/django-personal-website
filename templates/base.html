@@ -57,35 +57,43 @@
     {% analytical_head_bottom %}
   </head>
   
-  <body class="">
+  <body class="leading-relaxed">
     {% analytical_body_top %}
-      <div class="container flex flex-col max-w-4xl px-5 mx-auto mt-2">
-        <header class="h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">                  
-          <h1 class="inline-block"><a class="text-5xl font-semibold no-underline p-name u-url" href="{% url 'home' %}">Rasul Kireev</a></h1>
-          <a class="u-url" href="{% url 'home' %}">
-            <img class="float-left w-20 h-20 p-1 align-middle rounded-full md:w-40 md:h-40 u-photo" src="https://avatars.githubusercontent.com/u/8257474">
-          </a>
-          <div>
-            <a class="mr-1"href="{% url 'about' %}">About</a>
-            <a class="mr-1" href="{% url 'all_posts' %}">Writings</a>
-            <a class="mr-1" href="{% url 'now' %}">Now</a>
-          </div>
-          
-          <div class="p-2 mx-auto mb-4 bg-gray-200 rounded-lg ">
-            <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
-            An IndieWeb Webring 🕸💍
-            <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a>
-          </div>
-          
-          <a class="block w-24 px-2 py-1 mx-auto mb-4 text-center text-white bg-green-700 rounded-lg hover:bg-green-600" href="https://rasulkireev.substack.com/">
-            Subscribe
-          </a>
-        </header>
+    <div class="container flex flex-col max-w-2xl px-5 mx-auto my-4 md:my-10">
       
-          {% block content %}
-          {% endblock %}
-
-      {% analytical_body_bottom %}
+      <header class="flex flex-row items-start mb-2 h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">                  
+        <a class="u-url" href="{% url 'home' %}">
+          <img class="float-left w-20 h-20 mx-auto mt-2 mr-4 rounded-full shadow md:inline u-photo" src="https://avatars.githubusercontent.com/u/8257474">
+        </a>
+        <div class="mt-0">
+          <h1 class="inline-block"><a class="mb-2 text-3xl font-semibold no-underline p-name u-url" href="{% url 'home' %}">Rasul Kireev</a></h1>
+          
+          <nav class="mb-2">
+            <a class="mr-1 text-lg text-blue-700" href="{% url 'about' %}">About</a>
+            <a class="mr-1 text-lg text-blue-700" href="{% url 'all_posts' %}">Writings</a>
+            <a class="mr-1 text-lg text-blue-700" href="{% url 'now' %}">Now</a>
+          </nav>
+          <div class="mb-2">
+            <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
+            <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
+            <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
+            <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
+          </div>
+        </div>
+      </header>     
+        
+        {% block content %}
+        {% endblock %}
+              
+      <footer class="flex flex-col items-center justify-between w-full py-4 border-t border-grey pin-b">
+        <a class="block w-full p-2 mb-4 text-center text-white bg-green-300 rounded-lg md:w-1/2 hover:bg-green-600" href="https://rasulkireev.substack.com/">Subscribe</a>
+        <div class="w-full p-2 mb-4 text-center bg-gray-200 rounded-lg md:w-1/2 ">
+          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+          An IndieWeb Webring 🕸💍
+          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a>
+        </div>
+      </footer>
     </div>
+    {% analytical_body_bottom %}
   </body>
 </html>

@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from health.models import WeightMeasurement
+from writings.models import Post
 
 
-class WeightSerializer(serializers.ModelSerializer):
+class WritingsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = WeightMeasurement
-        fields = ('date_and_time', 'weight')
+        model = Post
+        fields = ('title', 'date', 'category', 'description','body')

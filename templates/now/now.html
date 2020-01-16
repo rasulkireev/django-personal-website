@@ -24,7 +24,7 @@
 
 {% block content %}
 
-    <section class="now h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <section class="mb-6 h-entry" itemscope itemtype="http://schema.org/BlogPosting">
       <!-- Author description -->
       <div style="display: none;" itemprop="author" itemscope itemtype="http://schema.org/Person">
         Published by 
@@ -32,17 +32,17 @@
         <img class="u-photo" src="{{ MEDIA_URL }}my_photo.jpg" height="200px" itemprop="image">
       </div>
 
-      <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl p-name" itemprop="name">This is what I am up to <strong>Now</strong></h1>
-      <p class="mb-4 text-xl text-gray-600">Updated on <time class="dt-published" itemprop="dateCreated" datetime="{{ now.title }}">{{ now.title }}</time></p>
+      <h1 class="text-3xl p-name" itemprop="name">This is what I am up to <strong>Now</strong></h1>
       <p class="mb-4">(This is a <a class="" href="https://nownownow.com/">now</a> page, and if you have your own site, <a class="now-description" href="https://nownownow.com/about">you should make one</a>, too.)</p>
+      <p class="m-0 text-sm text-gray-600">Updated on <time class="dt-published" itemprop="dateCreated" datetime="{{ now.title }}">{{ now.title }}</time></p>
       <a class="u-url" href="/now/" style="display: none;" itemprop="url"></a>
+      <hr class="mb-4">
       
-      <hr>
-
-      <div class="pb-6 border-b-4 border-blue-600 markdown-body post-body e-content" itemprop="articleBody">
+      <div class="markdown-body post-body e-content" itemprop="articleBody">
         {{ now.body | safe_markdown }}
       </div>
-        <p class="mt-4 text-4xl"><a href={% url 'archive' %}>Archive</a></p>
     </section>
+    
+    <!-- <a class="text-blue-700 underline" href={% url 'archive' %}>Archive</a> -->
 
 {% endblock content %}

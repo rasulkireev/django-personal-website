@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import WeightAPIView
+from .views import WritingsAPIView
 
 
 urlpatterns = [
-    path('weight/', WeightAPIView.as_view()),
+    path('writings/', WritingsAPIView.as_view()),
     ]

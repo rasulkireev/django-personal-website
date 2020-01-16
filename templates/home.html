@@ -17,17 +17,9 @@
 {% endblock %}
 
 {% block content %}
-
-<!-- <p class="mb-4 text-xl leading-normal md:leading-none p-note">In constant beta mode. Currently learning to build web apps, create beutiful visualizations and analyze large datasets.</p>
-<div class="social">
-  <a rel="me" href="https://twitter.com/rasulkireev"><i class="lab la-twitter"></i></a>
-  <a rel="me" href="https://github.com/rasulkireev"><i class="lab la-github"></i></a>
-  <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="lab la-linkedin-in"></i></a>
-  <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="las la-at"></i></a>
-</div> -->
-        
+      
   <section>
-      <h1 class="text-4xl">Recent Writings</h1><a href="{% url 'all_posts' %}">See all</a>
+      <h1 class="text-3xl font-bold">Recent Writings</h1><a class="text-blue-700" href="{% url 'all_posts' %}">See all</a>
       <hr class="mb-4">
       <ul>
         {% for post in post_list %}
