@@ -36,16 +36,35 @@ class AddComment(CreateView):
         return super(AddComment, self).form_valid(form)
 
     
-class DjangoLatestEntriesFeed(Feed):
-    title = "Django Writintgs"
-    link = "/django-rss/"
-    description = "These are posts about my experiences learning and working with Django."
+class WritingsFeed(Feed):
+    title = "Rasul Kireev | Writintgs"
+    link = "/feed/"
 
     def items(self):
-        return Post.objects.filter(category="Django").order_by('-date')
-
+        return Post.objects.order_by('-date')
+   
     def item_title(self, item):
         return item.title
 
     def item_description(self, item):
         return item.description
+
+    def item_pubdate(self, item):
+        return item.date
+        
+class DjangoLatestEntriesFeed(Feed):
+    title = "Django Writintgs"
+    link = "/djangofeed/"
+    description = "These are posts about my experiences learning and working with Django."
+
+    def items(self):
+        return Post.objects.filter(category="Django").order_by('-date')
+        
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.description
+
+    def item_pubdate(self, item):
+        return item.date
