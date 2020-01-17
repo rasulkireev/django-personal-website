@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
     'django.contrib.sites', 
     'django.contrib.sitemaps',
-    'django.contrib.flatpages',
 
     'mentions',
     'rest_framework',
