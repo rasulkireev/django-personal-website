@@ -12,19 +12,34 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+)
+# reading .env file
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mkds9d*k7-1rjr(ua)=insg1yio_@p&=@lqe)u7k1s_sfwc5)y'
+# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+SECRET_KEY = env('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'TRUE'
-ALLOWED_HOSTS =['*']
+# False if not in os.environ
+DEBUG = env('DEBUG')
+
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 INSTALLED_APPS = [
@@ -101,15 +116,8 @@ WSGI_APPLICATION = 'pw.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dj_pw',
-        'USER': 'rk_admin',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+    'default': env.db()
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -130,7 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Web traffic & Analytics
-GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-222222-2'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -145,20 +153,58 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
-
 SITE_ID = 1
 
-# CELERY
-BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+# Celery application definition
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
 CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'America/New_York'
 DOMAIN_NAME = 'rasulkireev.com'
+
+# Sentry Error Tracking
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+if not DEBUG:
+    sentry_sdk.init(
+        dsn=env('dsn'),
+        integrations=[DjangoIntegration()]
+    )
+
+# Google Analytics
+if not DEBUG:
+    GOOGLE_ANALYTICS_PROPERTY_ID = env('GOOGLE_ANALYTICS_PROPERTY_ID')
+    ANALYTICAL_INTERNAL_IPS = env.list('ANALYTICAL_INTERNAL_IPS')
+
+
+# AWS S3
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+# Media and Static Settings
+if DEBUG:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
+
+if not DEBUG:
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'pw.storage_backends.StaticStorage'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+
+
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'pw.storage_backends.MediaStorage'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
