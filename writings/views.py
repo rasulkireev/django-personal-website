@@ -4,6 +4,8 @@ from django.shortcuts import render
 from .models import Post, Comment
 from .forms import CommentForm
 from django.urls import reverse
+from mentions.models.webmention import Webmention
+from mentions.tasks.outgoing_webmentions import process_outgoing_webmentions
 
 
 class PostListView(ListView):
@@ -18,8 +20,8 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         current_post = Post.objects.get(slug=self.kwargs['slug'])
         context = super().get_context_data(**kwargs)
-        context ['comments'] = Comment.objects.filter(post_id=current_post.id)
-        context['form'] = CommentForm()
+        context ['webmentions'] = Webmention.objects.all()
+
         return context
 
 class AddComment(CreateView):
