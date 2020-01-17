@@ -8,33 +8,40 @@
     <meta property="og:title" content="Rasul Kireev">
     <meta property="og:type" content="article">
     <meta property="og:description" content="My peronal page to document my life journey.">
-    <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+    <meta name="og:image" content="https://avatars.githubusercontent.com/u/8257474">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Rasul Kireev">
     <meta name="twitter:description" content="My peronal page to document my life journey">
-    <meta name="twitter:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/8257474">
 {% endblock %}
 
 {% block content %}
      
-
-<div class="mb-2">
-  <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
-  <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
-  <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
-  <a rel="me" href="https://keybase.io/rasulkireev"><i class="text-3xl lab la-keybase"></i></a>
-  <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
+<div class="mx-auto text-xl md:flex md:flex-row md:items-center">
+  <div class="max-w-sm mr-10">
+    <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Hey, I'm Rasul</h1>
+    <p class="mb-6 text-xl">
+      I'm a front end software developer working on open source and writing about modern JavaScript, Node.js, and development. 
+      <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="{% url 'about' %}">Read More</a>
+    </p>
+    <div class="">
+      <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
+      <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
+      <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
+      <a rel="me" href="https://keybase.io/rasulkireev"><i class="text-3xl lab la-keybase"></i></a>
+      <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
+    </div>
+  </div>
+  
+  <div class="flex flex-col items-center p-6 my-8 text-center bg-gray-300 rounded-lg md:p-8 md:m-0">
+    <img class="w-32 mb-6 rounded-lg" src="https://avatars.githubusercontent.com/u/8257474" alt="Rasul">
+    <div class="">
+      <h3 class="mx-3 text-2xl font-bold">Get updates</h3>
+      <p class="max-w-4xl mb-6 text-lg">Open source projects and development tutorials.</p>
+      <a class="inline-block px-4 py-3 font-bold leading-none text-center text-white no-underline align-middle bg-green-400 border-2 border-green-400 border-solid rounded cursor-pointer" href="https://rasulkireev.substack.com/">Subscribe</a>
+    </div>
+  </div>
 </div>
-
-    
-<section class="">
-  <h1 class="text-3xl font-bold">About</h1>
-  <hr class="mb-2">
-  <p class="mb-3 text-xl">I started this website as a place to document everything I learn while on my path to become a Data Scientist and an Indie maker and generally a good person. I am trying to make a habit of writing about everything I learn.</p>
-  <p class="mb-3 text-xl">My current goal is to find an entry level job in the Data Science field. I also want to make a useful product/app that would be useful to people but would also create an additional independent income stream, to support my family, financially.</p>
-  <p class="mb-3 text-xl">When I am not applying to jobs, connecting with people, or creating things, I enjoy spending time with my wife, Tania. We like to walk, travel, discover new places among other many things.</p>
-  <p class="mb-3 text-xl">We also enjoy photography and are looking for subjects to improve our photography skills. If you would be interested in this please contact us. Here is our portfolio.</p>
-</section>
 
 {% endblock content %}
