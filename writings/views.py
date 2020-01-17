@@ -36,23 +36,6 @@ class AddComment(CreateView):
         form.instance.slug = current_post.slug
         form.instance.post_id = current_post.id
         return super(AddComment, self).form_valid(form)
-
-    
-class WritingsFeed(Feed):
-    title = "Rasul Kireev | Writintgs"
-    link = "/feed/"
-
-    def items(self):
-        return Post.objects.order_by('-date')
-   
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return item.description
-
-    def item_pubdate(self, item):
-        return item.date
         
 class DjangoLatestEntriesFeed(Feed):
     title = "Django Writintgs"

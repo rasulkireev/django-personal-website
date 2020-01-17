@@ -27,21 +27,14 @@
   <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
 </div>
 
-<a class="block w-full p-2 mb-4 text-center text-white bg-green-500 rounded-lg md:w-1/2 hover:bg-green-800" href="https://rasulkireev.substack.com/">Subscribe</a>
     
-  <section>
-      <h1 class="text-3xl font-bold">Recent Writings <a class="text-lg font-normal text-blue-700" href="{% url 'all_posts' %}">See all</a></h1>
-      <hr class="mb-4">
-      <ul>
-        {% for post in post_list %}
-          {% if post.draft == False %}
-            <li class="mb-4 text-xl">
-              <img class="inline w-8 align-middle" src="{% get_media_prefix %}{{post.cover}}" width="30" height="30">
-              <a class="text-blue-700" href="{% url 'post' post.slug %}"> {{post.title}} </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-  </section>
+<section class="">
+  <h1 class="text-3xl font-bold">About</h1>
+  <hr class="mb-2">
+  <p class="mb-3 text-xl">I started this website as a place to document everything I learn while on my path to become a Data Scientist and an Indie maker and generally a good person. I am trying to make a habit of writing about everything I learn.</p>
+  <p class="mb-3 text-xl">My current goal is to find an entry level job in the Data Science field. I also want to make a useful product/app that would be useful to people but would also create an additional independent income stream, to support my family, financially.</p>
+  <p class="mb-3 text-xl">When I am not applying to jobs, connecting with people, or creating things, I enjoy spending time with my wife, Tania. We like to walk, travel, discover new places among other many things.</p>
+  <p class="mb-3 text-xl">We also enjoy photography and are looking for subjects to improve our photography skills. If you would be interested in this please contact us. Here is our portfolio.</p>
+</section>
 
 {% endblock content %}

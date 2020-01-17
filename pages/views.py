@@ -1,3 +1,4 @@
+from django.contrib.syndication.views import Feed
 from django.shortcuts import render
 from django.views.generic import TemplateView # This is specific to this tutorial https://djangoforbeginners.com/pages-app/ . Learn about these built-in functions
 from writings.models import Post
@@ -14,3 +15,20 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'about.html'
+
+
+class WritingsFeed(Feed):
+    title = "Rasul Kireev | Writintgs"
+    link = "/rss.xml"
+
+    def items(self):
+        return Post.objects.order_by('-date')
+   
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.description
+
+    def item_pubdate(self, item):
+        return item.date
