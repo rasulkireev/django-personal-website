@@ -57,48 +57,41 @@
     {% analytical_head_bottom %}
   </head>
   
-  <body class="leading-relaxed">
+  <body class="max-w-2xl mx-auto leading-relaxed">
     {% analytical_body_top %}
-    <div class="container flex flex-col max-w-2xl px-5 mx-auto my-4 md:mt-6">
+    <div class="container flex flex-col px-5 my-4 md:mt-6">
       
-      <header class="flex flex-row items-start mb-2 h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">                  
-        <a class="u-url" href="{% url 'home' %}">
-          <img class="float-left w-20 h-20 mx-auto mt-2 mr-4 rounded-full shadow md:inline u-photo" src="https://avatars.githubusercontent.com/u/8257474">
-        </a>
-        <div class="mt-0">
-          <h1 class="inline-block"><a class="mb-2 text-3xl font-semibold no-underline p-name u-url" href="{% url 'home' %}">Rasul Kireev</a></h1>
-          
-          <nav class="mb-2">
-            <a class="mr-1 text-lg text-blue-700" href="{% url 'about' %}">About</a>
-            <a class="mr-1 text-lg text-blue-700" href="{% url 'all_posts' %}">Writings</a>
-            <a class="mr-1 text-lg text-blue-700" href="{% url 'now' %}">Now</a>
-          </nav>
-          <div class="mb-2">
-            <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
-            <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
-            <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
-            <a rel="me" href="https://keybase.io/rasulkireev"><i class="text-3xl lab la-keybase"></i></a>
-            <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
+      <header class="fixed top-0 left-0 z-10 w-full bg-white h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">      
+        <div class="flex flex-row items-center justify-between h-16 max-w-2xl px-6 m-auto md:h-24">
+          <div class="brand">
+            <a class="flex flex-row items-center u-url" href="{% url 'home' %}">
+              <img class="w-8 h-8 mx-auto mr-2 rounded-lg shadow u-photo" src="https://avatars.githubusercontent.com/u/8257474">
+              <h1 class="hidden text-xl font-semibold no-underline md:block p-name u-url">Rasul Kireev</h1>
+            </a>
           </div>
-        </div>
-      </header>     
+          
+          <nav class="flex flex-row items-center justify-end flex-1 m-0 mb-2">
+            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'about' %}">About</a>
+            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'all_posts' %}">Writings</a>
+            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'now' %}">Now</a>
+          </nav>
 
-      <div>
-        <a class="block w-full p-2 mb-4 text-center text-white bg-green-500 rounded-lg md:w-1/2 hover:bg-green-800" href="https://rasulkireev.substack.com/">Subscribe</a>
-        <div class="w-full p-2 mb-4 text-center bg-gray-400 rounded-lg md:w-1/2 ">
-          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
-          An IndieWeb Webring 🕸💍
-          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a>
-        </div>
       </div>
-      
-       <div class="mb-3">
+      </header>     
+     
+       <div class="my-20">
         {% block content %}
         {% endblock %}
       </div>
 
-      <!-- <footer class="flex flex-col justify-between w-full py-2 pin-b">
-      </footer> -->
+      <footer class="flex flex-col items-center justify-between w-full py-2 pin-b">
+        <div class="w-full p-1 mb-4 text-center rounded-lg md:w-1/2 ">
+          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+          An IndieWeb Webring 🕸💍
+          <a href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a>
+        </div>
+      </footer>
+      
     </div>
     {% analytical_body_bottom %}
   </body>
