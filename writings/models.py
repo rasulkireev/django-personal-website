@@ -24,8 +24,8 @@ class Post(MentionableMixin, models.Model):
     def __str__(self):
         return "(Draft = " + str(self.draft) + ") " + self.category + ': ' + self.title
 
-    def get_absolute_url(self):
-        return reverse('post', args=[self.slug])
+    def get_absolute_url(self) -> str:
+        return reverse('post', kwargs={'slug': self.slug})
 
 class Comment(models.Model):
     post = models.ForeignKey('writings.Post', on_delete=models.CASCADE, related_name="comments")
