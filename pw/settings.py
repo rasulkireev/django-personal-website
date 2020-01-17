@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites', 
     'django.contrib.sitemaps',
+    'django.contrib.flatpages',
 
     'mentions',
     'rest_framework',
@@ -103,7 +104,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #here add your context Processors
                 'django.template.context_processors.media',
             ],
         },

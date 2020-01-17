@@ -40,6 +40,7 @@ urlpatterns = [
     path('rk-admin/', admin.site.urls),
     path('', include('pages.urls')),
 
+
     path('now/', include('now.urls')),
     path('writings/', include('writings.urls')),
     path('api/v1/', include('api.urls')),
@@ -48,6 +49,7 @@ urlpatterns = [
     path('sentry-debug/', trigger_error),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('webmentions/', include('mentions.urls')),
+    path('pages/', include('django.contrib.flatpages.urls')),
 
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
