@@ -42,13 +42,13 @@
         </div>
       
         <!-- Post Info -->
-        <h1 class="text-3xl p-name" itemprop="name">{{ post.title }}</h1>
+        <h1 class="text-3xl font-bold p-name" itemprop="name">{{ post.title }}</h1>
         <h2 class="p-category" style="display: none;" itemprop="about">{{ post.category }}</h2>
         <a class="u-url" href="{{ post.get_absolute_url }}" style="display: none;" itemprop="url"></a>
         <p class="m-0 text-sm text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
         <p class="p-summary" style="display: none;" itemprop="abstract">{{ post.description }}</p>
         
-        <hr class="mb-4">
+        <hr class="mb-2">
       
         <!-- Article Body -->
         <div class="markdown-body e-content post-body" itemprop="articleBody">
