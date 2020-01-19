@@ -20,23 +20,22 @@
 
 <section id="blog-posts" >
 
-  <h1 class="text-3xl font-bold">
+  <h1 class="mb-4 text-2xl font-semibold">
     Writings
-    <a class="mx-1 text-lg font-normal text-blue-500" href="{% url 'writings-json' %}">JSON</a>
+    <a class="mx-1 text-sm font-normal text-blue-500" href="{% url 'writings-json' %}">JSON</a>
   </h1>
-  <hr class="mb-4">
 
-    <ul>
       {% for post in object_list %}
       {% if post.draft == False %}
-        <li class="mb-4 text-xl" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          <img class="inline w-8 align-middle" src="{{MEDIA_URL}}{{post.cover}}" width="30" height="30">
-          <a class="text-blue-700" href="{% url 'post' post.slug %}">{{ post.title }}</a>
-        </li>
+      <div class="flex flex-row p-1 mb-1 text-xl border-b-2 border-gray-300 rounded hover:bg-gray-200" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <img class="inline w-16 h-16 p-2 mr-4 align-middle" src="{{MEDIA_URL}}{{ post.cover }}">
+        <div>
+          <a class="text-sm text-gray-600 md:text-lg hover:text-gray-900" href="{% url 'post' post.slug %}">{{ post.title }}</a>
+          <p class="m-0 text-xs text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
+        </div>
+      </div>
       {% endif %}
       {% endfor %}
-    </ul>
-
 </section>
 
 

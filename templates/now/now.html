@@ -19,10 +19,7 @@
     <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
 {% endblock %}
 
-{% block title %}Now{% endblock %}
-
 {% load martortags %}
-
 
 {% block content %}
 
@@ -34,7 +31,7 @@
         <img class="u-photo" src="{{ MEDIA_URL }}my_photo.jpg" height="200px" itemprop="image">
       </div>
 
-      <h1 class="text-3xl p-name" itemprop="name">This is what I am up to <strong>Now</strong></h1>
+      <h1 class="text-2xl font-semibold p-name" itemprop="name">This is what I am up to <strong>Now</strong></h1>
       <p class="mb-4">(This is a <a class="" href="https://nownownow.com/">now</a> page, and if you have your own site, <a class="now-description" href="https://nownownow.com/about">you should make one</a>, too.)</p>
       <p class="m-0 text-sm text-gray-600">Updated on <time class="dt-published" itemprop="dateCreated" datetime="{{ now.title }}">{{ now.title }}</time></p>
       <a class="u-url" href="/now/" style="display: none;" itemprop="url"></a>
