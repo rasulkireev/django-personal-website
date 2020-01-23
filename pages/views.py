@@ -19,10 +19,10 @@ class AboutPageView(TemplateView):
 
 class WritingsFeed(Feed):
     title = "Rasul Kireev | Writintgs"
-    link = "/rss.xml"
+    link = "/rss/"
 
     def items(self):
-        return Post.objects.order_by('-date')
+        return Post.objects.filter(draft="False").order_by('-date')
    
     def item_title(self, item):
         return item.title

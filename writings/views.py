@@ -43,7 +43,7 @@ class DjangoLatestEntriesFeed(Feed):
     description = "These are posts about my experiences learning and working with Django."
 
     def items(self):
-        return Post.objects.filter(category="Django").order_by('-date')
+        return Post.objects.filter(category="Django", draft="False").order_by('-date')
         
     def item_title(self, item):
         return item.title
