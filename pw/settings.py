@@ -162,7 +162,10 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'America/New_York'
+
+# WebMention Support
 DOMAIN_NAME = 'rasulkireev.com'
+WEBMENTIONS_AUTO_APPROVE = True
 
 # Sentry Error Tracking
 import sentry_sdk
