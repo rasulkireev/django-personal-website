@@ -9,7 +9,7 @@ from django.forms import ModelForm
 class Post(MentionableMixin, models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200, blank=True)
-    slug = AutoSlugField(populate_from='title', unique_with='title', always_update=True)
+    slug = models.SlugField()
     draft = models.BooleanField(default = False)
     body = models.TextField()
     cover = models.ImageField(upload_to='post-images/', blank=True)

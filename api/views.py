@@ -4,5 +4,5 @@ from .serializers import WritingsSerializer
 
 
 class WritingsAPIView(generics.ListAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(draft="False")
     serializer_class = WritingsSerializer
