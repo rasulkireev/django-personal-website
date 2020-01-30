@@ -28,6 +28,11 @@
 
 {% block title %}{{post.title}}{% endblock %}
 
+{% block martor_css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock martor_css %}
 
 {% block content %}
 
@@ -59,3 +64,14 @@
     </article>
     
 {% endblock content %}
+
+{% block martor.js %}
+    <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+    <script>
+    $('pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+    $('.ui.dropdown').dropdown();
+    </script>
+{% endblock martor.js %}
