@@ -16,6 +16,9 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
+class FavouritePageView(TemplateView):
+    template_name = 'favourites.html'
+
 
 class WritingsFeed(Feed):
     title = "Rasul Kireev | Writintgs"
