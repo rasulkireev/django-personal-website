@@ -175,7 +175,7 @@ MARTOR_ENABLE_CONFIGS = {
     'emoji': 'true',       # to enable/disable emoji icons.
     'mention': 'true',   # to enable/disable mention
     'jquery': 'true',    # to include/revoke jquery (require for admin default django)
-    'living': 'true',     # to enable/disable live updates in preview
+    'living': 'false',     # to enable/disable live updates in preview
     'spellcheck': 'true',  # to enable/disable spellcheck in form textareas
     'hljs': 'true',        # to enable/disable hljs highlighting in preview
 }
