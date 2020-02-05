@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import environ
+import time
+
 
 env = environ.Env(
     # set casting, default value
@@ -167,6 +169,24 @@ CELERY_TIMEZONE = 'America/New_York'
 DOMAIN_NAME = 'rasulkireev.com'
 WEBMENTIONS_AUTO_APPROVE = True
 
+# Martor
+MARTOR_ENABLE_CONFIGS = {
+    'imgur': 'true',     # to enable/disable imgur uploader/custom uploader.
+    'emoji': 'true',       # to enable/disable emoji icons.
+    'mention': 'true',   # to enable/disable mention
+    'jquery': 'true',    # to include/revoke jquery (require for admin default django)
+    'living': 'true',     # to enable/disable live updates in preview
+    'spellcheck': 'true',  # to enable/disable spellcheck in form textareas
+    'hljs': 'true',        # to enable/disable hljs highlighting in preview
+}
+
+MARTOR_UPLOAD_PATH = 'images/uploads/{}'.format(time.strftime("%Y/%m/%d/"))
+MARTOR_UPLOAD_URL = '/api/uploader/'  # change to local uploader
+
+MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
+
+
+
 # Sentry Error Tracking
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -206,7 +226,6 @@ if not DEBUG:
     STATICFILES_LOCATION = 'static'
     STATICFILES_STORAGE = 'pw.storage_backends.StaticStorage'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-
 
     MEDIAFILES_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'pw.storage_backends.MediaStorage'

@@ -28,13 +28,13 @@
       {% for post in object_list %}
       {% if post.draft == False %}
       <div class="mb-1">
-        <div class="flex flex-row p-1 text-xl rounded-lg hover:bg-gray-200" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <a class="flex flex-row items-center p-1 text-xl text-gray-900 rounded-lg hover:bg-gray-200" href="{% url 'post' post.slug %}" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
           <img class="inline w-16 h-16 p-2 mr-4 align-middle" src="{{MEDIA_URL}}{{ post.cover }}">
-          <div>
-            <a class="text-sm text-gray-900 md:text-lg" href="{% url 'post' post.slug %}">{{ post.title }}</a>
+          <div class="">
+            <p class="text-sm md:text-lg">{{ post.title }}</p>
             <p class="m-0 text-xs text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
           </div>
-        </div>
+        </a>
       </div>
 
       {% endif %}

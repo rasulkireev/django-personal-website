@@ -21,8 +21,10 @@ from django.conf.urls.static import static
 # Sitemap imports
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import GenericSitemap
-from writings.models import Post
 from .sitemaps import StaticViewSitemap
+
+from writings.models import Post
+from writings.views import markdown_uploader
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -50,6 +52,8 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('webmentions/', include('mentions.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
+
+    path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
 
  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
