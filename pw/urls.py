@@ -46,6 +46,7 @@ urlpatterns = [
     path('now/', include('now.urls')),
     path('writings/', include('writings.urls')),
     path('api/v1/', include('api.urls')),
+    path('newsletter/', include('newsletter.urls')),
     
     path('martor/', include('martor.urls')),
     path('sentry-debug/', trigger_error),

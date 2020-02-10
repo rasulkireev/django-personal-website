@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'now.apps.NowConfig',
     'writings.apps.WritingsConfig',
     'api.apps.ApiConfig',
+    'newsletter.apps.NewsletterConfig',
 
 ]
 
