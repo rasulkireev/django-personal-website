@@ -47,3 +47,11 @@ class WritingsFeed(Feed):
 
     def item_pubdate(self, item):
         return item.date
+
+
+
+class ExperimentsPageView(TemplateView):
+    template_name = 'experiments/experiments-list.html'
+
+class FirstD3PageView(TemplateView):
+    template_name = 'experiments/first-d3-chart.html'
