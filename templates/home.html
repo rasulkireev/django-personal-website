@@ -18,8 +18,8 @@
 
 {% block content %}
      
-<div class="mx-auto mb-10 text-xl md:flex md:flex-row md:items-center">
-  <div class="max-w-sm mr-10">
+<div class="mx-auto mb-10 text-xl">
+  <div>
     <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Hey, I'm Rasul</h1>
     <p class="mb-4 text-xl">
       Currently learning to build web apps, create beautiful visualizations and analyze large datasets. In constant beta mode. Trying to write about my learnings more often.
@@ -28,47 +28,49 @@
     <p class="mb-4 text-xl">
       Also, check out a <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="{% url 'favourites' %}">list of my favourite things</a>. Currently only podcast episodes.
     </p>
-    <div class="">
-      <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
-      <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
-      <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
-      <a rel="me" href="https://keybase.io/rasulkireev"><i class="text-3xl lab la-keybase"></i></a>
-      <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
-    </div>
   </div>
   
-  <div class="flex flex-col items-center p-6 my-8 text-center bg-gray-300 rounded-lg md:p-8 md:m-0">
-    <img class="w-32 mb-6 rounded-lg" src="https://avatars.githubusercontent.com/u/8257474" alt="Rasul">
-    <div class="">
-      <h3 class="mx-3 text-2xl font-bold">Get updates</h3>
-      <p class="max-w-4xl mb-2 text-lg">Open source projects and latest posts.</p>
-      
-      {% if messages %}
-          {% for message in messages %}
-              <div class="p-2 mb-2 border border-green-700 rounded ">
-                <p class="text-green-700">{{ message }}</p>
-              </div>
-          {% endfor %}
-      {% endif %}
+  <div class="mb-4">
+    <a rel="me" href="https://twitter.com/rasulkireev"><i class="text-3xl lab la-twitter"></i></a>
+    <a rel="me" href="https://github.com/rasulkireev"><i class="text-3xl lab la-github"></i></a>
+    <a rel="me" href="https://www.linkedin.com/in/rasul-kireev/"><i class="text-3xl lab la-linkedin-in"></i></a>
+    <a rel="me" href="https://keybase.io/rasulkireev"><i class="text-3xl lab la-keybase"></i></a>
+    <a rel="me" class="u-email" href="mailto:me@rasulkireev.com"><i class="text-3xl las la-at"></i></a>
+  </div>
 
-      <form id="" class="" method="post" enctype="multipart/form-data" action="{% url 'newsletter-home' %}">{% csrf_token %}
+  {% if messages %}
+    {% for message in messages %}
+        <div class="p-2 mb-2 border border-green-700 rounded ">
+          <p class="text-green-700">{{ message }}</p>
+        </div>
+    {% endfor %}
+  {% endif %}
+
+
+  <div class="p-4 mb-6 border-2 border-green-300 rounded">
+    <p class="mb-2">
+      Finally, consider signing up for my monthly newsletter. I will update you on the latest articles and any interesting articles and resources I've encountered.
+    </p>
+      
+    <div class="mb-2">
+      
+      <form id="" class="flex flex-col md:flex-row" method="post" enctype="multipart/form-data" action="{% url 'home-newsletter' %}">{% csrf_token %}
         {{ email_form.non_field_errors }}
 
-        <div class="mb-2">
-          {{ email_form.user_email.errors }}
-          {{ email_form.user_email }}
-        </div>
+        {{ email_form.user_email.errors }}
+        <input type="email" name="user_email" maxlength="254"
+        class="w-full p-1 mb-2 leading-tight text-gray-800 bg-gray-200 border border-gray-500 rounded appearance-none md:h-10 focus:outline-none focus:bg-white md:w-64" 
+        required="" id="id_user_email">
 
-        <button class="w-full px-2 py-1 text-lg font-semibold text-center text-white no-underline bg-green-500 rounded cursor-pointer">
+        <button class="w-full text-lg font-semibold text-center text-white no-underline bg-green-500 border border-green-500 rounded cursor-pointer md:ml-2 md:h-10 sm:w-32">
           Subscribe
         </button>
-      </form>
-
+      </form>      
     </div>
   </div>
-</div>
 
-<section id="blog-posts">
+<div class="flex flex-row justify-between">
+  <section id="blog-posts">
     <h1 class="flex items-center pl-1 mb-4 text-2xl font-semibold">
       Recent Writings 
       <a class="inline-block p-1 px-2 ml-4 text-sm font-light text-gray-800 bg-gray-200 rounded center" href="{% url 'all_posts' %}">See All</a>
@@ -81,7 +83,8 @@
       </a>
       {% endif %}
       {% endfor %}
-</section>
+  </section>
+</div>
 
 
 {% endblock content %}

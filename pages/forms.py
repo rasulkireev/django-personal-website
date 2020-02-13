@@ -1,17 +1,10 @@
 from django.forms import ModelForm
 from newsletter.models import Email
-from .models import Comment
 
-class CommentForm(ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['author', 'author_email', 'text']
-
-
-class NewsletterSignupPostForm(ModelForm):
+class NewsletterSignupHomeForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
-            super(NewsletterSignupPostForm, self).__init__(*args, **kwargs)
+            super(NewsletterSignupHomeForm, self).__init__(*args, **kwargs)
             
             for fieldname in ['user_email']:
                 self.fields[fieldname].help_text = None

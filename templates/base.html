@@ -47,6 +47,9 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
 
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <!-- Hypothesis -->
     <!-- <script src="https://hypothes.is/embed.js" async></script> -->
 
@@ -69,22 +72,33 @@
   
   <body class="max-w-3xl mx-auto leading-relaxed">
     {% analytical_body_top %}  
-    <div class="container flex flex-col px-5 md:mt-6">
+    <div id="app" class="container flex flex-col px-5 md:mt-6">
       
       <header class="fixed top-0 left-0 z-10 w-full bg-white h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">      
-        <div class="flex flex-row items-center justify-between h-16 max-w-3xl px-6 m-auto md:h-24">
-          <div class="brand">
-            <a class="flex flex-row items-center u-url" href="{% url 'home' %}">
-              <img class="w-8 h-8 mx-auto mr-2 rounded-lg shadow u-photo" src="https://avatars.githubusercontent.com/u/8257474">
-              <span class="hidden text-xl font-semibold no-underline md:block p-name u-url">Rasul Kireev</span>
-            </a>
+        <div class="flex flex-col justify-between max-w-3xl px-6 m-auto sm:flex-row md:h-24">
+          <div class="flex flex-row items-center justify-between w-full h-16 md:h-24">
+            <div class="brand">
+              <a class="flex flex-row items-center u-url" href="{% url 'home' %}">
+                <img class="w-8 h-8 mx-auto mr-2 rounded-lg shadow u-photo" src="https://avatars.githubusercontent.com/u/8257474">
+                <span class="block text-xl font-semibold no-underline p-name u-url">Rasul Kireev</span>
+              </a>
+            </div>
+            <button class="sm:hidden" @click="isOpen = !isOpen" type="button">
+              <svg viewBox="0 0 100 50" width="30" height="30">
+                <rect width="80" height="10"></rect>
+                <rect y="20" width="80" height="10"></rect>
+                <rect y="40" width="80" height="10"></rect>
+              </svg>
+            </button>
           </div>
-          <nav class="flex flex-row items-center justify-end flex-1 m-0 mb-2">
-            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'about' %}">About</a>
-            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'all_posts' %}">Writings</a>
-            <a class="flex items-center p-2 m-0 leading-tight text-center text-blue-700 text-md md:text-lg" href="{% url 'now' %}">Now</a>
-          </nav>
-        </div>
+            <nav v-bind:class="isOpen ? 'block' : 'hidden'" class="flex-col items-start justify-end flex-1 mt-0 mb-2 sm:flex sm:mx-0 sm:items-center sm:flex-row">
+              <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="{% url 'about' %}">About</a>
+              <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="{% url 'all_posts' %}">Writings</a>
+              <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="#">Notes</a>
+              <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="{% url 'now' %}">Now</a>
+              <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="#">Experiments</a>
+            </nav>
+          </div>
       </header>     
      
        <div class="mt-20">
@@ -105,6 +119,15 @@
       </footer>
       
     </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          isOpen: false,
+        }
+      })
+    </script>
 
     {% block martor_js %}
     {% endblock martor_js %}

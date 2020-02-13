@@ -4,18 +4,22 @@ import uuid
 
 from django.contrib.syndication.views import Feed
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.messages.views import SuccessMessageMixin
+
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.http import HttpResponse
+
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 
-
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, NewsletterSignupPostForm
+from newsletter.forms import NewsletterSignupForm
+from newsletter.models import Email
 
 from mentions.models.webmention import Webmention
 from mentions.tasks.outgoing_webmentions import process_outgoing_webmentions
@@ -35,9 +39,25 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         current_post = Post.objects.get(slug=self.kwargs['slug'])
         context = super().get_context_data(**kwargs)
-        context ['webmentions'] = Webmention.objects.all()
+        context['webmentions'] = Webmention.objects.all()
+        context['email_form'] = NewsletterSignupPostForm
 
         return context
+
+class EmailFormView(SuccessMessageMixin, CreateView):
+    form_class = NewsletterSignupPostForm
+    model = Post
+    success_message = "Thanks for signing up!"
+    
+    def get_success_url(self):
+        return reverse('post', kwargs = {'slug':self.object.slug})
+
+    def form_valid(self, form):
+        current_post = Post.objects.get(slug=self.kwargs['slug'])
+        form.instance.slug = current_post.slug
+        form.instance.post_id = current_post.id
+        return super(EmailFormView, self).form_valid(form)
+
 
 class AddComment(CreateView):
     model = Comment

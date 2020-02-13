@@ -7,4 +7,4 @@ class Email(models.Model):
     confirmed = models.BooleanField(default=False)
 
     def __str__(self):
-        return str(self.user_email)
+        return str(self.user_email) + " - " + str(self.date_added)

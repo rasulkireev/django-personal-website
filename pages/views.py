@@ -1,8 +1,12 @@
+from django.views.generic import CreateView, TemplateView # This is specific to this tutorial https://djangoforbeginners.com/pages-app/ . Learn about these built-in functions
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.syndication.views import Feed
 from django.shortcuts import render
-from django.views.generic import TemplateView # This is specific to this tutorial https://djangoforbeginners.com/pages-app/ . Learn about these built-in functions
+from django.urls import reverse_lazy
+
 from writings.models import Post
-from newsletter.forms import NewsletterSignupForm
+from .forms import NewsletterSignupHomeForm
+from newsletter.models import Email
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -10,9 +14,15 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.filter(draft=False).order_by('-date')[0:5]
-        context['email_form'] = NewsletterSignupForm
+        context['email_form'] = NewsletterSignupHomeForm
 
         return context
+
+class EmailFormView(SuccessMessageMixin, CreateView):
+    form_class = NewsletterSignupHomeForm
+    model = Email
+    success_message = "Thanks for signing up!"
+    success_url = reverse_lazy('home')
 
 
 class AboutPageView(TemplateView):
