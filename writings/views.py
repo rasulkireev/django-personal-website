@@ -16,8 +16,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 
-from .models import Post, Comment
-from .forms import CommentForm, NewsletterSignupPostForm
+from .models import Post, Book
+from .forms import NewsletterSignupPostForm
 from newsletter.forms import NewsletterSignupForm
 from newsletter.models import Email
 
@@ -29,12 +29,12 @@ from martor.utils import LazyEncoder
 
 class PostListView(ListView):
     model = Post
-    template_name = 'writings/all_posts.html'
+    template_name = 'writings/posts/all-posts.html'
     ordering = '-date'
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'writings/post.html'
+    template_name = 'writings/posts/post.html'
 
     def get_context_data(self, **kwargs):
         current_post = Post.objects.get(slug=self.kwargs['slug'])
@@ -59,19 +59,21 @@ class EmailFormView(SuccessMessageMixin, CreateView):
         return super(EmailFormView, self).form_valid(form)
 
 
-class AddComment(CreateView):
-    model = Comment
-    form_class = CommentForm
 
-    def get_success_url(self):
-        return reverse('post', kwargs = {'slug':self.object.post.slug})
-        
-    def form_valid(self, form):
-        current_post = Post.objects.get(slug=self.kwargs['slug'])
-        form.instance.slug = current_post.slug
-        form.instance.post_id = current_post.id
-        return super(AddComment, self).form_valid(form)
-        
+
+class ReadBooksView(ListView):
+    model = Book
+    template_name = 'writings/books/all-books.html'
+    ordering = '-date_read'
+    queryset = Book.objects.filter(status="READ")
+
+class BooksDetailView(DetailView):
+    model = Book
+    template_name = 'writings/books/book.html'
+
+
+
+
 class DjangoLatestEntriesFeed(Feed):
     title = "Django Writintgs"
     link = "/djangofeed/"
@@ -88,7 +90,6 @@ class DjangoLatestEntriesFeed(Feed):
 
     def item_pubdate(self, item):
         return item.date
-
 
 @login_required
 def markdown_uploader(request):
