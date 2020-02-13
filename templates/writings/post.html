@@ -71,7 +71,7 @@
       {% endfor %}
     {% endif %}
 
-      <div class="p-4 my-6 border-2 border-green-200 rounded">
+      <div class="p-4 mb-6 border-2 border-green-300 rounded">
         <p class="mb-2 text-2xl font-semibold">Did you enjoy this?</p>
         <p class="mb-2 text-lg">Consider signing up for my monthly newsletter. I will update you on the latest articles and any interesting articles and resources I've encountered.</p>
 
@@ -81,7 +81,7 @@
           <div class="mb-2">
             {{ email_form.user_email.errors }}
             <input type="email" name="user_email" maxlength="254" 
-            class="w-full p-2 leading-tight text-gray-800 bg-gray-100 border rounded appearance-none md:w-64 focus:outline-none focus:bg-white" 
+            class="w-full p-2 leading-tight text-gray-800 bg-gray-100 border border-gray-500 rounded appearance-none md:w-64 focus:outline-none focus:bg-white" 
             required="" id="id_user_email">
           </div>
 
