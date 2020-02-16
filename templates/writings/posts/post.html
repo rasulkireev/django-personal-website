@@ -37,8 +37,16 @@
 {% block content %}
 
     <p class="mb-2 text-blue-700">← <a class="" href="{% url 'all_posts' %}">back to posts</a></p>
-
-    <article class="h-entry" id="blogpost" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    {% if messages %}
+      {% for message in messages %}
+          <div class="p-2 mt-4 border border-green-700 rounded ">
+            <p class="text-green-700">{{ message }}</p>
+          </div>
+      {% endfor %}
+    {% endif %}
+    
+    <article class="mb-10 h-entry" id="blogpost" itemscope itemtype="http://schema.org/BlogPosting">
         <!-- Author description -->
         <div style="display: none;" itemprop="author" itemscope itemtype="http://schema.org/Person">
             Published by 
@@ -63,15 +71,16 @@
         
     </article>
 
-    {% if messages %}
-      {% for message in messages %}
-          <div class="p-2 mt-4 border border-green-700 rounded ">
-            <p class="text-green-700">{{ message }}</p>
-          </div>
-      {% endfor %}
-    {% endif %}
+    <!-- Twitter Button -->
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
+    class="twitter-share-button" 
+    data-size="large" 
+    data-text="I liked that post and hope you will too :)" 
+    data-via="rasulkireev" data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-      <div class="p-4 my-6 border-2 border-green-300 rounded">
+
+    <div class="p-4 my-6 border-2 border-green-300 rounded">
         <p class="mb-2 text-2xl font-semibold">Did you enjoy this?</p>
         <p class="mb-2 text-lg">Consider signing up for my monthly newsletter. I will update you on the latest articles and any interesting articles and resources I've encountered.</p>
 
