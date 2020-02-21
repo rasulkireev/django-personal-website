@@ -45,6 +45,7 @@ urlpatterns = [
 
     path('now/', include('now.urls')),
     path('writings/', include('writings.urls')),
+    path('books/', include('books.urls')),
     path('api/v1/', include('api.urls')),
     
     path('martor/', include('martor.urls')),

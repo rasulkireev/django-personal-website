@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 
-from .models import Post, Book
+from .models import Post
 from .forms import NewsletterSignupPostForm
 from newsletter.forms import NewsletterSignupForm
 from newsletter.models import Email
@@ -57,20 +57,6 @@ class EmailFormView(SuccessMessageMixin, CreateView):
         form.instance.slug = current_post.slug
         form.instance.post_id = current_post.id
         return super(EmailFormView, self).form_valid(form)
-
-
-
-
-class ReadBooksView(ListView):
-    model = Book
-    template_name = 'writings/books/all-books.html'
-    ordering = '-date_read'
-    queryset = Book.objects.filter(status="READ")
-
-class BooksDetailView(DetailView):
-    model = Book
-    template_name = 'writings/books/book.html'
-
 
 
 
