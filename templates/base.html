@@ -70,12 +70,12 @@
     {% analytical_head_bottom %}
   </head>
   
-  <body class="max-w-3xl mx-auto leading-relaxed">
+  <body class="max-w-4xl mx-auto leading-relaxed">
     {% analytical_body_top %}  
     <div id="app" class="container flex flex-col px-5 md:mt-6">
       
       <header class="fixed top-0 left-0 z-10 w-full bg-white h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">      
-        <div class="flex flex-col justify-between max-w-3xl px-6 m-auto sm:flex-row md:h-24">
+        <div class="flex flex-col justify-between max-w-4xl px-6 m-auto sm:flex-row md:h-24">
           <div class="flex flex-row items-center justify-between w-full h-16 md:h-24">
             <div class="brand">
               <a class="flex flex-row items-center u-url" href="{% url 'home' %}">
@@ -133,6 +133,9 @@
 
     {% block martor_js %}
     {% endblock martor_js %}
+
+    {% block emailoctopus %}
+    {% endblock emailoctopus %}
     
     {% analytical_body_bottom %}
   </body>

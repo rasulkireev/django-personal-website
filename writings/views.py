@@ -1,6 +1,7 @@
 import os
 import json
 import uuid
+import requests
 
 from django.contrib.syndication.views import Feed
 from django.views.generic import ListView, DetailView, CreateView
@@ -9,7 +10,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.conf import settings
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
@@ -56,8 +58,25 @@ class EmailFormView(SuccessMessageMixin, CreateView):
         current_post = Post.objects.get(slug=self.kwargs['slug'])
         form.instance.slug = current_post.slug
         form.instance.post_id = current_post.id
-        return super(EmailFormView, self).form_valid(form)
+        
+        self.object = form.save()
+        
+        emailoctopus_api_key = settings.EMAILOCTOPUS_API
+        list_id = settings.OCTO_LIST_ID
 
+        data = {
+            "api_key": emailoctopus_api_key,
+            "email_address": self.object.user_email
+        }
+
+        response = requests.post(f"https://emailoctopus.com/api/1.5/lists/{list_id}/contacts", data=data)
+        response.status_code
+        messages.success(self.request, 'Thanks for signing up!')
+        
+        return HttpResponseRedirect(self.get_success_url())
+        
+    # def form_valid(self, form):
+    #     return super(EmailFormView, self).form_valid(form)
 
 
 class DjangoLatestEntriesFeed(Feed):

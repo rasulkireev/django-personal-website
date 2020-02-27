@@ -232,3 +232,9 @@ if not DEBUG:
     MEDIAFILES_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'pw.storage_backends.MediaStorage'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+# Email Octopus Integration
+EMAILOCTOPUS_API = env("EMAILOCTOPUS_API")
+OCTO_LIST_ID = env("OCTO_LIST_ID")

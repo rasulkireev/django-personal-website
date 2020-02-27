@@ -1,28 +1,55 @@
 from django.views.generic import CreateView, TemplateView # This is specific to this tutorial https://djangoforbeginners.com/pages-app/ . Learn about these built-in functions
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.syndication.views import Feed
+
+from django.http import HttpResponseRedirect
+from django.conf import settings
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.contrib import messages
+
+import requests
 
 from writings.models import Post
-from .forms import NewsletterSignupHomeForm
 from newsletter.models import Email
+from .forms import NewsletterSignupHomeForm
 
 class HomePageView(TemplateView):
-    template_name = 'home.html'
+    template_name = "home.html"
+    form_class = NewsletterSignupHomeForm
+    model = Email
+    success_message = "Thanks for signing up...."
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.filter(draft=False).order_by('-date')[0:5]
-        context['email_form'] = NewsletterSignupHomeForm
 
         return context
 
+    
 class EmailFormView(SuccessMessageMixin, CreateView):
     form_class = NewsletterSignupHomeForm
     model = Email
-    success_message = "Thanks for signing up!"
-    success_url = reverse_lazy('home')
+
+    def get_success_url(self):
+        return self.request.path
+
+    def form_valid(self, form):
+        self.object = form.save()
+        
+        emailoctopus_api_key = settings.EMAILOCTOPUS_API
+        list_id = settings.OCTO_LIST_ID
+
+        data = {
+            "api_key": emailoctopus_api_key,
+            "email_address": self.object.user_email
+        }
+
+        response = requests.post(f"https://emailoctopus.com/api/1.5/lists/{list_id}/contacts", data=data)
+        response.status_code
+        messages.success(self.request, 'Thanks for signing up!')
+        
+        return HttpResponseRedirect(reverse_lazy('home'))
 
 
 class AboutPageView(TemplateView):
