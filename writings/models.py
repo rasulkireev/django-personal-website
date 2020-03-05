@@ -28,3 +28,23 @@ class Post(MentionableMixin, models.Model):
 
     def get_absolute_url(self) -> str:
         return reverse('post', kwargs={'slug': self.slug})
+
+    @property
+    def day_of_the_week(self):
+        return self.date.strftime("%A")
+
+    @property
+    def day_of_the_month(self):
+        return self.date.strftime("%d")
+    
+    @property
+    def month(self):
+        return self.date.strftime("%B")
+
+    @property
+    def year(self):
+        return self.date.strftime("%Y")
+
+    @property
+    def word_count(self):
+        return len(self.body.split())
