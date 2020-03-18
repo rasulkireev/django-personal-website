@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'analytical',
     'taggit',
+    'django_social_share',
 
     'pages.apps.PagesConfig',
     'now.apps.NowConfig',

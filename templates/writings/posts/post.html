@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load martortags %}
+{% load social_share %}
 
 {% block meta %}
     <!-- Other meta stuff -->
@@ -36,7 +37,7 @@
 
 {% block content %}
 
-    <p class="mb-2 text-blue-700">← <a class="" href="{% url 'all_posts' %}">back to posts</a></p>
+    <p class="mb-2 text-blue-700">← <a href="{% url 'all_posts' %}">back to posts</a></p>
     
     {% if messages %}
       {% for message in messages %}
@@ -62,9 +63,8 @@
             <span class="hidden p-category" itemprop="about">{{ post.category }}</span>
             <a class="u-url" href="{{ post.get_absolute_url }}" style="display: none;" itemprop="url"></a>
             <div class="flex flex-row" id="meta">
-              <p class="m-0 mx-2 text-sm text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
-              |
-              <p class="m-0 mx-2 text-sm text-gray-600">{{ post.word_count }} words</p>
+              <p class="hidden m-0 mx-2 text-sm text-gray-600"><time class="dt-published" itemprop="dateCreated" datetime="{{post.date}}">{{post.date|date:'F jS, Y'}}</time></p>
+              <p class="m-0 text-sm text-gray-600">{{ post.word_count }} words</p>
             </div>
             <p class="hidden p-summary" itemprop="abstract">{{ post.description }}</p>
         </div>
@@ -76,8 +76,29 @@
         </div>
         
     </article>
- 
 
+    <div id="social-share" class="flex justify-start">
+      <div class="inline-block p-1 mr-2 bg-blue-400 rounded-lg">
+        {% post_to_twitter "Just read '{{ post.title }}' post. Recommend it :)" object_or_url "<i class='text-2xl text-white lab la-twitter'></i>" %}
+      </div>
+
+      <div class="inline-block p-1 mr-2 bg-gray-400 rounded-lg">
+        {% send_email "Rasul Kireev Blog" "Just read '{{ post.title }}' post. Recommend it :)" object_or_url "<i class='text-2xl text-black las la-envelope'></i>" %}
+      </div>
+
+      <div class="inline-block p-1 mr-2 bg-red-500 rounded-lg">
+        {% post_to_reddit "Just read '{{ post.title }}' post. Recommend it :)" object_or_url "<i class='text-2xl text-white lab la-reddit'></i>" %}
+      </div>
+
+      <div class="inline-block p-1 mr-2 bg-blue-700 rounded-lg">
+        {% post_to_linkedin "Just read '{{ post.title }}' post. Recommend it :)" object_or_url "<i class='text-2xl text-white lab la-linkedin-in'></i>" %}
+      </div>
+
+      <div class="inline-block p-1 mr-2 bg-blue-500 rounded-lg">
+        {% post_to_telegram "Just read '{{ post.title }}' post. Recommend it :)" object_or_url "<i class='text-2xl text-white lab la-telegram'></i>" %}
+      </div>
+    </div>
+    
     <div class="p-4 my-6 border-2 border-green-300 rounded">
         <p class="mb-2 text-2xl font-semibold">Did you enjoy this?</p>
         <p class="mb-2 text-lg">Consider signing up for my monthly newsletter. I will update you on the latest articles and any interesting articles and resources I've encountered.</p>
