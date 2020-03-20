@@ -23,9 +23,6 @@ from .forms import NewsletterSignupPostForm
 from newsletter.forms import NewsletterSignupForm
 from newsletter.models import Email
 
-from mentions.models.webmention import Webmention
-from mentions.tasks.outgoing_webmentions import process_outgoing_webmentions
-
 from martor.utils import LazyEncoder
 
 
@@ -41,7 +38,6 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         current_post = Post.objects.get(slug=self.kwargs['slug'])
         context = super().get_context_data(**kwargs)
-        context['webmentions'] = Webmention.objects.all()
         context['email_form'] = NewsletterSignupPostForm
 
         return context

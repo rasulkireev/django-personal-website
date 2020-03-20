@@ -1,4 +1,3 @@
-from mentions.models.mixins.mentionable import MentionableMixin
 from django.db import models
 from autoslug import AutoSlugField
 from django.urls import reverse
@@ -8,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 
-class Post(MentionableMixin, models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200, blank=True)
     slug = models.SlugField()

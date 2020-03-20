@@ -51,7 +51,6 @@ urlpatterns = [
     path('martor/', include('martor.urls')),
     path('sentry-debug/', trigger_error),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    path('webmentions/', include('mentions.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
 
     path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),

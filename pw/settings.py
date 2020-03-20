@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.sites', 
     'django.contrib.sitemaps',
 
-    'mentions',
     'rest_framework',
     'martor',
     'storages',
@@ -83,8 +82,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'corsheaders.middleware.CorsMiddleware',
-    'mentions.middleware.WebmentionHeadMiddleware',
-]
+    ]
 
 # DRF
 REST_FRAMEWORK = {
@@ -159,18 +157,6 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 1
-
-# Celery application definition
-CELERY_BROKER_URL = env('CELERY_BROKER_URL')
-CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'America/New_York'
-
-# WebMention Support
-DOMAIN_NAME = 'rasulkireev.com'
-WEBMENTIONS_AUTO_APPROVE = True
 
 # Martor
 MARTOR_ENABLE_CONFIGS = {
