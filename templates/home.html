@@ -16,6 +16,14 @@
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/8257474">
 {% endblock %}
 
+  
+{% block d3 %}
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js" charset="utf-8"></script>
+    <script src="{% static 'js/published-words-chart.js' %}"></script>
+{% endblock d3 %}
+
 {% block content %}
      
 <div class="mx-auto mb-10 text-xl">
@@ -71,9 +79,10 @@
 
 <div class="flex flex-row justify-between">
   <section id="blog-posts">
-    <h1 class="flex items-center pl-1 mb-4 text-2xl font-semibold">
+    <h1 class="flex items-center pl-1 mb-4 text-xl font-semibold sm:text-2xl">
       Recent Writings 
       <a class="inline-block p-1 px-2 ml-4 text-sm font-light text-gray-800 bg-gray-200 rounded center" href="{% url 'all_posts' %}">See All</a>
+      <a class="inline-block p-1 px-2 ml-4 text-sm font-light text-gray-800 bg-gray-200 rounded center" href="https://fd3.netlify.com">Stats</a>
     </h1>
       {% for post in posts %}
       {% if post.draft == False %}
@@ -86,5 +95,8 @@
   </section>
 </div>
 
+<div class="justify-center hidden p-1 mx-auto my-6 border border-gray-200 shadow md:flex">
+    <div id="wrapper"></div>
+</div>
 
 {% endblock content %}

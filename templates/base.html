@@ -49,24 +49,19 @@
 
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-    <!-- Hypothesis -->
-    <!-- <script src="https://hypothes.is/embed.js" async></script> -->
-
-    <!-- Crisp Chat -->
-    <!-- <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="530bbe6e-391d-4292-9a80-814ffa04a733";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+    
     
     <title>{% block title %}Rasul Kireev | Personal Website{% endblock %}</title>
-
-    {% block d3_js %}
-      {# Import D3.js CDN #}
-      {# Plus any additional styling for D3 chart #}
-    {% endblock %}
-
-
+    
     {% block martor_css %}
     {% endblock martor_css %}
-
+    
+    {% block d3 %}
+    {% endblock d3 %}
+    
+    <!-- Hypothesis -->
+    <script src="https://hypothes.is/embed.js" async></script>
+    
     {% analytical_head_bottom %}
   </head>
   
