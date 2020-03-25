@@ -11,22 +11,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <meta property="og:url" content="{{ request.build_absolute_uri  }}" />
     <meta property="og:site_name" content="Rasul Kireev | Personal Website" />
-    
+
+    <!-- Stable meta stuff -->
     <meta name="twitter:site" content="@rasulkireev">
     <meta name="twitter:creator" content="@rasulkireev">
 
     {% block meta %}
     <!-- Other meta stuff -->
     <meta name="description" content="{% block description %}My peronal page to document my life journey.{% endblock %}">
-    
+
     <meta property="og:title" content="Rasul Kireev">
     <meta property="og:type" content="article">
     <meta property="og:description" content="{% block og-description %}My peronal page to document my life journey.{% endblock %}">
     <meta name="og:image" content="https://dj-pw-static.s3.amazonaws.com/media/my_photo.jpg">
-    
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Rasul Kireev">
     <meta name="twitter:description" content="{% block twitter-description %}My peronal page to document my life journey.{% endblock %}">
@@ -43,33 +44,20 @@
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/final.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
 
-    <!-- Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    
-    
     <title>{% block title %}Rasul Kireev | Personal Website{% endblock %}</title>
-    
-    {% block martor_css %}
-    {% endblock martor_css %}
-    
-    {% block d3 %}
-    {% endblock d3 %}
-    
-    <!-- Hypothesis -->
-    <script src="https://hypothes.is/embed.js" async></script>
-    
+
     {% analytical_head_bottom %}
   </head>
-  
+
   <body class="max-w-4xl mx-auto leading-relaxed">
-    {% analytical_body_top %}  
+    {% analytical_body_top %}
     <div id="app" class="container flex flex-col px-5 md:mt-6">
-      
-      <header class="fixed top-0 left-0 z-10 w-full bg-white h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">      
+
+      <header class="fixed top-0 left-0 z-10 w-full bg-white h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <div class="flex flex-col justify-between max-w-4xl px-6 m-auto sm:flex-row md:h-24">
           <div class="flex flex-row items-center justify-between w-full h-16 md:h-24">
             <div class="brand">
@@ -96,8 +84,8 @@
               <!-- <a class="flex items-center w-full p-2 m-0 text-lg leading-tight text-left text-blue-700 rounded sm:w-auto sm:text-center hover:bg-gray-300" href="#">Favourites</a> -->
             </nav>
           </div>
-      </header>     
-     
+      </header>
+
        <div class="mt-20">
         {% block content %}
         {% endblock %}
@@ -114,8 +102,18 @@
           <a class="text-blue-700" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a>
         </div>
       </footer>
-      
+
     </div>
+
+    <!-- Scripts -->
+    {% block d3 %}
+    {% endblock d3 %}
+
+    <!-- Hypothesis -->
+    <script src="https://hypothes.is/embed.js" async></script>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <script>
       var app = new Vue({
@@ -126,12 +124,9 @@
       })
     </script>
 
-    {% block martor_js %}
-    {% endblock martor_js %}
-
     {% block emailoctopus %}
     {% endblock emailoctopus %}
-    
+
     {% analytical_body_bottom %}
   </body>
 </html>
