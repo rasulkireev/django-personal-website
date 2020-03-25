@@ -5,23 +5,23 @@ async function loadAndTransform() {
     // Parse Python Datetime string to JS date object
     dateParser = d3.utcParse("%Y-%m-%dT%H:%M:%S%Z")
     formatMonth = d3.timeFormat("%B %Y")
-    
+
     // Grouping data by month
     wordsByMonth = Array.from(
         d3.rollup(
-            dataset, 
-            v => d3.sum(v, d => d.word_count),  
+            dataset,
+            v => d3.sum(v, d => d.word_count),
             d => formatMonth(dateParser(d.date))
             )
         )
-    
+
     return wordsByMonth;
 }
 
 async function drawLineChart() {
 
     const dataset = await loadAndTransform()
-    
+
     const yAccessor = d => d[1]
     const xAccessor = d => d[0]
 
@@ -78,7 +78,7 @@ async function drawLineChart() {
     const monthGroups = monthsGroup.selectAll("g")
         .data(dataset)
         .enter().append("g")
-    
+
     const barPadding = 1
 
     const barRects = monthGroups.append("rect")
@@ -97,8 +97,8 @@ async function drawLineChart() {
         .text("# of Published Words")
         .style("font-size", "20px")
         .style("font-family", "sans-serif")
-    
-    
+
+
     const barText =  monthGroups.filter(yAccessor)
         .append("text")
         .attr("x", d => xScale(xAccessor(d)) + 30)
@@ -114,7 +114,7 @@ async function drawLineChart() {
     const xAxis = bounds.append("g")
         .call(xAxisGenerator)
         .style("transform",`translate(0, ${dimensions.boundedHeight}px)`)
-        .selectAll("text")	
+        .selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
