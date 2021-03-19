@@ -21,7 +21,7 @@ django-storages = "^1.9.1"
 django-taggit = "^1.2.0"
 sentry-sdk = "^0.14.3"
 requests = "^2.23.0"
-djangorestframework = "^3.11.0"
+djangorestframework = "^3.11.2"
 psycopg2 = "^2.8.4"
 
 [tool.poetry.dev-dependencies]
